@@ -1,442 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Health Layout</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Layout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-gray-50 font-sans">
 
-<header>
-  <!-- ================= PREMIUM HEADER ================= -->
-<header class="sticky top-0 z-50">
+    <header>
+        <!-- ================= PREMIUM HEADER ================= -->
+        <header class="sticky top-0 z-50">
 
-  <!-- ===== TOPBAR ===== -->
-  <div class="w-full bg-white border-b border-gray-200">
-    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- ===== TOPBAR ===== -->
+            <div class="w-full bg-white border-b border-gray-200">
+                <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
-      <!-- Logo -->
-      <img src="https://cdn1.healthians.com/img/healthians-logo.svg" class="h-9">
+                    <!-- Logo -->
+                    <img src="https://cdn1.healthians.com/img/healthians-logo.svg" class="h-9">
 
-      <!-- Right Info -->
-      <div class="hidden lg:flex items-center gap-10 text-[13px] text-gray-600">
+                    <!-- Right Info -->
+                    <div class="hidden lg:flex items-center gap-10 text-[13px] text-gray-600">
 
-        <div class="flex items-center gap-2 cursor-pointer hover:text-teal-700">
-          <svg class="w-5 h-5 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M12 21s7-5.2 7-11a7 7 0 10-14 0c0 5.8 7 11 7 11z"/>
-            <circle cx="12" cy="10" r="2.5"/>
-          </svg>
-          Your Location <b class="text-gray-800">Gurgaon</b>
+                        <div class="flex items-center gap-2 cursor-pointer hover:text-teal-700">
+                            <svg class="w-5 h-5 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <path d="M12 21s7-5.2 7-11a7 7 0 10-14 0c0 5.8 7 11 7 11z" />
+                                <circle cx="12" cy="10" r="2.5" />
+                            </svg>
+                            Your Location <b class="text-gray-800">Gurgaon</b>
+                        </div>
+
+                        <div class="h-5 w-px bg-gray-300"></div>
+                        <div>Login / Signup</div>
+                        <div class="h-5 w-px bg-gray-300"></div>
+
+                        <div>
+                            <div class="text-[11px] text-gray-500">Customer Support</div>
+                            <div class="font-semibold text-gray-800">1800-572-0005</div>
+                        </div>
+
+                        <div class="h-5 w-px bg-gray-300"></div>
+
+                        <div>
+                            <div class="text-[11px] text-gray-500">Corporate Enquiry</div>
+                            <div class="font-semibold text-gray-800">93-125-3875</div>
+                        </div>
+
+                    </div>
+
+                    <!-- Mobile Hamburger -->
+                    <button onclick="openMenu()" class="lg:hidden">
+                        <svg class="w-7 h-7 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- ===== NAVBAR ===== -->
+            <nav class="w-full bg-teal-600 shadow-md">
+                <div class="max-w-7xl mx-auto px-6 h-12 flex items-center justify-between text-white">
+
+                    <!-- Desktop Menu -->
+                    <div class="hidden lg:flex items-center gap-10 text-[14.5px] font-medium">
+
+                        <!-- Menu Item -->
+                        <div class="group relative cursor-pointer">
+                            <div class="flex items-center gap-1">
+                                Full Body Checkup
+                                <svg class="arrow w-3.5 h-3.5 transition-transform duration-300" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path d="M5.5 7l4.5 5 4.5-5" />
+                                </svg>
+                            </div>
+                            <span class="nav-underline"></span>
+                        </div>
+
+                        <div class="group relative cursor-pointer">
+                            <div class="flex items-center gap-1">
+                                Heart
+                                <svg class="arrow w-3.5 h-3.5 transition-transform duration-300" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path d="M5.5 7l4.5 5 4.5-5" />
+                                </svg>
+                            </div>
+                            <span class="nav-underline"></span>
+                        </div>
+
+                        <div class="group relative cursor-pointer">
+                            <div class="flex items-center gap-1">
+                                Cancer
+                                <svg class="arrow w-3.5 h-3.5 transition-transform duration-300" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path d="M5.5 7l4.5 5 4.5-5" />
+                                </svg>
+                            </div>
+                            <span class="nav-underline"></span>
+                        </div>
+
+                        <div class="group relative cursor-pointer">
+                            <div class="flex items-center gap-1">
+                                Thyroid
+                                <svg class="arrow w-3.5 h-3.5 transition-transform duration-300" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path d="M5.5 7l4.5 5 4.5-5" />
+                                </svg>
+                            </div>
+                            <span class="nav-underline"></span>
+                        </div>
+
+                        <div class="group relative cursor-pointer">
+                            <div class="flex items-center gap-1">
+                                Diabetes
+                                <svg class="arrow w-3.5 h-3.5 transition-transform duration-300" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path d="M5.5 7l4.5 5 4.5-5" />
+                                </svg>
+                            </div>
+                            <span class="nav-underline"></span>
+                        </div>
+
+                    </div>
+
+                    <!-- Mobile Scroll Menu -->
+                    <div class="lg:hidden flex gap-6 overflow-x-auto no-scrollbar text-[14px]">
+                        <span class="whitespace-nowrap">Full Body</span>
+                        <span class="whitespace-nowrap">Heart</span>
+                        <span class="whitespace-nowrap">Cancer</span>
+                        <span class="whitespace-nowrap">Thyroid</span>
+                        <span class="whitespace-nowrap">Diabetes</span>
+                    </div>
+
+                </div>
+            </nav>
+
+        </header>
+
+        <!-- ===== Sidebar ===== -->
+        <div id="sidebar" class="fixed inset-0 bg-black/40 z-50 hidden">
+            <div class="w-72 bg-white h-full p-6 shadow-2xl">
+                <div class="flex justify-between items-center mb-6">
+                    <img src="https://cdn1.healthians.com/img/healthians-logo.svg" class="h-8">
+                    <button onclick="closeMenu()">✕</button>
+                </div>
+                <div class="space-y-5 text-gray-700 font-medium">
+                    <div>Full Body Checkup</div>
+                    <div>Heart</div>
+                    <div>Cancer</div>
+                    <div>Thyroid</div>
+                    <div>Diabetes</div>
+                </div>
+            </div>
         </div>
 
-        <div class="h-5 w-px bg-gray-300"></div>
-        <div>Login / Signup</div>
-        <div class="h-5 w-px bg-gray-300"></div>
+        <style>
+            .nav-underline {
+                position: absolute;
+                left: 0;
+                bottom: -6px;
+                height: 2px;
+                width: 0%;
+                background: white;
+                transition: width .35s ease;
+            }
 
-        <div>
-          <div class="text-[11px] text-gray-500">Customer Support</div>
-          <div class="font-semibold text-gray-800">1800-572-0005</div>
-        </div>
+            .group:hover .nav-underline {
+                width: 100%;
+            }
 
-        <div class="h-5 w-px bg-gray-300"></div>
+            .group:hover .arrow {
+                transform: rotate(180deg);
+            }
 
-        <div>
-          <div class="text-[11px] text-gray-500">Corporate Enquiry</div>
-          <div class="font-semibold text-gray-800">93-125-3875</div>
-        </div>
+            .no-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+        </style>
 
-      </div>
+        <script>
+            function openMenu() { document.getElementById('sidebar').classList.remove('hidden'); }
+            function closeMenu() { document.getElementById('sidebar').classList.add('hidden'); }
+        </script>
+        <!-- ================= END HEADER ================= -->
 
-      <!-- Mobile Hamburger -->
-      <button onclick="openMenu()" class="lg:hidden">
-        <svg class="w-7 h-7 text-gray-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
+    </header>
 
     </div>
+
+    <!-- Hero Section -->
+    <div id="hero">
+        <!-- ================= FULL WIDTH PREMIUM HERO ================= -->
+        <section class="relative overflow-hidden text-white">
+
+            <!-- Background Image -->
+            <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?q=80&w=2000&auto=format&fit=crop"
+                class="absolute inset-0 w-full h-full object-cover">
+
+            <!-- Gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-to-r from-[#3b3127]/95 via-[#3b3127]/85 to-transparent"></div>
+
+            <!-- Content -->
+            <div class="relative max-w-7xl mx-auto px-5 lg:px-6 py-20 lg:py-28">
+
+                <div class="max-w-2xl">
+
+                    <h2 class="text-3xl sm:text-4xl lg:text-6xl font-extrabold leading-tight mb-4">
+                        WHEN GOOD FOOD <br> MAKES YOU FEEL BAD,
+                    </h2>
+
+                    <p class="text-lg text-blue-300 font-semibold mb-8">
+                        It’s time to find out why.
+                    </p>
+
+                    <!-- Offer Row -->
+                    <div class="flex flex-wrap items-center gap-4 mb-8">
+                        <div class="bg-[#5b4a3a] px-5 py-4 rounded-xl">
+                            <div class="text-sm">FOOD</div>
+                            <div class="font-bold text-xl">INTOLERANCE TEST</div>
+                        </div>
+
+                        <div class="bg-[#5b4a3a] px-6 py-4 rounded-xl text-3xl font-bold">
+                            ₹5499
+                        </div>
+
+                        <button class="bg-white text-gray-900 font-semibold px-6 py-3 rounded-lg shadow-lg">
+                            BOOK NOW →
+                        </button>
+                    </div>
+
+                    <!-- Search -->
+                    <div class="flex w-full max-w-xl overflow-hidden rounded-xl shadow-lg mb-8">
+                        <input class="flex-1 px-4 py-3 text-gray-800 outline-none"
+                            placeholder="Find your Package/Test/Scans" />
+                        <button class="bg-orange-500 text-white px-6 font-semibold">
+                            Search
+                        </button>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="flex flex-wrap gap-6 text-sm text-gray-200">
+                        <div class="flex items-center gap-2">🚚 Free Sample Collection</div>
+                        <div class="flex items-center gap-2">📊 Smart Reports</div>
+                        <div class="flex items-center gap-2">👨‍⚕️ Free Report Counseling</div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+<!-- ================= CATEGORY CARDS ================= -->
+<section class="bg-white py-10 lg:py-14">
+  <div class="max-w-7xl mx-auto px-4 lg:px-6">
+
+    <!-- ===== DESKTOP GRID ===== -->
+    <div class="hidden lg:grid grid-cols-6 gap-5">
+
+      <!-- CARD -->
+      <div onclick="openModal('Blood Tests')" class="cursor-pointer rounded-2xl bg-[#e8fbff] p-5 text-center shadow-sm hover:shadow-xl transition">
+        <div class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">Up to 79% off</div>
+        <img src="https://cdn-icons-png.flaticon.com/512/2966/2966483.png" class="w-16 h-16 mx-auto mb-4">
+        <div class="font-semibold text-gray-700">Blood Tests</div>
+      </div>
+
+      <div onclick="openModal('X-Rays, Scans & MRI')" class="cursor-pointer rounded-2xl bg-[#eaf1ff] p-5 text-center shadow-sm hover:shadow-xl transition">
+        <div class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">Up to 70% off</div>
+        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920329.png" class="w-16 h-16 mx-auto mb-4">
+        <div class="font-semibold text-gray-700">X-Rays, Scans & MRI</div>
+      </div>
+
+      <div onclick="openModal('Doctor & Diet Consultations')" class="cursor-pointer rounded-2xl bg-[#fff1ec] p-5 text-center shadow-sm hover:shadow-xl transition">
+        <div class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">Up to 75% off</div>
+        <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png" class="w-16 h-16 mx-auto mb-4">
+        <div class="font-semibold text-gray-700">Doctor & Diet Consultations</div>
+      </div>
+
+      <div onclick="openModal('Herbved+ Supplements')" class="cursor-pointer rounded-2xl bg-[#f2f9ff] p-5 text-center shadow-sm hover:shadow-xl transition">
+        <div class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">Flat 55% off</div>
+        <img src="https://cdn-icons-png.flaticon.com/512/3039/3039432.png" class="w-16 h-16 mx-auto mb-4">
+        <div class="font-semibold text-gray-700">Herbved+ Supplements</div>
+      </div>
+
+      <div onclick="openModal('Genetic Testing')" class="cursor-pointer rounded-2xl bg-[#ffeef6] p-5 text-center shadow-sm hover:shadow-xl transition">
+        <div class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">Up to 70% off</div>
+        <img src="https://cdn-icons-png.flaticon.com/512/2941/2941776.png" class="w-16 h-16 mx-auto mb-4">
+        <div class="font-semibold text-gray-700">Genetic Testing</div>
+      </div>
+
+      <div onclick="openModal('Upload Prescription')" class="cursor-pointer rounded-2xl bg-[#eaf7ff] p-5 text-center shadow-sm hover:shadow-xl transition">
+        <div class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">Easy</div>
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="w-16 h-16 mx-auto mb-4">
+        <div class="font-semibold text-gray-700">Upload Prescription</div>
+      </div>
+
+    </div>
+
+    <!-- ===== MOBILE SLIDER ===== -->
+    <div class="lg:hidden overflow-hidden">
+      <div id="catSlider" class="flex gap-5">
+
+        <!-- Repeat same cards -->
+        <div onclick="openModal('Blood Tests')" class="cursor-pointer min-w-[85%] bg-[#e8fbff] p-5 rounded-2xl text-center shadow">
+          <div class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">Up to 79% off</div>
+          <img src="https://cdn-icons-png.flaticon.com/512/2966/2966483.png" class="w-16 h-16 mx-auto mb-4">
+          <div class="font-semibold text-gray-700">Blood Tests</div>
+        </div>
+
+        <div onclick="openModal('X-Rays, Scans & MRI')" class="cursor-pointer min-w-[85%] bg-[#eaf1ff] p-5 rounded-2xl text-center shadow">
+          <div class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">Up to 70% off</div>
+          <img src="https://cdn-icons-png.flaticon.com/512/2920/2920329.png" class="w-16 h-16 mx-auto mb-4">
+          <div class="font-semibold text-gray-700">X-Rays, Scans & MRI</div>
+        </div>
+
+        <div onclick="openModal('Doctor & Diet Consultations')" class="cursor-pointer min-w-[85%] bg-[#fff1ec] p-5 rounded-2xl text-center shadow">
+          <div class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">Up to 75% off</div>
+          <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png" class="w-16 h-16 mx-auto mb-4">
+          <div class="font-semibold text-gray-700">Doctor & Diet Consultations</div>
+        </div>
+
+        <!-- add remaining 3 same -->
+
+      </div>
+    </div>
+
   </div>
+</section>
 
-  <!-- ===== NAVBAR ===== -->
-  <nav class="w-full bg-teal-600 shadow-md">
-    <div class="max-w-7xl mx-auto px-6 h-12 flex items-center justify-between text-white">
-
-      <!-- Desktop Menu -->
-      <div class="hidden lg:flex items-center gap-10 text-[14.5px] font-medium">
-
-        <!-- Menu Item -->
-        <div class="group relative cursor-pointer">
-          <div class="flex items-center gap-1">
-            Full Body Checkup
-            <svg class="arrow w-3.5 h-3.5 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M5.5 7l4.5 5 4.5-5"/>
-            </svg>
-          </div>
-          <span class="nav-underline"></span>
-        </div>
-
-        <div class="group relative cursor-pointer">
-          <div class="flex items-center gap-1">
-            Heart
-            <svg class="arrow w-3.5 h-3.5 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M5.5 7l4.5 5 4.5-5"/>
-            </svg>
-          </div>
-          <span class="nav-underline"></span>
-        </div>
-
-        <div class="group relative cursor-pointer">
-          <div class="flex items-center gap-1">
-            Cancer
-            <svg class="arrow w-3.5 h-3.5 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M5.5 7l4.5 5 4.5-5"/>
-            </svg>
-          </div>
-          <span class="nav-underline"></span>
-        </div>
-
-        <div class="group relative cursor-pointer">
-          <div class="flex items-center gap-1">
-            Thyroid
-            <svg class="arrow w-3.5 h-3.5 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M5.5 7l4.5 5 4.5-5"/>
-            </svg>
-          </div>
-          <span class="nav-underline"></span>
-        </div>
-
-        <div class="group relative cursor-pointer">
-          <div class="flex items-center gap-1">
-            Diabetes
-            <svg class="arrow w-3.5 h-3.5 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M5.5 7l4.5 5 4.5-5"/>
-            </svg>
-          </div>
-          <span class="nav-underline"></span>
-        </div>
-
-      </div>
-
-      <!-- Mobile Scroll Menu -->
-      <div class="lg:hidden flex gap-6 overflow-x-auto no-scrollbar text-[14px]">
-        <span class="whitespace-nowrap">Full Body</span>
-        <span class="whitespace-nowrap">Heart</span>
-        <span class="whitespace-nowrap">Cancer</span>
-        <span class="whitespace-nowrap">Thyroid</span>
-        <span class="whitespace-nowrap">Diabetes</span>
-      </div>
-
-    </div>
-  </nav>
-
-</header>
-
-<!-- ===== Sidebar ===== -->
-<div id="sidebar" class="fixed inset-0 bg-black/40 z-50 hidden">
-  <div class="w-72 bg-white h-full p-6 shadow-2xl">
-    <div class="flex justify-between items-center mb-6">
-      <img src="https://cdn1.healthians.com/img/healthians-logo.svg" class="h-8">
-      <button onclick="closeMenu()">✕</button>
-    </div>
-    <div class="space-y-5 text-gray-700 font-medium">
-      <div>Full Body Checkup</div>
-      <div>Heart</div>
-      <div>Cancer</div>
-      <div>Thyroid</div>
-      <div>Diabetes</div>
+<!-- ===== MODAL ===== -->
+<div id="callbackModal" class="fixed inset-0 hidden items-center justify-center bg-black/50 backdrop-blur-sm z-50">
+  <div class="bg-white w-[92%] max-w-md rounded-3xl p-7 relative shadow-2xl">
+    <button onclick="closeModal()" class="absolute top-3 right-4 text-2xl text-gray-400">&times;</button>
+    <h3 class="text-2xl font-semibold text-gray-800 mb-1">Book <span id="testName" class="text-teal-600"></span></h3>
+    <p class="text-sm text-gray-500 mb-6">Our health advisor will call you shortly</p>
+    <div class="space-y-4">
+      <input class="w-full border rounded-xl px-4 py-3" placeholder="Full Name">
+      <input class="w-full border rounded-xl px-4 py-3" placeholder="Mobile Number">
+      <input class="w-full border rounded-xl px-4 py-3" placeholder="City">
+      <button class="w-full bg-teal-600 text-white py-3 rounded-xl font-semibold">Request Callback</button>
     </div>
   </div>
 </div>
 
-<style>
-.nav-underline{
-  position:absolute;
-  left:0;
-  bottom:-6px;
-  height:2px;
-  width:0%;
-  background:white;
-  transition:width .35s ease;
-}
-.group:hover .nav-underline{ width:100%; }
-.group:hover .arrow{ transform:rotate(180deg); }
-.no-scrollbar::-webkit-scrollbar{ display:none; }
-</style>
-
 <script>
-function openMenu(){ document.getElementById('sidebar').classList.remove('hidden'); }
-function closeMenu(){ document.getElementById('sidebar').classList.add('hidden'); }
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.getElementById("catSlider");
+  if (slider && window.innerWidth < 1024) {
+    const cards = Array.from(slider.children);
+    const gap = 20;
+    const cardWidth = cards[0].getBoundingClientRect().width + gap;
+
+    cards.forEach(card => slider.appendChild(card.cloneNode(true)));
+
+    let index = 0;
+    setInterval(() => {
+      index++;
+      slider.style.transition = "transform 0.7s ease";
+      slider.style.transform = `translateX(-${index * cardWidth}px)`;
+
+      if (index >= cards.length) {
+        setTimeout(() => {
+          slider.style.transition = "none";
+          slider.style.transform = "translateX(0px)";
+          index = 0;
+        }, 700);
+      }
+    }, 2500);
+  }
+});
+
+function openModal(name) {
+  document.getElementById('testName').innerText = name;
+  const modal = document.getElementById('callbackModal');
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+}
+function closeModal() {
+  const modal = document.getElementById('callbackModal');
+  modal.classList.add('hidden');
+  modal.classList.remove('flex');
+}
 </script>
-<!-- ================= END HEADER ================= -->
 
-</header>
 
-  </div>
 
-  <!-- Hero Section -->
-  <div id="hero">
-    <!-- ================= FULL WIDTH PREMIUM HERO ================= -->
-<section class="relative overflow-hidden text-white">
+    <!-- Callback Strip -->
+    <div id="callback">
+        <!-- ================= INFO CARDS + TRUST STRIP ================= -->
+        <section class="bg-white py-10 lg:py-14 mt-[-3%]">
+            <div class="max-w-7xl mx-auto px-4 lg:px-6 space-y-8">
 
-  <!-- Background Image -->
-  <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?q=80&w=2000&auto=format&fit=crop"
-       class="absolute inset-0 w-full h-full object-cover">
+                <!-- Top 2 Cards -->
+                <div class="grid lg:grid-cols-2 gap-6">
 
-  <!-- Gradient overlay -->
-  <div class="absolute inset-0 bg-gradient-to-r from-[#3b3127]/95 via-[#3b3127]/85 to-transparent"></div>
+                    <!-- Card 1 -->
+                    <div
+                        class="bg-[#e9fbff] border border-[#c8eef5] rounded-2xl p-6 flex flex-col lg:flex-row items-start gap-4 shadow-sm">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="w-12 h-12">
 
-  <!-- Content -->
-  <div class="relative max-w-7xl mx-auto px-5 lg:px-6 py-20 lg:py-28">
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-gray-800 text-lg mb-1">
+                                We are now empanelled on Government Panels for Health Tests
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-4">
+                                For in-service or retired govt. employees across CGHS, DGHS, ESIC & relevant Dept.
+                            </p>
 
-    <div class="max-w-2xl">
+                            <button class="bg-[#f6b042] text-black font-semibold px-5 py-2 rounded-lg shadow">
+                                📞 Call us: +91-9289902266
+                            </button>
+                        </div>
+                    </div>
 
-      <h2 class="text-3xl sm:text-4xl lg:text-6xl font-extrabold leading-tight mb-4">
-        WHEN GOOD FOOD <br> MAKES YOU FEEL BAD,
-      </h2>
+                    <!-- Card 2 -->
+                    <div
+                        class="bg-[#e9fbff] border border-[#c8eef5] rounded-2xl p-6 flex flex-col lg:flex-row items-start gap-4 shadow-sm">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2331/2331966.png" class="w-12 h-12">
 
-      <p class="text-lg text-blue-300 font-semibold mb-8">
-        It’s time to find out why.
-      </p>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-gray-800 text-lg mb-1">
+                                Unlock Your Health Score with HealthKarma!
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-4">
+                                Uncover potential health risks and get custom test recommendations.
+                            </p>
 
-      <!-- Offer Row -->
-      <div class="flex flex-wrap items-center gap-4 mb-8">
-        <div class="bg-[#5b4a3a] px-5 py-4 rounded-xl">
-          <div class="text-sm">FOOD</div>
-          <div class="font-bold text-xl">INTOLERANCE TEST</div>
-        </div>
+                            <button class="bg-orange-500 text-white font-semibold px-5 py-2 rounded-lg shadow">
+                                Check your health score →
+                            </button>
+                        </div>
+                    </div>
 
-        <div class="bg-[#5b4a3a] px-6 py-4 rounded-xl text-3xl font-bold">
-          ₹5499
-        </div>
+                </div>
 
-        <button class="bg-white text-gray-900 font-semibold px-6 py-3 rounded-lg shadow-lg">
-          BOOK NOW →
-        </button>
-      </div>
+                <!-- ================= PREMIUM TRUST STRIP ================= -->
+                <div class="bg-gradient-to-r from-[#f5fdff] to-[#e9f9fc] rounded-3xl px-6 py-8">
 
-      <!-- Search -->
-      <div class="flex w-full max-w-xl overflow-hidden rounded-xl shadow-lg mb-8">
-        <input
-          class="flex-1 px-4 py-3 text-gray-800 outline-none"
-          placeholder="Find your Package/Test/Scans"
-        />
-        <button class="bg-orange-500 text-white px-6 font-semibold">
-          Search
-        </button>
-      </div>
+                    <div class="grid lg:grid-cols-5 gap-8 items-center">
 
-      <!-- Features -->
-      <div class="flex flex-wrap gap-6 text-sm text-gray-200">
-        <div class="flex items-center gap-2">🚚 Free Sample Collection</div>
-        <div class="flex items-center gap-2">📊 Smart Reports</div>
-        <div class="flex items-center gap-2">👨‍⚕️ Free Report Counseling</div>
-      </div>
+                        <!-- Left Heading -->
+                        <div class="text-center lg:text-left">
+                            <h3 class="text-lg lg:text-xl font-semibold text-gray-800 leading-snug">
+                                Why <span class="text-teal-600 font-bold">8.5 Million</span><br class="hidden lg:block">
+                                Indians Trust Health Labs
+                            </h3>
+                        </div>
+
+                        <!-- Badges -->
+                        <div class="lg:col-span-4 grid grid-cols-2 sm:grid-cols-4 gap-6 text-sm text-gray-700">
+
+                            <!-- Badge -->
+                            <div class="flex flex-col items-center text-center gap-3">
+                                <div
+                                    class="w-12 h-12 bg-white rounded-xl shadow flex items-center justify-center text-xl">
+                                    🏅
+                                </div>
+                                <span>CAP & NABL<br>Accredited Labs</span>
+                            </div>
+
+                            <!-- Badge -->
+                            <div class="flex flex-col items-center text-center gap-3">
+                                <div
+                                    class="w-12 h-12 bg-white rounded-xl shadow flex items-center justify-center text-xl">
+                                    ⏱️
+                                </div>
+                                <span>On Time Sample<br>Collection</span>
+                            </div>
+
+                            <!-- Badge -->
+                            <div class="flex flex-col items-center text-center gap-3">
+                                <div
+                                    class="w-12 h-12 bg-white rounded-xl shadow flex items-center justify-center text-xl">
+                                    📄
+                                </div>
+                                <span>Smart Reports<br>in 6 Hours</span>
+                            </div>
+
+                            <!-- Badge -->
+                            <div class="flex flex-col items-center text-center gap-3">
+                                <div
+                                    class="w-12 h-12 bg-white rounded-xl shadow flex items-center justify-center text-xl">
+                                    📞
+                                </div>
+                                <span>Free Report<br>Consultation</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+    </div>
+    </section>
 
     </div>
 
-  </div>
-</section>
+    <!-- Content Sections -->
+    <div id="content"></div>
 
-  </div>
-
-  <!-- Category Cards -->
-  <div id="categories">
-    <!-- ================= DETAILED CATEGORY CARDS ================= -->
-<section class="bg-white py-10 lg:py-14">
-  <div class="max-w-7xl mx-auto px-4 lg:px-6">
-
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
-
-      <!-- CARD -->
-      <div class="group rounded-2xl bg-[#e8fbff] p-5 text-center shadow-sm hover:shadow-xl transition">
-        <div class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">
-          Up to 79% off
-        </div>
-
-        <img src="https://cdn-icons-png.flaticon.com/512/2966/2966483.png"
-             class="w-16 h-16 mx-auto mb-4">
-
-        <div class="font-semibold text-gray-700">
-          Blood Tests
-        </div>
-      </div>
-
-      <!-- CARD -->
-      <div class="group rounded-2xl bg-[#eaf1ff] p-5 text-center shadow-sm hover:shadow-xl transition">
-        <div class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">
-          Up to 70% off
-        </div>
-
-        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920329.png"
-             class="w-16 h-16 mx-auto mb-4">
-
-        <div class="font-semibold text-gray-700">
-          X-Rays, Scans & MRI
-        </div>
-      </div>
-
-      <!-- CARD -->
-      <div class="group rounded-2xl bg-[#fff1ec] p-5 text-center shadow-sm hover:shadow-xl transition">
-        <div class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">
-          Up to 75% off
-        </div>
-
-        <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png"
-             class="w-16 h-16 mx-auto mb-4">
-
-        <div class="font-semibold text-gray-700">
-          Doctor & Diet Consultations
-        </div>
-      </div>
-
-      <!-- CARD -->
-      <div class="group rounded-2xl bg-[#f2f9ff] p-5 text-center shadow-sm hover:shadow-xl transition">
-        <div class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">
-          Flat 55% off
-        </div>
-
-        <img src="https://cdn-icons-png.flaticon.com/512/3039/3039432.png"
-             class="w-16 h-16 mx-auto mb-4">
-
-        <div class="font-semibold text-gray-700">
-          Herbved+ Supplements
-        </div>
-      </div>
-
-      <!-- CARD -->
-      <div class="group rounded-2xl bg-[#ffeef6] p-5 text-center shadow-sm hover:shadow-xl transition">
-        <div class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">
-          Up to 70% off
-        </div>
-
-        <img src="https://cdn-icons-png.flaticon.com/512/2941/2941776.png"
-             class="w-16 h-16 mx-auto mb-4">
-
-        <div class="font-semibold text-gray-700">
-          Genetic Testing
-        </div>
-      </div>
-
-      <!-- CARD -->
-      <div class="group rounded-2xl bg-[#eaf7ff] p-5 text-center shadow-sm hover:shadow-xl transition">
-        <div class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">
-          Easy
-        </div>
-
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-             class="w-16 h-16 mx-auto mb-4">
-
-        <div class="font-semibold text-gray-700">
-          Upload Prescription
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-  </div>
-
-  <!-- Callback Strip -->
-  <div id="callback">
-    <!-- ================= MATCHED INFO + TRUST ================= -->
-<section class="bg-white py-12">
-  <div class="max-w-7xl mx-auto px-4 lg:px-6 space-y-8">
-
-    <!-- TOP TWO CARDS -->
-    <div class="grid lg:grid-cols-2 gap-6">
-
-      <!-- Govt Panel Card -->
-      <div class="bg-[#f3fdff] border border-[#cfeff6] rounded-2xl p-6 lg:p-7 flex gap-5 items-start shadow-sm">
-
-        <div class="bg-white p-3 rounded-xl shadow">
-          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="w-8 h-8">
-        </div>
-
-        <div>
-          <h3 class="font-semibold text-gray-800 text-lg mb-1">
-            We are now empanelled on Government Panels for Health Tests
-          </h3>
-          <p class="text-sm text-gray-600 mb-4">
-            For in-service or retired govt. employees across CGHS, DGHS, ESIC &
-            relevant Dept, AIR INDIA, CAPF (Central Armed Police Forces).
-          </p>
-
-          <button class="bg-[#f4b544] hover:bg-[#e9a63a] text-black font-semibold px-5 py-2.5 rounded-lg shadow">
-            📞 Call us: +91-9289902266
-          </button>
-        </div>
-      </div>
-
-      <!-- Health Score Card -->
-      <div class="bg-[#f3fdff] border border-[#cfeff6] rounded-2xl p-6 lg:p-7 flex gap-5 items-start shadow-sm">
-
-        <div class="bg-white p-3 rounded-xl shadow">
-          <img src="https://cdn-icons-png.flaticon.com/512/2331/2331966.png" class="w-8 h-8">
-        </div>
-
-        <div>
-          <h3 class="font-semibold text-gray-800 text-lg mb-1">
-            Unlock Your Health Score with HealthKarma!
-          </h3>
-          <p class="text-sm text-gray-600 mb-4">
-            Uncover potential health risks and get custom test recommendation
-            based on your lifestyle and habits.
-          </p>
-
-          <button class="bg-[#ff6a3d] hover:bg-[#e85c32] text-white font-semibold px-5 py-2.5 rounded-lg shadow">
-            Check your health score →
-          </button>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- TRUST STRIP -->
-    <div class="bg-gradient-to-r from-[#f6fdff] to-[#e9f9fc] rounded-2xl px-6 py-5
-                flex flex-col lg:flex-row items-center justify-between gap-6">
-
-      <div class="text-lg font-semibold text-gray-800">
-        Why <span class="text-teal-600 font-bold">8.5 Million</span> Indians Trust Healthians Labs
-      </div>
-
-      <div class="flex flex-wrap items-center justify-center gap-10 text-sm text-gray-700">
-
-        <div class="flex items-center gap-2">
-          <span class="text-xl">🏅</span>
-          CAP & NABL Accredited Labs
-        </div>
-
-        <div class="flex items-center gap-2">
-          <span class="text-xl">⏱️</span>
-          On Time Sample Collection
-        </div>
-
-        <div class="flex items-center gap-2">
-          <span class="text-xl">📄</span>
-          Smart Reports in 6 Hours
-        </div>
-
-        <div class="flex items-center gap-2">
-          <span class="text-xl">📞</span>
-          Free Report Consultation
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-  </div>
-
-  <!-- Content Sections -->
-  <div id="content"></div>
-
-  <!-- Footer -->
-  <div id="footer"></div>
+    <!-- Footer -->
+    <div id="footer"></div>
 
 </body>
+
 </html>
