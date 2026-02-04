@@ -1482,163 +1482,619 @@
     <!-- DOWNLAOD MOBILE APPLICAITON SECTION END{aak}-->
 
     <!-- Health Checkup Journey Section Start{aak}-->
-     <style>
-    /* Desktop Styles */
-    .journey-overflow { overflow: hidden; width: 100%; position: relative; }
-    
-    .journey-track {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-    }
+    <style>
+        /* Desktop Styles */
+        .journey-overflow {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
 
-    .journey-step {
-        flex: 1;
-        min-width: 250px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 0 10px;
-        z-index: 2;
-    }
+        .journey-track {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
 
-    /* Curved Line for Desktop only */
-    .journey-line-svg {
-        position: absolute;
-        top: 45px;
-        left: 5%;
-        width: 90%;
-        height: 60px;
-        z-index: 1;
-        pointer-events: none;
-    }
-
-    /* Indicators for Mobile */
-    .journey-dots {
-        display: none;
-        justify-content: center;
-        gap: 8px;
-        margin-top: 30px;
-    }
-    .j-dot { width: 8px; height: 8px; background: #ddd; border-radius: 50%; transition: 0.3s; }
-    .j-dot.active { background: #008b94; width: 22px; border-radius: 10px; }
-
-    /* Mobile Responsive Adjustments */
-    @media (max-width: 768px) {
-        .journey-line-svg { display: none; }
-        .journey-dots { display: flex; }
-        
-        .journey-track { gap: 0 !important; justify-content: flex-start !important; }
         .journey-step {
-            min-width: 100% !important; /* One card at a time for focus */
-            padding: 0;
+            flex: 1;
+            min-width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 10px;
+            z-index: 2;
         }
 
-        .icon-circle-j {
-            width: 80px !important;
-            height: 80px !important;
+        /* Curved Line for Desktop only */
+        .journey-line-svg {
+            position: absolute;
+            top: 45px;
+            left: 5%;
+            width: 90%;
+            height: 60px;
+            z-index: 1;
+            pointer-events: none;
         }
-        .journey-step-title { font-size: 18px !important; }
-        .journey-step-desc { font-size: 14px !important; max-width: 80% !important; }
-    }
-</style>
 
-<section style="padding: 60px 0; background-color: #ffffff; font-family: 'Inter', sans-serif;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-        
-        <div style="text-align: center; margin-bottom: 50px;">
-            <p style="color: #666; font-size: 16px; margin: 0; letter-spacing: 1px;">Your Healthians</p>
-            <h2 style="color: #008b94; font-size: 28px; font-weight: 700; margin: 5px 0;">Health Checkup Journey</h2>
-            <div style="width: 100px; height: 3px; background: #f39c12; margin: 10px auto; border-radius: 2px;"></div>
+        /* Indicators for Mobile */
+        .journey-dots {
+            display: none;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 30px;
+        }
+
+        .j-dot {
+            width: 8px;
+            height: 8px;
+            background: #ddd;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .j-dot.active {
+            background: #008b94;
+            width: 22px;
+            border-radius: 10px;
+        }
+
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 768px) {
+            .journey-line-svg {
+                display: none;
+            }
+
+            .journey-dots {
+                display: flex;
+            }
+
+            .journey-track {
+                gap: 0 !important;
+                justify-content: flex-start !important;
+            }
+
+            .journey-step {
+                min-width: 100% !important;
+                /* One card at a time for focus */
+                padding: 0;
+            }
+
+            .icon-circle-j {
+                width: 80px !important;
+                height: 80px !important;
+            }
+
+            .journey-step-title {
+                font-size: 18px !important;
+            }
+
+            .journey-step-desc {
+                font-size: 14px !important;
+                max-width: 80% !important;
+            }
+        }
+    </style>
+
+    <section style="padding: 60px 0; background-color: #ffffff; font-family: 'Inter', sans-serif;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+
+            <div style="text-align: center; margin-bottom: 50px;">
+                <p style="color: #666; font-size: 16px; margin: 0; letter-spacing: 1px;">Your Healthians</p>
+                <h2 style="color: #008b94; font-size: 28px; font-weight: 700; margin: 5px 0;">Health Checkup Journey
+                </h2>
+                <div style="width: 100px; height: 3px; background: #f39c12; margin: 10px auto; border-radius: 2px;">
+                </div>
+            </div>
+
+            <div class="journey-overflow">
+                <svg class="journey-line-svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                    <path d="M0,50 Q125,0 250,50 T500,50 T750,50 T1000,50" fill="none" stroke="#008b94" stroke-width="2"
+                        stroke-dasharray="8,8" opacity="0.3" />
+                </svg>
+
+                <div id="journeyTrack" class="journey-track">
+
+                    <div class="journey-step">
+                        <div class="icon-circle-j"
+                            style="width: 90px; height: 90px; background: #fdfaf2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2693/2693507.png" style="width: 45px;">
+                        </div>
+                        <h4 class="journey-step-title"
+                            style="font-size: 16px; font-weight: 700; color: #333; margin-bottom: 10px;">Book with Ease
+                        </h4>
+                        <p class="journey-step-desc" style="font-size: 13px; color: #777; line-height: 1.5;">Choose your
+                            test, time slot and book instantly.</p>
+                    </div>
+
+                    <div class="journey-step">
+                        <div class="icon-circle-j"
+                            style="width: 90px; height: 90px; background: #fdfaf2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
+                            <img src="https://cdn-icons-png.flaticon.com/512/609/609803.png" style="width: 45px;">
+                        </div>
+                        <h4 class="journey-step-title"
+                            style="font-size: 16px; font-weight: 700; color: #333; margin-bottom: 10px;">Hassle-Free
+                            Collection</h4>
+                        <p class="journey-step-desc" style="font-size: 13px; color: #777; line-height: 1.5;">Safe &
+                            timely sample collection by trained phlebotomist.</p>
+                    </div>
+
+                    <div class="journey-step">
+                        <div class="icon-circle-j"
+                            style="width: 90px; height: 90px; background: #fdfaf2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2830/2830305.png" style="width: 45px;">
+                        </div>
+                        <h4 class="journey-step-title"
+                            style="font-size: 16px; font-weight: 700; color: #333; margin-bottom: 10px;">Secure Transfer
+                        </h4>
+                        <p class="journey-step-desc" style="font-size: 13px; color: #777; line-height: 1.5;">
+                            Temperature-controlled transportation to lab.</p>
+                    </div>
+
+                    <div class="journey-step">
+                        <div class="icon-circle-j"
+                            style="width: 90px; height: 90px; background: #fdfaf2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2907/2907971.png" style="width: 45px;">
+                        </div>
+                        <h4 class="journey-step-title"
+                            style="font-size: 16px; font-weight: 700; color: #333; margin-bottom: 10px;">Quick Report
+                            Access</h4>
+                        <p class="journey-step-desc" style="font-size: 13px; color: #777; line-height: 1.5;">Get reports
+                            within 6 hours via WhatsApp & Email.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="journey-dots" id="jDots">
+                <div class="j-dot active"></div>
+                <div class="j-dot"></div>
+                <div class="j-dot"></div>
+                <div class="j-dot"></div>
+            </div>
         </div>
+    </section>
 
-        <div class="journey-overflow">
-            <svg class="journey-line-svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
-                <path d="M0,50 Q125,0 250,50 T500,50 T750,50 T1000,50" fill="none" stroke="#008b94" stroke-width="2" stroke-dasharray="8,8" opacity="0.3"/>
-            </svg>
+    <script>
+        (function () {
+            const jTrack = document.getElementById('journeyTrack');
+            const jDots = document.querySelectorAll('.j-dot');
+            let jIndex = 0;
+            const jTotal = 4;
 
-            <div id="journeyTrack" class="journey-track">
-                
-                <div class="journey-step">
-                    <div class="icon-circle-j" style="width: 90px; height: 90px; background: #fdfaf2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2693/2693507.png" style="width: 45px;">
-                    </div>
-                    <h4 class="journey-step-title" style="font-size: 16px; font-weight: 700; color: #333; margin-bottom: 10px;">Book with Ease</h4>
-                    <p class="journey-step-desc" style="font-size: 13px; color: #777; line-height: 1.5;">Choose your test, time slot and book instantly.</p>
-                </div>
+            function slideJourney() {
+                if (window.innerWidth <= 768) {
+                    jIndex++;
+                    if (jIndex >= jTotal) jIndex = 0;
 
-                <div class="journey-step">
-                    <div class="icon-circle-j" style="width: 90px; height: 90px; background: #fdfaf2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
-                        <img src="https://cdn-icons-png.flaticon.com/512/609/609803.png" style="width: 45px;">
-                    </div>
-                    <h4 class="journey-step-title" style="font-size: 16px; font-weight: 700; color: #333; margin-bottom: 10px;">Hassle-Free Collection</h4>
-                    <p class="journey-step-desc" style="font-size: 13px; color: #777; line-height: 1.5;">Safe & timely sample collection by trained phlebotomist.</p>
-                </div>
+                    jTrack.style.transform = `translateX(-${jIndex * 100}%)`;
 
-                <div class="journey-step">
-                    <div class="icon-circle-j" style="width: 90px; height: 90px; background: #fdfaf2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2830/2830305.png" style="width: 45px;">
-                    </div>
-                    <h4 class="journey-step-title" style="font-size: 16px; font-weight: 700; color: #333; margin-bottom: 10px;">Secure Transfer</h4>
-                    <p class="journey-step-desc" style="font-size: 13px; color: #777; line-height: 1.5;">Temperature-controlled transportation to lab.</p>
-                </div>
+                    jDots.forEach(d => d.classList.remove('active'));
+                    jDots[jIndex].classList.add('active');
+                } else {
+                    jTrack.style.transform = `translateX(0)`;
+                }
+            }
 
-                <div class="journey-step">
-                    <div class="icon-circle-j" style="width: 90px; height: 90px; background: #fdfaf2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2907/2907971.png" style="width: 45px;">
-                    </div>
-                    <h4 class="journey-step-title" style="font-size: 16px; font-weight: 700; color: #333; margin-bottom: 10px;">Quick Report Access</h4>
-                    <p class="journey-step-desc" style="font-size: 13px; color: #777; line-height: 1.5;">Get reports within 6 hours via WhatsApp & Email.</p>
-                </div>
+            setInterval(slideJourney, 3500); // Slide every 3.5s
 
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    jTrack.style.transform = `translateX(0)`;
+                    jIndex = 0;
+                }
+            });
+        })();
+    </script>
+    <!-- Health Checkup Journey Section End{aak}-->
+
+
+    <!-- The Excellence of Healthians Labs Start{aak}-->
+    <style>
+        .combined-wrapper {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            overflow: hidden;
+        }
+
+        /* Part 1: Smart Report (Top) */
+        .sr-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-end;
+            /* Image ko bottom se touch karne ke liye */
+            padding: 60px 20px 0 20px;
+            /* Bottom padding 0 ki taki gap na rahe */
+        }
+
+        .sr-text-box {
+            flex: 1;
+            padding-bottom: 60px;
+            /* Text ko center mein rakhne ke liye padding */
+        }
+
+        .sr-main-title {
+            color: #008b94;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .sr-desc-text {
+            color: #666;
+            font-size: 22px;
+            line-height: 1.2;
+            margin-bottom: 40px;
+        }
+
+        .sr-history {
+            color: #008b94;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .sr-image-box {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+
+        .sr-mockup {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            display: block;
+            /* Gap remove karne ke liye */
+            margin-bottom: -1px;
+            /* Precision touch for the section below */
+        }
+
+        /* Part 2: Lab Excellence (Bottom Teal) */
+        .lab-teal-section {
+            background-color: #00a4ad;
+            padding: 60px 0;
+            color: #ffffff;
+        }
+
+        .lab-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .lab-header-title {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 45px;
+        }
+
+        .lab-header-title span {
+            color: #ffb400;
+        }
+
+        .lab-flex-row {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .lab-text-content {
+            flex: 1.2;
+        }
+
+        .lab-video-container {
+            flex: 1;
+            position: relative;
+        }
+
+        .lab-paragraph {
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .btn-know-more {
+            display: inline-block;
+            padding: 12px 35px;
+            background: #ffffff;
+            color: #00a4ad;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-thumb-img {
+            width: 100%;
+            border-radius: 12px;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .play-icon-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 55px;
+            height: 55px;
+            background: #ff0000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        /* Mobile Responsive Logic */
+        @media (max-width: 768px) {
+            .sr-section {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 40px;
+                align-items: center;
+            }
+
+            .sr-text-box {
+                padding-bottom: 30px;
+            }
+
+            .sr-image-box {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .sr-mockup {
+                max-width: 350px;
+            }
+
+            .lab-flex-row {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .lab-video-container {
+                order: 2;
+                width: 100%;
+            }
+
+            .lab-text-content {
+                order: 1;
+            }
+
+            .lab-header-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+
+    <div class="combined-wrapper">
+        <div class="sr-section">
+            <div class="sr-text-box">
+                <h2 class="sr-main-title">Healthians Smart Report</h2>
+                <p class="sr-desc-text">Now understanding lab<br>reports got easier</p>
+                <p class="sr-history">Consolidated Health<br>History Report</p>
+            </div>
+            <div class="sr-image-box">
+                <img src="https://helma-mumbai.healthians.com/stationery/mailer-assets/68663d546352c.webp"
+                    class="sr-mockup" alt="Smart Report Mockup">
             </div>
         </div>
 
-        <div class="journey-dots" id="jDots">
-            <div class="j-dot active"></div>
-            <div class="j-dot"></div>
-            <div class="j-dot"></div>
-            <div class="j-dot"></div>
+        <div class="lab-teal-section">
+            <div class="lab-inner">
+                <h2 class="lab-header-title">The Excellence of <span>Healthians Labs</span></h2>
+
+                <div class="lab-flex-row">
+                    <div class="lab-text-content">
+                        <p class="lab-paragraph">
+                            Healthians is one of the most trusted players in diagnostics today, with a network of fully
+                            automated labs across major cities in India, that are hardcoded with innovative technology,
+                            advanced robotics and intelligent digital solutions.
+                        </p>
+                        <p class="lab-paragraph">
+                            With an extensive team of highly qualified lab technicians and pathologists, our
+                            single-minded purpose is to follow the strictest of quality measures to maintain accuracy
+                            for each test we perform.
+                        </p>
+                        <a href="#" class="btn-know-more">Know more</a>
+                    </div>
+
+                    <div class="lab-video-container">
+                        <img src="https://img.freepik.com/free-photo/scientist-working-lab_23-2148851065.jpg"
+                            class="video-thumb-img" alt="Lab Excellence Video">
+                        <div class="play-icon-overlay">
+                            <div
+                                style="width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 16px solid white; margin-left: 4px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</section>
+    <!-- The Excellence of Healthians Labs Ending{aak}-->
 
-<script>
-    (function() {
-        const jTrack = document.getElementById('journeyTrack');
-        const jDots = document.querySelectorAll('.j-dot');
-        let jIndex = 0;
-        const jTotal = 4;
 
-        function slideJourney() {
-            if (window.innerWidth <= 768) {
-                jIndex++;
-                if (jIndex >= jTotal) jIndex = 0;
-                
-                jTrack.style.transform = `translateX(-${jIndex * 100}%)`;
-                
-                jDots.forEach(d => d.classList.remove('active'));
-                jDots[jIndex].classList.add('active');
-            } else {
-                jTrack.style.transform = `translateX(0)`;
-            }
+    <!-- HEALTH VIDEO REVIEWS SECTION START{aak}-->
+<style>
+    .reviews-outer-wrapper {
+        padding: 80px 0;
+        background-color: #ffffff;
+        font-family: 'Inter', sans-serif;
+    }
+
+    /* Half Width Container - Exactly like your reference */
+    .reviews-centered-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        overflow: hidden; /* Bahar ka content hide rahega */
+        position: relative;
+    }
+
+    .reviews-header-text { 
+        text-align: center; 
+        color: #008b94; 
+        font-size: 30px; 
+        font-weight: 700; 
+        margin-bottom: 40px; 
+    }
+
+    /* Infinite Track - Very Slow Slide */
+    .video-infinite-track {
+        display: flex;
+        /* Width = (Card Width + Margin) * Total Items (6 Unique + 6 Clones) */
+        width: calc(260px * 12); 
+        animation: slowScroll 40s linear infinite; /* Increased to 40s for slow feel */
+    }
+
+    @keyframes slowScroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-260px * 6)); }
+    }
+
+    /* Card Styling - Portrait Look */
+    .portrait-video-card {
+        width: 240px;
+        height: 350px;
+        margin-right: 20px; /* Space between cards */
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        flex-shrink: 0;
+        cursor: pointer;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+
+    /* Play Button Overlay */
+    .video-center-play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        background: rgba(255,255,255,0.25);
+        backdrop-filter: blur(4px);
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        transition: 0.3s ease;
+    }
+
+    .portrait-video-card:hover .video-center-play {
+        background: #008b94;
+        border-color: #008b94;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .play-arrow-white {
+        width: 0; height: 0; 
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-left: 12px solid white;
+        margin-left: 4px;
+    }
+
+    /* Bottom Info Overlay */
+    .video-card-footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        color: white;
+        z-index: 3;
+    }
+
+    .cust-name { font-size: 15px; font-weight: 700; margin: 0; }
+    .cust-city { font-size: 11px; opacity: 0.8; margin: 0; }
+
+    /* Mobile View - 2 cards visible */
+    @media (max-width: 768px) {
+        .reviews-centered-container { max-width: 90%; }
+        .portrait-video-card { width: 170px; height: 250px; margin-right: 15px; }
+        .video-infinite-track { width: calc(185px * 12); }
+        @keyframes slowScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-185px * 6)); }
         }
+        .video-center-play { width: 40px; height: 40px; }
+    }
+</style>
 
-        setInterval(slideJourney, 3500); // Slide every 3.5s
+<div class="reviews-outer-wrapper">
+    <div class="reviews-centered-container">
+        <h2 class="reviews-header-text">Healthians Reviews</h2>
+        
+        <div class="video-infinite-track">
+            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1566753323558-f4e0952af115?auto=format&fit=crop&w=400');">
+                <div class="video-center-play"><div class="play-arrow-white"></div></div>
+                <div class="video-card-footer"><p class="cust-name">Mukesh</p><p class="cust-city">Bhopal</p></div>
+            </div>
 
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                jTrack.style.transform = `translateX(0)`;
-                jIndex = 0;
-            }
-        });
-    })();
-</script>
-    <!-- Health Checkup Journey Section End{aak}-->
+            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400');">
+                <div class="video-center-play"><div class="play-arrow-white"></div></div>
+                <div class="video-card-footer"><p class="cust-name">Anna</p><p class="cust-city">Bengaluru</p></div>
+            </div>
 
+            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400');">
+                <div class="video-center-play"><div class="play-arrow-white"></div></div>
+                <div class="video-card-footer"><p class="cust-name">Jason</p><p class="cust-city">Bengaluru</p></div>
+            </div>
+
+            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&w=400');">
+                <div class="video-center-play"><div class="play-arrow-white"></div></div>
+                <div class="video-card-footer"><p class="cust-name">Rajesh</p><p class="cust-city">Delhi</p></div>
+            </div>
+
+            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400');">
+                <div class="video-center-play"><div class="play-arrow-white"></div></div>
+                <div class="video-card-footer"><p class="cust-name">Sneha</p><p class="cust-city">Mumbai</p></div>
+            </div>
+
+            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1566753323558-f4e0952af115?auto=format&fit=crop&w=400');">
+                <div class="video-center-play"><div class="play-arrow-white"></div></div>
+                <div class="video-card-footer"><p class="cust-name">Mukesh</p><p class="cust-city">Bhopal</p></div>
+            </div>
+            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400');">
+                <div class="video-center-play"><div class="play-arrow-white"></div></div>
+                <div class="video-card-footer"><p class="cust-name">Anna</p><p class="cust-city">Bengaluru</p></div>
+            </div>
+            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400');">
+                <div class="video-center-play"><div class="play-arrow-white"></div></div>
+                <div class="video-card-footer"><p class="cust-name">Jason</p><p class="cust-city">Bengaluru</p></div>
+            </div>
+            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1598550874175-4d0fe4a2c943?auto=format&fit=crop&w=400');">
+                <div class="video-center-play"><div class="play-arrow-white"></div></div>
+                <div class="video-card-footer"><p class="cust-name">Pravita</p><p class="cust-city">Pune</p></div>
+            </div>
+            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&w=400');">
+                <div class="video-center-play"><div class="play-arrow-white"></div></div>
+                <div class="video-card-footer"><p class="cust-name">Rajesh</p><p class="cust-city">Delhi</p></div>
+            </div>
+            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400');">
+                <div class="video-center-play"><div class="play-arrow-white"></div></div>
+                <div class="video-card-footer"><p class="cust-name">Sneha</p><p class="cust-city">Mumbai</p></div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- HEALTH VIDEO REVIEWS SECTION END{aak}-->
 
 
 
