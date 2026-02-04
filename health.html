@@ -193,11 +193,11 @@
     </div>
 
     <!-- HERO SECTION START AAK -->
-    <section  class="relative overflow-hidden text-white" >
+    <section class="relative overflow-hidden text-white">
 
         <!-- Background Image -->
         <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?q=80&w=2000&auto=format&fit=crop"
-            class="absolute inset-0 w-full h-full object-cover" >
+            class="absolute inset-0 w-full h-full object-cover">
 
         <!-- Gradient overlay -->
         <div class="absolute inset-0 bg-gradient-to-r from-[#3b3127]/95 via-[#3b3127]/85 to-transparent"></div>
@@ -525,39 +525,106 @@
 
 
     <!-- Content Sections image slider start {aak}-->
-    <div
-        style="background-color: #ffffff; padding: 50px 0; overflow: hidden; font-family: sans-serif; margin-top: -3%;">
-        <div
-            style="max-width: 1300px; margin: 0 auto; position: relative; height: 300px; display: flex; align-items: center; justify-content: center; perspective: 1500px;">
+    <style>
+        /* Section & Container Setup */
+        .premium-stack-section {
+            background-color: #ffffff;
+            padding: 5px 0;
+            /* Bohat kam padding margins ke liye */
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            margin-top: -15px;
+        }
 
-            <button onclick="moveStack(-1)"
-                style="position: absolute; left: 8%; z-index: 100; width: 40px; height: 40px; border-radius: 50%; border: 1px solid #eee; background: white; box-shadow: 0 4px 10px rgba(0,0,0,0.08); cursor: pointer; color: #007bff; font-size: 20px; display: flex; align-items: center; justify-content: center;">‹</button>
-            <button onclick="moveStack(1)"
-                style="position: absolute; right: 8%; z-index: 100; width: 40px; height: 40px; border-radius: 50%; border: 1px solid #eee; background: white; box-shadow: 0 4px 10px rgba(0,0,0,0.08); cursor: pointer; color: #007bff; font-size: 20px; display: flex; align-items: center; justify-content: center;">›</button>
+        .premium-stack-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            position: relative;
+            height: 320px;
+            /* PC height restored */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1500px;
+        }
 
-            <div id="imageStack"
+        /* Card Styling */
+        .p-stack-card {
+            position: absolute;
+            width: 750px;
+            /* PC View: Pehle jaisi width */
+            height: 250px;
+            /* PC View: Pehle jaisi height */
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Mobile Responsive Logic - Fixed & Premium */
+        @media (max-width: 768px) {
+            .premium-stack-section {
+                margin-top: 0;
+                padding: 10px 0;
+            }
+
+            .premium-stack-container {
+                height: 180px;
+                /* Mobile par chota section */
+            }
+
+            .p-stack-card {
+                width: 85% !important;
+                /* Screen ke andar rahega */
+                height: 140px !important;
+            }
+
+            .nav-btn-p {
+                width: 32px !important;
+                height: 32px !important;
+                font-size: 16px !important;
+            }
+
+            .btn-p-left {
+                left: 2% !important;
+            }
+
+            .btn-p-right {
+                right: 2% !important;
+            }
+        }
+    </style>
+
+    <div class="premium-stack-section">
+        <div class="premium-stack-container">
+
+            <button class="nav-btn-p btn-p-left" onclick="pMoveStack(-1)"
+                style="position: absolute; left: 8%; z-index: 100; width: 42px; height: 42px; border-radius: 50%; border: 1px solid #eee; background: white; cursor: pointer; color: #008b94; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">‹</button>
+
+            <button class="nav-btn-p btn-p-right" onclick="pMoveStack(1)"
+                style="position: absolute; right: 8%; z-index: 100; width: 42px; height: 42px; border-radius: 50%; border: 1px solid #eee; background: white; cursor: pointer; color: #008b94; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">›</button>
+
+            <div id="pStackTrack"
                 style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; transform-style: preserve-3d;">
 
-                <div class="stack-card"
-                    style="position: absolute; width: 750px; height: 240px; transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1); border-radius: 16px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.12); cursor: pointer;">
+                <div class="p-stack-card">
                     <img src="https://helma.healthians.com/stationery/banners/138_115.webp"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
 
-                <div class="stack-card"
-                    style="position: absolute; width: 750px; height: 240px; transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1); border-radius: 16px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.12); cursor: pointer;">
+                <div class="p-stack-card">
                     <img src="https://helma.healthians.com/stationery/banners/140_8317.webp"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
 
-                <div class="stack-card"
-                    style="position: absolute; width: 750px; height: 240px; transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1); border-radius: 16px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.12); cursor: pointer;">
+                <div class="p-stack-card">
                     <img src="https://helma.healthians.com/stationery/banners/142_6114.jpg"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
 
-                <div class="stack-card"
-                    style="position: absolute; width: 750px; height: 240px; transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1); border-radius: 16px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.12); cursor: pointer;">
+                <div class="p-stack-card">
                     <img src="https://helma.healthians.com/stationery/banners/146_8725.webp"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
@@ -567,157 +634,194 @@
     </div>
 
     <script>
-        const stackItems = document.querySelectorAll('.stack-card');
-        let activeIdx = 0;
+        (function () {
+            const pItems = document.querySelectorAll('.p-stack-card');
+            let pActiveIdx = 0;
 
-        function renderStack() {
-            stackItems.forEach((item, i) => {
-                // Default State: Hidden/Far Behind
-                item.style.opacity = "0";
-                item.style.transform = "translateX(0) scale(0.6) translateZ(-400px)";
-                item.style.zIndex = "0";
-                item.style.filter = "blur(10px) brightness(0.7)";
-                item.style.pointerEvents = "none";
+            function pRender() {
+                const isMob = window.innerWidth <= 768;
 
-                // Infinite loop index logic
-                const prev = (activeIdx - 1 + stackItems.length) % stackItems.length;
-                const next = (activeIdx + 1) % stackItems.length;
+                pItems.forEach((item, i) => {
+                    item.style.opacity = "0";
+                    item.style.transform = "translateX(0) scale(0.6) translateZ(-500px)";
+                    item.style.zIndex = "0";
+                    item.style.filter = "blur(10px) brightness(0.7)";
+                    item.style.pointerEvents = "none";
 
-                if (i === activeIdx) {
-                    // CENTER CARD (Top Layer)
-                    item.style.opacity = "1";
-                    item.style.transform = "translateX(0) scale(1) translateZ(0)";
-                    item.style.zIndex = "30";
-                    item.style.filter = "blur(0px) brightness(1)";
-                    item.style.pointerEvents = "auto";
-                }
-                else if (i === prev) {
-                    // LEFT PEEKING (Behind Center)
-                    item.style.opacity = "0.4";
-                    item.style.transform = "translateX(-45%) scale(0.85) translateZ(-150px)";
-                    item.style.zIndex = "20";
-                    item.style.filter = "blur(3px) brightness(0.8)";
-                }
-                else if (i === next) {
-                    // RIGHT PEEKING (Behind Center)
-                    item.style.opacity = "0.4";
-                    item.style.transform = "translateX(45%) scale(0.85) translateZ(-150px)";
-                    item.style.zIndex = "20";
-                    item.style.filter = "blur(3px) brightness(0.8)";
-                }
-            });
-        }
+                    const pPrev = (pActiveIdx - 1 + pItems.length) % pItems.length;
+                    const pNext = (pActiveIdx + 1) % pItems.length;
 
-        function moveStack(dir) {
-            activeIdx = (activeIdx + dir + stackItems.length) % stackItems.length;
-            renderStack();
-        }
+                    if (i === pActiveIdx) {
+                        item.style.opacity = "1";
+                        item.style.transform = "translateX(0) scale(1) translateZ(0)";
+                        item.style.zIndex = "30";
+                        item.style.filter = "blur(0px) brightness(1)";
+                        item.style.pointerEvents = "auto";
+                    }
+                    else if (i === pPrev) {
+                        const xOff = isMob ? "-15%" : "-45%";
+                        item.style.opacity = isMob ? "0.3" : "0.5";
+                        item.style.transform = `translateX(${xOff}) scale(0.85) translateZ(-150px)`;
+                        item.style.zIndex = "20";
+                        item.style.filter = "blur(3px) brightness(0.8)";
+                    }
+                    else if (i === pNext) {
+                        const xOff = isMob ? "15%" : "45%";
+                        item.style.opacity = isMob ? "0.3" : "0.5";
+                        item.style.transform = `translateX(${xOff}) scale(0.85) translateZ(-150px)`;
+                        item.style.zIndex = "20";
+                        item.style.filter = "blur(3px) brightness(0.8)";
+                    }
+                });
+            }
 
-        // Auto-play
-        let autoPlayTimer = setInterval(() => moveStack(1), 5000);
+            window.pMoveStack = function (dir) {
+                pActiveIdx = (pActiveIdx + dir + pItems.length) % pItems.length;
+                pRender();
+            };
 
-        // Initial load
-        renderStack();
+            setInterval(() => pMoveStack(1), 5000);
+
+            pRender();
+            window.addEventListener('resize', pRender);
+        })();
     </script>
     <!-- Content Sections image slider end {aak}-->
 
 
-<!--PLANS SECTION START-->
+    <!--PLANS SECTION START-->
     <section style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
-        <h2 style="text-align: center; color: #008b94; font-size: 28px; font-weight: 700; margin-bottom: 30px;">Full Body Checkup packages in Gurgaon</h2>
+        <h2 style="text-align: center; color: #008b94; font-size: 28px; font-weight: 700; margin-bottom: 30px;">Full
+            Body Checkup packages in Gurgaon</h2>
 
         <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 40px;">
-            <button onclick="filterPkg('all', this)" style="padding: 10px 22px; border-radius: 25px; border: 1px solid #008b94; background: #008b94; color: white; cursor: pointer; font-weight: 600;">Full Body Checkup</button>
-            <button onclick="filterPkg('fever', this)" style="padding: 10px 22px; border-radius: 25px; border: 1px solid #ddd; background: white; color: #666; cursor: pointer;">Fever</button>
-            <button onclick="filterPkg('diabetes', this)" style="padding: 10px 22px; border-radius: 25px; border: 1px solid #ddd; background: white; color: #666; cursor: pointer;">Diabetes</button>
-            <button onclick="filterPkg('heart', this)" style="padding: 10px 22px; border-radius: 25px; border: 1px solid #ddd; background: white; color: #666; cursor: pointer;">Heart</button>
+            <button onclick="filterPkg('all', this)"
+                style="padding: 10px 22px; border-radius: 25px; border: 1px solid #008b94; background: #008b94; color: white; cursor: pointer; font-weight: 600;">Full
+                Body Checkup</button>
+            <button onclick="filterPkg('fever', this)"
+                style="padding: 10px 22px; border-radius: 25px; border: 1px solid #ddd; background: white; color: #666; cursor: pointer;">Fever</button>
+            <button onclick="filterPkg('diabetes', this)"
+                style="padding: 10px 22px; border-radius: 25px; border: 1px solid #ddd; background: white; color: #666; cursor: pointer;">Diabetes</button>
+            <button onclick="filterPkg('heart', this)"
+                style="padding: 10px 22px; border-radius: 25px; border: 1px solid #ddd; background: white; color: #666; cursor: pointer;">Heart</button>
         </div>
 
-        <div id="pkgGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 25px;">
-            
-            <div class="pkg-card" data-cat="all" style="background: white; border-radius: 16px; border: 1px solid #e0e6e6; overflow: hidden; transition: 0.3s; position: relative;">
+        <div id="pkgGrid"
+            style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 25px;">
+
+            <div class="pkg-card" data-cat="all"
+                style="background: white; border-radius: 16px; border: 1px solid #e0e6e6; overflow: hidden; transition: 0.3s; position: relative;">
                 <div style="padding: 24px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                        <h3 style="font-size: 18px; font-weight: 700; color: #333; margin: 0; line-height: 1.3;">Healthy India 2026 Full Body Checkup Lite</h3>
-                        <div style="background: #e6f7f8; color: #008b94; padding: 6px 12px; border-radius: 10px; text-align: center; border: 1px solid #b2e2e5;">
-                            <b style="font-size: 20px; display: block;">80</b> <small style="font-size: 10px;">Tests</small>
+                        <h3 style="font-size: 18px; font-weight: 700; color: #333; margin: 0; line-height: 1.3;">Healthy
+                            India 2026 Full Body Checkup Lite</h3>
+                        <div
+                            style="background: #e6f7f8; color: #008b94; padding: 6px 12px; border-radius: 10px; text-align: center; border: 1px solid #b2e2e5;">
+                            <b style="font-size: 20px; display: block;">80</b> <small
+                                style="font-size: 10px;">Tests</small>
                         </div>
                     </div>
 
                     <div style="margin-top: 20px; font-size: 13px; color: #666; line-height: 1.6; min-height: 50px;">
-                        <b>Tests Included:</b> Blood Glucose Fasting, TSH Ultra-Sensitive, Vitamin D Total-25 Hydroxy, Liver Function Test...
+                        <b>Tests Included:</b> Blood Glucose Fasting, TSH Ultra-Sensitive, Vitamin D Total-25 Hydroxy,
+                        Liver Function Test...
                         <span style="color: #008b94; cursor: pointer; font-weight: 700;">+ Know More</span>
                     </div>
 
-                    <div style="background: #f8fcfc; border-radius: 8px; padding: 12px; margin-top: 20px; display: flex; justify-content: space-between; font-size: 12px; color: #777; border: 1px solid #edf2f2;">
+                    <div
+                        style="background: #f8fcfc; border-radius: 8px; padding: 12px; margin-top: 20px; display: flex; justify-content: space-between; font-size: 12px; color: #777; border: 1px solid #edf2f2;">
                         <span>🕒 12 hrs Fasting</span>
                         <span>👥 For Everyone</span>
                     </div>
 
-                    <div style="margin-top: 24px; padding-top: 20px; border-top: 1px dashed #e0e6e6; display: flex; justify-content: space-between; align-items: center;">
+                    <div
+                        style="margin-top: 24px; padding-top: 20px; border-top: 1px dashed #e0e6e6; display: flex; justify-content: space-between; align-items: center;">
                         <div>
                             <span style="font-size: 22px; font-weight: 800; color: #333;">₹910</span>
-                            <span style="font-size: 13px; color: #999; text-decoration: line-through; margin-left: 6px;">₹1819</span>
+                            <span
+                                style="font-size: 13px; color: #999; text-decoration: line-through; margin-left: 6px;">₹1819</span>
                         </div>
-                        <button style="background: #008b94; color: white; border: none; padding: 12px 28px; border-radius: 10px; font-weight: 700; cursor: pointer;">Book Now</button>
+                        <button
+                            style="background: #008b94; color: white; border: none; padding: 12px 28px; border-radius: 10px; font-weight: 700; cursor: pointer;">Book
+                            Now</button>
                     </div>
                 </div>
             </div>
 
 
-            <div class="pkg-card" data-cat="all" style="background: white; border-radius: 16px; border: 1px solid #e0e6e6; overflow: hidden; transition: 0.3s; position: relative;">
+            <div class="pkg-card" data-cat="all"
+                style="background: white; border-radius: 16px; border: 1px solid #e0e6e6; overflow: hidden; transition: 0.3s; position: relative;">
                 <div style="padding: 24px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                        <h3 style="font-size: 18px; font-weight: 700; color: #333; margin: 0; line-height: 1.3;">Healthy India 2026 Full Body Checkup Lite</h3>
-                        <div style="background: #e6f7f8; color: #008b94; padding: 6px 12px; border-radius: 10px; text-align: center; border: 1px solid #b2e2e5;">
-                            <b style="font-size: 20px; display: block;">80</b> <small style="font-size: 10px;">Tests</small>
+                        <h3 style="font-size: 18px; font-weight: 700; color: #333; margin: 0; line-height: 1.3;">Healthy
+                            India 2026 Full Body Checkup Lite</h3>
+                        <div
+                            style="background: #e6f7f8; color: #008b94; padding: 6px 12px; border-radius: 10px; text-align: center; border: 1px solid #b2e2e5;">
+                            <b style="font-size: 20px; display: block;">80</b> <small
+                                style="font-size: 10px;">Tests</small>
                         </div>
                     </div>
 
                     <div style="margin-top: 20px; font-size: 13px; color: #666; line-height: 1.6; min-height: 50px;">
-                        <b>Tests Included:</b> Blood Glucose Fasting, TSH Ultra-Sensitive, Vitamin D Total-25 Hydroxy, Liver Function Test...
+                        <b>Tests Included:</b> Blood Glucose Fasting, TSH Ultra-Sensitive, Vitamin D Total-25 Hydroxy,
+                        Liver Function Test...
                         <span style="color: #008b94; cursor: pointer; font-weight: 700;">+ Know More</span>
                     </div>
 
-                    <div style="background: #f8fcfc; border-radius: 8px; padding: 12px; margin-top: 20px; display: flex; justify-content: space-between; font-size: 12px; color: #777; border: 1px solid #edf2f2;">
+                    <div
+                        style="background: #f8fcfc; border-radius: 8px; padding: 12px; margin-top: 20px; display: flex; justify-content: space-between; font-size: 12px; color: #777; border: 1px solid #edf2f2;">
                         <span>🕒 12 hrs Fasting</span>
                         <span>👥 For Everyone</span>
                     </div>
 
-                    <div style="margin-top: 24px; padding-top: 20px; border-top: 1px dashed #e0e6e6; display: flex; justify-content: space-between; align-items: center;">
+                    <div
+                        style="margin-top: 24px; padding-top: 20px; border-top: 1px dashed #e0e6e6; display: flex; justify-content: space-between; align-items: center;">
                         <div>
                             <span style="font-size: 22px; font-weight: 800; color: #333;">₹910</span>
-                            <span style="font-size: 13px; color: #999; text-decoration: line-through; margin-left: 6px;">₹1819</span>
+                            <span
+                                style="font-size: 13px; color: #999; text-decoration: line-through; margin-left: 6px;">₹1819</span>
                         </div>
-                        <button style="background: #008b94; color: white; border: none; padding: 12px 28px; border-radius: 10px; font-weight: 700; cursor: pointer;">Book Now</button>
+                        <button
+                            style="background: #008b94; color: white; border: none; padding: 12px 28px; border-radius: 10px; font-weight: 700; cursor: pointer;">Book
+                            Now</button>
                     </div>
                 </div>
             </div>
-            <div class="pkg-card" data-cat="all" style="background: white; border-radius: 16px; border: 1px solid #e0e6e6; overflow: hidden; transition: 0.3s; position: relative;">
+            <div class="pkg-card" data-cat="all"
+                style="background: white; border-radius: 16px; border: 1px solid #e0e6e6; overflow: hidden; transition: 0.3s; position: relative;">
                 <div style="padding: 24px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                        <h3 style="font-size: 18px; font-weight: 700; color: #333; margin: 0; line-height: 1.3;">Healthy India 2026 Full Body Checkup Lite</h3>
-                        <div style="background: #e6f7f8; color: #008b94; padding: 6px 12px; border-radius: 10px; text-align: center; border: 1px solid #b2e2e5;">
-                            <b style="font-size: 20px; display: block;">80</b> <small style="font-size: 10px;">Tests</small>
+                        <h3 style="font-size: 18px; font-weight: 700; color: #333; margin: 0; line-height: 1.3;">Healthy
+                            India 2026 Full Body Checkup Lite</h3>
+                        <div
+                            style="background: #e6f7f8; color: #008b94; padding: 6px 12px; border-radius: 10px; text-align: center; border: 1px solid #b2e2e5;">
+                            <b style="font-size: 20px; display: block;">80</b> <small
+                                style="font-size: 10px;">Tests</small>
                         </div>
                     </div>
 
                     <div style="margin-top: 20px; font-size: 13px; color: #666; line-height: 1.6; min-height: 50px;">
-                        <b>Tests Included:</b> Blood Glucose Fasting, TSH Ultra-Sensitive, Vitamin D Total-25 Hydroxy, Liver Function Test...
+                        <b>Tests Included:</b> Blood Glucose Fasting, TSH Ultra-Sensitive, Vitamin D Total-25 Hydroxy,
+                        Liver Function Test...
                         <span style="color: #008b94; cursor: pointer; font-weight: 700;">+ Know More</span>
                     </div>
 
-                    <div style="background: #f8fcfc; border-radius: 8px; padding: 12px; margin-top: 20px; display: flex; justify-content: space-between; font-size: 12px; color: #777; border: 1px solid #edf2f2;">
+                    <div
+                        style="background: #f8fcfc; border-radius: 8px; padding: 12px; margin-top: 20px; display: flex; justify-content: space-between; font-size: 12px; color: #777; border: 1px solid #edf2f2;">
                         <span>🕒 12 hrs Fasting</span>
                         <span>👥 For Everyone</span>
                     </div>
 
-                    <div style="margin-top: 24px; padding-top: 20px; border-top: 1px dashed #e0e6e6; display: flex; justify-content: space-between; align-items: center;">
+                    <div
+                        style="margin-top: 24px; padding-top: 20px; border-top: 1px dashed #e0e6e6; display: flex; justify-content: space-between; align-items: center;">
                         <div>
                             <span style="font-size: 22px; font-weight: 800; color: #333;">₹910</span>
-                            <span style="font-size: 13px; color: #999; text-decoration: line-through; margin-left: 6px;">₹1819</span>
+                            <span
+                                style="font-size: 13px; color: #999; text-decoration: line-through; margin-left: 6px;">₹1819</span>
                         </div>
-                        <button style="background: #008b94; color: white; border: none; padding: 12px 28px; border-radius: 10px; font-weight: 700; cursor: pointer;">Book Now</button>
+                        <button
+                            style="background: #008b94; color: white; border: none; padding: 12px 28px; border-radius: 10px; font-weight: 700; cursor: pointer;">Book
+                            Now</button>
                     </div>
                 </div>
             </div>
@@ -727,71 +831,584 @@
 
 
         <div style="text-align: center; margin-top: 50px;">
-            <button style="background: #e6f7f8; color: #008b94; border: 1px solid #b2e2e5; padding: 14px 40px; border-radius: 12px; font-weight: 700; cursor: pointer; font-size: 16px;">View All Full Body Checkup packages</button>
+            <button
+                style="background: #e6f7f8; color: #008b94; border: 1px solid #b2e2e5; padding: 14px 40px; border-radius: 12px; font-weight: 700; cursor: pointer; font-size: 16px;">View
+                All Full Body Checkup packages</button>
         </div>
     </section>
-</div>
+    </div>
+
+    <script>
+        // 1. Banner Logic (3D Stack)
+        const banners = document.querySelectorAll('.stack-card');
+        let bannerIdx = 0;
+
+        function renderBanners() {
+            banners.forEach((card, i) => {
+                const prev = (bannerIdx - 1 + banners.length) % banners.length;
+                const next = (bannerIdx + 1) % banners.length;
+
+                if (i === bannerIdx) {
+                    card.style.transform = "translateX(0) scale(1) translateZ(0)";
+                    card.style.zIndex = "30";
+                    card.style.opacity = "1";
+                    card.style.filter = "none";
+                } else if (i === prev) {
+                    card.style.transform = "translateX(-45%) scale(0.85) translateZ(-150px)";
+                    card.style.zIndex = "20";
+                    card.style.opacity = "0.4";
+                    card.style.filter = "blur(2px)";
+                } else if (i === next) {
+                    card.style.transform = "translateX(45%) scale(0.85) translateZ(-150px)";
+                    card.style.zIndex = "20";
+                    card.style.opacity = "0.4";
+                    card.style.filter = "blur(2px)";
+                } else {
+                    card.style.opacity = "0";
+                }
+            });
+        }
+
+        function moveBanner(dir) {
+            bannerIdx = (bannerIdx + dir + banners.length) % banners.length;
+            renderBanners();
+        }
+
+        // 2. Filter Logic
+        function filterPkg(cat, btn) {
+            const btns = btn.parentElement.querySelectorAll('button');
+            btns.forEach(b => {
+                b.style.background = "white";
+                b.style.color = "#666";
+                b.style.borderColor = "#ddd";
+            });
+            btn.style.background = "#008b94";
+            btn.style.color = "white";
+            btn.style.borderColor = "#008b94";
+
+            const cards = document.querySelectorAll('.pkg-card');
+            cards.forEach(card => {
+                card.style.display = (cat === 'all' || card.dataset.cat === cat) ? "block" : "none";
+            });
+        }
+
+        renderBanners();
+        setInterval(() => moveBanner(1), 5000);
+    </script>
+    <!--PLANS SECTION END-->
+
+    <!--Health Scans & Imaging Tests START-->
+    <style>
+        .card-unit {
+            min-width: calc(33.33% - 14px);
+            transition: 0.3s;
+        }
+
+        @media (max-width: 992px) {
+            .card-unit {
+                min-width: calc(50% - 10px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .card-unit {
+                min-width: 100%;
+            }
+
+            #infiniteTrack {
+                gap: 10px !important;
+            }
+
+            .nav-btn {
+                width: 35px !important;
+                height: 35px !important;
+            }
+        }
+    </style>
+
+    <section style="background-color: #ffffff; padding: 60px 0; font-family: 'Inter', sans-serif; overflow: hidden;">
+        <div style="max-width: 1240px; margin: 0 auto; position: relative; padding: 0 20px;">
+
+            <h2 style="text-align: center; color: #008b94; font-size: 28px; font-weight: 700; margin-bottom: 40px;">
+                Health Scans & Imaging Tests
+            </h2>
+
+            <div style="overflow: hidden; width: 100%;">
+                <div id="infiniteTrack"
+                    style="display: flex; gap: 20px; transition: transform 0.5s cubic-bezier(0.45, 0.05, 0.55, 0.95); will-change: transform;">
+
+                    <div class="card-unit"
+                        style="background: white; border-radius: 15px; border: 1px solid #e0e6e6; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <img src="https://helma.healthians.com/stationery/mailer-assets/61bc43a2774ff.png"
+                            style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 24px; text-align: center;">
+                            <h3 style="font-size: 20px; margin: 0; color: #333; font-weight: 700;">DEXA Scan</h3>
+                            <p style="color: #008b94; font-weight: 700; font-size: 19px; margin: 12px 0;">Starting @
+                                <span
+                                    style="text-decoration: line-through; color: #999; font-weight: 400; font-size: 14px;">₹1500</span>
+                                ₹789
+                            </p>
+                            <p
+                                style="font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 20px; height: 85px; overflow: hidden;">
+                                A DEXA bone density scan is a non-invasive, painless, and cutting-edge diagnostic test
+                                conducted to determine bone mineral density. It helps in the early detection of
+                                osteoporosis and assesses your risk for bone fractures by measuring calcium levels
+                                accurately.
+                            </p>
+                            <div
+                                style="background: #f37048; color: white; display: inline-block; padding: 6px 18px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 15px;">
+                                Salient Features</div>
+                        </div>
+                        <div
+                            style="background: #f0f7f8; padding: 18px; font-size: 12px; color: #444; border-top: 1px solid #e0e6e6; flex-grow: 1;">
+                            <div style="margin-bottom: 6px;">• High-resolution image quality for diagnosis</div>
+                            <div>• 100% Non-invasive and safe procedure</div>
+                        </div>
+                    </div>
+
+                    <div class="card-unit"
+                        style="background: white; border-radius: 15px; border: 1px solid #e0e6e6; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <img src="https://helma.healthians.com/stationery/mailer-assets/61bc534c83559.jpg"
+                            style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 24px; text-align: center;">
+                            <h3 style="font-size: 20px; margin: 0; color: #333; font-weight: 700;">Mammography</h3>
+                            <p style="color: #008b94; font-weight: 700; font-size: 19px; margin: 12px 0;">Starting @
+                                <span
+                                    style="text-decoration: line-through; color: #999; font-weight: 400; font-size: 14px;">₹3000</span>
+                                ₹1500
+                            </p>
+                            <p
+                                style="font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 20px; height: 85px; overflow: hidden;">
+                                A mammogram is a specialized X-ray of the breasts used to screen for early signs of
+                                breast cancer. It can detect tumors that cannot be felt during physical exams, making it
+                                a vital preventive tool for women's health and early medical intervention.
+                            </p>
+                            <div
+                                style="background: #f37048; color: white; display: inline-block; padding: 6px 18px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 15px;">
+                                Salient Features</div>
+                        </div>
+                        <div
+                            style="background: #f0f7f8; padding: 18px; font-size: 12px; color: #444; border-top: 1px solid #e0e6e6; flex-grow: 1;">
+                            <div style="margin-bottom: 6px;">• Advanced screening for early detection</div>
+                            <div>• Conducted by certified female specialists</div>
+                        </div>
+                    </div>
+
+                    <div class="card-unit"
+                        style="background: white; border-radius: 15px; border: 1px solid #e0e6e6; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=400"
+                            style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 24px; text-align: center;">
+                            <h3 style="font-size: 20px; margin: 0; color: #333; font-weight: 700;">EMG NCV Test</h3>
+                            <p style="color: #008b94; font-weight: 700; font-size: 19px; margin: 12px 0;">Starting @
+                                <span
+                                    style="text-decoration: line-through; color: #999; font-weight: 400; font-size: 14px;">₹7125</span>
+                                ₹2118
+                            </p>
+                            <p
+                                style="font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 20px; height: 85px; overflow: hidden;">
+                                Electromyography (EMG) and nerve conduction studies (NCV) evaluate the electrical
+                                activity of nerves and muscles. These tests help diagnose neuromuscular diseases, nerve
+                                injuries, and carpal tunnel syndrome with high clinical precision.
+                            </p>
+                            <div
+                                style="background: #f37048; color: white; display: inline-block; padding: 6px 18px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 15px;">
+                                Salient Features</div>
+                        </div>
+                        <div
+                            style="background: #f0f7f8; padding: 18px; font-size: 12px; color: #444; border-top: 1px solid #e0e6e6; flex-grow: 1;">
+                            <div style="margin-bottom: 6px;">• Comprehensive nerve health assessment</div>
+                            <div>• 100% Painless and accurate results</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <button class="nav-btn" onclick="moveBy(-1)"
+                style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 10; background: #f37048; border: none; width: 44px; height: 44px; border-radius: 50%; color: white; cursor: pointer; font-size: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">‹</button>
+            <button class="nav-btn" onclick="moveBy(1)"
+                style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 10; background: #f37048; border: none; width: 44px; height: 44px; border-radius: 50%; color: white; cursor: pointer; font-size: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">›</button>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <button
+                    style="background: #f37048; color: white; border: none; padding: 14px 70px; border-radius: 12px; font-weight: 700; font-size: 16px; cursor: pointer; box-shadow: 0 6px 20px rgba(243, 112, 72, 0.35);">View
+                    All Scans</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const track = document.getElementById('infiniteTrack');
+        const originalCardsCount = track.children.length;
+
+        // Duplicate cards for seamless infinite effect
+        const cardsToClone = Array.from(track.children);
+        cardsToClone.forEach(card => track.appendChild(card.cloneNode(true)));
+        cardsToClone.forEach(card => track.appendChild(card.cloneNode(true)));
+
+        let currentIndex = 0;
+
+        function getStepWidth() {
+            const firstCard = track.children[0];
+            const gap = 20;
+            return firstCard.offsetWidth + gap;
+        }
+
+        function updateSlider(animate = true) {
+            const step = getStepWidth();
+            track.style.transition = animate ? "transform 0.5s cubic-bezier(0.45, 0.05, 0.55, 0.95)" : "none";
+            track.style.transform = `translateX(-${currentIndex * step}px)`;
+        }
+
+        function moveBy(direction) {
+            currentIndex += direction;
+            updateSlider();
+
+            if (currentIndex >= originalCardsCount) {
+                setTimeout(() => {
+                    currentIndex = 0;
+                    updateSlider(false);
+                }, 500);
+            } else if (currentIndex < 0) {
+                setTimeout(() => {
+                    currentIndex = originalCardsCount - 1;
+                    updateSlider(false);
+                }, 500);
+            }
+        }
+
+        let autoPlay = setInterval(() => moveBy(1), 5000);
+        track.parentElement.addEventListener('mouseenter', () => clearInterval(autoPlay));
+        track.parentElement.addEventListener('mouseleave', () => autoPlay = setInterval(() => moveBy(1), 5000));
+        window.addEventListener('resize', () => updateSlider(false));
+    </script>
+    <!--Health Scans & Imaging Tests END-->
+
+
+    <!--HEALTH RISK START SECTION START-->
+    <style>
+        .risk-card {
+            min-width: calc(33.33% - 14px);
+            background: white;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .risk-card:hover {
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 992px) {
+            .risk-card {
+                min-width: calc(50% - 10px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .risk-card {
+                min-width: 100%;
+            }
+
+            .nav-btn-risk {
+                width: 35px !important;
+                height: 35px !important;
+            }
+        }
+    </style>
+
+    <section style="background-color: #ffffff; padding: 60px 0; font-family: 'Inter', sans-serif; overflow: hidden;">
+        <div style="max-width: 1200px; margin: 0 auto; position: relative; padding: 0 20px;">
+
+            <h2 style="text-align: center; color: #008b94; font-size: 32px; font-weight: 700; margin-bottom: 45px;">
+                Health Risk
+            </h2>
+
+            <div style="overflow: hidden; width: 100%;">
+                <div id="riskTrack"
+                    style="display: flex; gap: 20px; transition: transform 0.5s cubic-bezier(0.45, 0.05, 0.55, 0.95); will-change: transform;">
+
+                    <div class="risk-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3010/3010164.png" alt="Joints"
+                            style="width: 80px; height: 80px; margin-bottom: 20px; object-fit: contain;">
+                        <h3 style="color: #008b94; font-size: 22px; font-weight: 700; margin-bottom: 15px;">Joints</h3>
+                        <p
+                            style="color: #555; font-size: 14px; line-height: 1.6; margin-bottom: 20px; height: 70px; overflow: hidden;">
+                            Most of us relate joint pain with age, but that is not true. It does not just affect elderly
+                            people but can occur at any stage of life...
+                        </p>
+                        <a href="#"
+                            style="color: #008b94; text-decoration: none; font-weight: 700; font-size: 15px;">View
+                            More</a>
+                    </div>
+
+                    <div class="risk-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2865/2865801.png" alt="Bone"
+                            style="width: 80px; height: 80px; margin-bottom: 20px; object-fit: contain;">
+                        <h3 style="color: #008b94; font-size: 22px; font-weight: 700; margin-bottom: 15px;">Bone</h3>
+                        <p
+                            style="color: #555; font-size: 14px; line-height: 1.6; margin-bottom: 20px; height: 70px; overflow: hidden;">
+                            Strong bones are key to staying active, mobile, and independent as we age. However, bone
+                            health often starts declining quietly...
+                        </p>
+                        <a href="#"
+                            style="color: #008b94; text-decoration: none; font-weight: 700; font-size: 15px;">View
+                            More</a>
+                    </div>
+
+                    <div class="risk-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3233/3233858.png" alt="Fatigue"
+                            style="width: 80px; height: 80px; margin-bottom: 20px; object-fit: contain;">
+                        <h3 style="color: #008b94; font-size: 22px; font-weight: 700; margin-bottom: 15px;">Fatigue</h3>
+                        <p
+                            style="color: #555; font-size: 14px; line-height: 1.6; margin-bottom: 20px; height: 70px; overflow: hidden;">
+                            Fatigue can be defined as a feeling of overall tiredness or a lack of energy, wherein the
+                            individual feels drained and exhausted...
+                        </p>
+                        <a href="#"
+                            style="color: #008b94; text-decoration: none; font-weight: 700; font-size: 15px;">View
+                            More</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <button class="nav-btn-risk" onclick="moveRisk(-1)"
+                style="position: absolute; left: 0; top: 55%; transform: translateY(-50%); z-index: 10; background: #f37048; border: none; width: 40px; height: 40px; border-radius: 50%; color: white; cursor: pointer; font-size: 22px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">‹</button>
+            <button class="nav-btn-risk" onclick="moveRisk(1)"
+                style="position: absolute; right: 0; top: 55%; transform: translateY(-50%); z-index: 10; background: #f37048; border: none; width: 40px; height: 40px; border-radius: 50%; color: white; cursor: pointer; font-size: 22px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">›</button>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <button
+                    style="background: #f37048; color: white; border: none; padding: 14px 70px; border-radius: 12px; font-weight: 700; font-size: 16px; cursor: pointer; box-shadow: 0 6px 20px rgba(243, 112, 72, 0.35);">View
+                    All</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const riskTrack = document.getElementById('riskTrack');
+        const riskCards = Array.from(riskTrack.children);
+        const riskCount = riskCards.length;
+
+        // Triple cloning for seamless loop
+        riskCards.forEach(c => riskTrack.appendChild(c.cloneNode(true)));
+        riskCards.forEach(c => riskTrack.appendChild(c.cloneNode(true)));
+
+        let riskIndex = 0;
+
+        function moveRisk(dir) {
+            riskIndex += dir;
+            const step = riskTrack.children[0].offsetWidth + 20;
+            riskTrack.style.transition = "transform 0.5s cubic-bezier(0.45, 0.05, 0.55, 0.95)";
+            riskTrack.style.transform = `translateX(-${riskIndex * step}px)`;
+
+            if (riskIndex >= riskCount) {
+                setTimeout(() => {
+                    riskTrack.style.transition = "none";
+                    riskIndex = 0;
+                    riskTrack.style.transform = `translateX(0)`;
+                }, 500);
+            } else if (riskIndex < 0) {
+                setTimeout(() => {
+                    riskTrack.style.transition = "none";
+                    riskIndex = riskCount - 1;
+                    riskTrack.style.transform = `translateX(-${riskIndex * step}px)`;
+                }, 500);
+            }
+        }
+
+        // Auto-play
+        let riskTimer = setInterval(() => moveRisk(1), 4500);
+        riskTrack.parentElement.addEventListener('mouseenter', () => clearInterval(riskTimer));
+        riskTrack.parentElement.addEventListener('mouseleave', () => riskTimer = setInterval(() => moveRisk(1), 4500));
+        window.addEventListener('resize', () => {
+            riskTrack.style.transition = "none";
+            riskTrack.style.transform = `translateX(0)`;
+            riskIndex = 0;
+        });
+    </script>
+    <!--HEALTH RISK START SECTION END-->
+
+    <!-- DOWNLAOD MOBILE APPLICAITON SECTION START {aak}-->
+<style>
+    /* Desktop & General Styles */
+    .features-overflow { overflow: hidden; width: 100%; position: relative; }
+    
+    .features-container {
+        display: flex;
+        gap: 20px;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .feature-item {
+        flex: 1;
+        min-width: 160px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    /* Indicators */
+    .carousel-dots {
+        display: none;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 20px;
+    }
+    .dot {
+        width: 8px;
+        height: 8px;
+        background: #ddd;
+        border-radius: 50%;
+        transition: 0.3s;
+    }
+    .dot.active { background: #008b94; width: 20px; border-radius: 10px; }
+
+    /* Mobile Responsive Logic */
+    @media (max-width: 768px) {
+        .app-flex { flex-direction: column !important; text-align: center !important; }
+        .app-image-wrap { margin-bottom: 30px !important; }
+        .app-content { padding: 0 !important; }
+        .badge-wrap { justify-content: center !important; }
+        .carousel-dots { display: flex; }
+
+        .features-container { gap: 0 !important; }
+        .feature-item {
+            min-width: 50% !important; /* Show 2 cards at a time */
+            box-sizing: border-box;
+        }
+
+        .feature-number { font-size: 40px !important; top: -12px !important; }
+        .feature-text { font-size: 11px !important; margin-top: 5px !important; }
+    }
+</style>
+
+<section style="background-color: #fcfdfe; padding: 60px 0; font-family: 'Inter', sans-serif; overflow: hidden;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        
+        <div class="app-flex" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 70px;">
+            <div class="app-image-wrap" style="flex: 1; min-width: 280px; text-align: center;">
+                <img src="https://colourmoon.com/images/docto-top-img.png" alt="App" style="max-width: 480px; width: 100%; height: auto; transform: rotate(-2deg); filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));">
+            </div>
+            
+            <div class="app-content" style="flex: 1.2; min-width: 300px; padding-left: 45px;">
+                <h2 style="color: #008b94; font-size: 30px; font-weight: 700; margin-bottom: 15px;">Download Our App Now</h2>
+                <p style="color: #666; line-height: 1.6; font-size: 15px; margin-bottom: 25px;">
+                    Tracking health status made easy. Book health tests and access your smart reports anytime anywhere. Get the app for a better experience.
+                </p>
+                <div class="badge-wrap" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="#" style="transition: 0.3s;"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" style="height: 42px;"></a>
+                    <a href="#" style="transition: 0.3s;"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" style="height: 42px;"></a>
+                </div>
+            </div>
+        </div>
+
+        <div style="width: 100%; height: 1px; background: linear-gradient(to right, transparent, #eee, transparent); margin-bottom: 60px;"></div>
+
+        <h2 style="text-align: center; color: #008b94; font-size: 30px; font-weight: 700; margin-bottom: 50px;">Why Choose Healthians</h2>
+        
+        <div class="features-overflow">
+            <div id="chooseTrackFinal" class="features-container">
+                
+                <div class="feature-item">
+                    <div style="position: relative; margin-bottom: 15px;">
+                        <span class="feature-number" style="color: #f0f7f8; font-size: 55px; font-weight: 900; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 1;">01</span>
+                        <img src="https://cdn-icons-png.flaticon.com/512/3062/3062276.png" style="width: 45px; position: relative; z-index: 2; filter: hue-rotate(140deg);">
+                    </div>
+                    <p class="feature-text" style="font-size: 13px; color: #444; font-weight: 700; line-height: 1.4;">Free & On-time<br>Collection</p>
+                </div>
+
+                <div class="feature-item">
+                    <div style="position: relative; margin-bottom: 15px;">
+                        <span class="feature-number" style="color: #f0f7f8; font-size: 55px; font-weight: 900; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 1;">02</span>
+                        <img src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png" style="width: 45px; position: relative; z-index: 2; filter: hue-rotate(140deg);">
+                    </div>
+                    <p class="feature-text" style="font-size: 13px; color: #444; font-weight: 700; line-height: 1.4;">Free Report<br>Counselling</p>
+                </div>
+
+                <div class="feature-item">
+                    <div style="position: relative; margin-bottom: 15px;">
+                        <span class="feature-number" style="color: #f0f7f8; font-size: 55px; font-weight: 900; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 1;">03</span>
+                        <img src="https://cdn-icons-png.flaticon.com/512/2618/2618576.png" style="width: 45px; position: relative; z-index: 2; filter: hue-rotate(140deg);">
+                    </div>
+                    <p class="feature-text" style="font-size: 13px; color: #444; font-weight: 700; line-height: 1.4;">Fast & Accurate<br>Reports</p>
+                </div>
+
+                <div class="feature-item">
+                    <div style="position: relative; margin-bottom: 15px;">
+                        <span class="feature-number" style="color: #f0f7f8; font-size: 55px; font-weight: 900; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 1;">04</span>
+                        <img src="https://cdn-icons-png.flaticon.com/512/8244/8244464.png" style="width: 45px; position: relative; z-index: 2; filter: hue-rotate(140deg);">
+                    </div>
+                    <p class="feature-text" style="font-size: 13px; color: #444; font-weight: 700; line-height: 1.4;">250+ Cities<br>In India</p>
+                </div>
+
+                <div class="feature-item">
+                    <div style="position: relative; margin-bottom: 15px;">
+                        <span class="feature-number" style="color: #f0f7f8; font-size: 55px; font-weight: 900; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 1;">05</span>
+                        <img src="https://cdn-icons-png.flaticon.com/512/2785/2785641.png" style="width: 45px; position: relative; z-index: 2; filter: hue-rotate(140deg);">
+                    </div>
+                    <p class="feature-text" style="font-size: 13px; color: #444; font-weight: 700; line-height: 1.4;">Largest Fleet<br>Phlebotomists</p>
+                </div>
+
+                <div class="feature-item">
+                    <div style="position: relative; margin-bottom: 15px;">
+                        <span class="feature-number" style="color: #f0f7f8; font-size: 55px; font-weight: 900; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 1;">06</span>
+                        <img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png" style="width: 45px; position: relative; z-index: 2; filter: hue-rotate(140deg);">
+                    </div>
+                    <p class="feature-text" style="font-size: 13px; color: #444; font-weight: 700; line-height: 1.4;">85 Lakh+<br>Customers</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="carousel-dots" id="dotsContainer">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+</section>
 
 <script>
-    // 1. Banner Logic (3D Stack)
-    const banners = document.querySelectorAll('.stack-card');
-    let bannerIdx = 0;
+    (function() {
+        const track = document.getElementById('chooseTrackFinal');
+        const dots = document.querySelectorAll('.dot');
+        let index = 0;
+        const slides = 3; // Since we show 2 cards at a time (6/2 = 3 slides)
 
-    function renderBanners() {
-        banners.forEach((card, i) => {
-            const prev = (bannerIdx - 1 + banners.length) % banners.length;
-            const next = (bannerIdx + 1) % banners.length;
-
-            if (i === bannerIdx) {
-                card.style.transform = "translateX(0) scale(1) translateZ(0)";
-                card.style.zIndex = "30";
-                card.style.opacity = "1";
-                card.style.filter = "none";
-            } else if (i === prev) {
-                card.style.transform = "translateX(-45%) scale(0.85) translateZ(-150px)";
-                card.style.zIndex = "20";
-                card.style.opacity = "0.4";
-                card.style.filter = "blur(2px)";
-            } else if (i === next) {
-                card.style.transform = "translateX(45%) scale(0.85) translateZ(-150px)";
-                card.style.zIndex = "20";
-                card.style.opacity = "0.4";
-                card.style.filter = "blur(2px)";
+        function updateCarousel() {
+            if (window.innerWidth <= 768) {
+                index++;
+                if (index >= slides) index = 0;
+                
+                track.style.transform = `translateX(-${index * 100}%)`;
+                
+                // Update dots
+                dots.forEach(d => d.classList.remove('active'));
+                dots[index].classList.add('active');
             } else {
-                card.style.opacity = "0";
+                track.style.transform = `translateX(0)`;
+            }
+        }
+
+        let slideInterval = setInterval(updateCarousel, 3000);
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                track.style.transform = `translateX(0)`;
+                index = 0;
             }
         });
-    }
-
-    function moveBanner(dir) {
-        bannerIdx = (bannerIdx + dir + banners.length) % banners.length;
-        renderBanners();
-    }
-
-    // 2. Filter Logic
-    function filterPkg(cat, btn) {
-        const btns = btn.parentElement.querySelectorAll('button');
-        btns.forEach(b => {
-            b.style.background = "white";
-            b.style.color = "#666";
-            b.style.borderColor = "#ddd";
-        });
-        btn.style.background = "#008b94";
-        btn.style.color = "white";
-        btn.style.borderColor = "#008b94";
-
-        const cards = document.querySelectorAll('.pkg-card');
-        cards.forEach(card => {
-            card.style.display = (cat === 'all' || card.dataset.cat === cat) ? "block" : "none";
-        });
-    }
-
-    renderBanners();
-    setInterval(() => moveBanner(1), 5000);
+    })();
 </script>
-<!--PLANS SECTION END-->
-
-
+    <!-- DOWNLAOD MOBILE APPLICAITON SECTION END{aak}-->
 </body>
 
 </html>
