@@ -1925,178 +1925,421 @@
 
 
     <!-- HEALTH VIDEO REVIEWS SECTION START{aak}-->
-<style>
-    .reviews-outer-wrapper {
-        padding: 80px 0;
-        background-color: #ffffff;
+    <style>
+        .reviews-outer-wrapper {
+            padding: 80px 0;
+            background-color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Half Width Container - Exactly like your reference */
+        .reviews-centered-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            /* Bahar ka content hide rahega */
+            position: relative;
+        }
+
+        .reviews-header-text {
+            text-align: center;
+            color: #008b94;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        /* Infinite Track - Very Slow Slide */
+        .video-infinite-track {
+            display: flex;
+            /* Width = (Card Width + Margin) * Total Items (6 Unique + 6 Clones) */
+            width: calc(260px * 12);
+            animation: slowScroll 40s linear infinite;
+            /* Increased to 40s for slow feel */
+        }
+
+        @keyframes slowScroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-260px * 6));
+            }
+        }
+
+        /* Card Styling - Portrait Look */
+        .portrait-video-card {
+            width: 240px;
+            height: 350px;
+            margin-right: 20px;
+            /* Space between cards */
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            flex-shrink: 0;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Play Button Overlay */
+        .video-center-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(4px);
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            transition: 0.3s ease;
+        }
+
+        .portrait-video-card:hover .video-center-play {
+            background: #008b94;
+            border-color: #008b94;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .play-arrow-white {
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 12px solid white;
+            margin-left: 4px;
+        }
+
+        /* Bottom Info Overlay */
+        .video-card-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            color: white;
+            z-index: 3;
+        }
+
+        .cust-name {
+            font-size: 15px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .cust-city {
+            font-size: 11px;
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        /* Mobile View - 2 cards visible */
+        @media (max-width: 768px) {
+            .reviews-centered-container {
+                max-width: 90%;
+            }
+
+            .portrait-video-card {
+                width: 170px;
+                height: 250px;
+                margin-right: 15px;
+            }
+
+            .video-infinite-track {
+                width: calc(185px * 12);
+            }
+
+            @keyframes slowScroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(calc(-185px * 6));
+                }
+            }
+
+            .video-center-play {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+
+    <div class="reviews-outer-wrapper">
+        <div class="reviews-centered-container">
+            <h2 class="reviews-header-text">Healthians Reviews</h2>
+
+            <div class="video-infinite-track">
+                <div class="portrait-video-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1566753323558-f4e0952af115?auto=format&fit=crop&w=400');">
+                    <div class="video-center-play">
+                        <div class="play-arrow-white"></div>
+                    </div>
+                    <div class="video-card-footer">
+                        <p class="cust-name">Mukesh</p>
+                        <p class="cust-city">Bhopal</p>
+                    </div>
+                </div>
+
+                <div class="portrait-video-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400');">
+                    <div class="video-center-play">
+                        <div class="play-arrow-white"></div>
+                    </div>
+                    <div class="video-card-footer">
+                        <p class="cust-name">Anna</p>
+                        <p class="cust-city">Bengaluru</p>
+                    </div>
+                </div>
+
+                <div class="portrait-video-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400');">
+                    <div class="video-center-play">
+                        <div class="play-arrow-white"></div>
+                    </div>
+                    <div class="video-card-footer">
+                        <p class="cust-name">Jason</p>
+                        <p class="cust-city">Bengaluru</p>
+                    </div>
+                </div>
+
+                <div class="portrait-video-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&w=400');">
+                    <div class="video-center-play">
+                        <div class="play-arrow-white"></div>
+                    </div>
+                    <div class="video-card-footer">
+                        <p class="cust-name">Rajesh</p>
+                        <p class="cust-city">Delhi</p>
+                    </div>
+                </div>
+
+                <div class="portrait-video-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400');">
+                    <div class="video-center-play">
+                        <div class="play-arrow-white"></div>
+                    </div>
+                    <div class="video-card-footer">
+                        <p class="cust-name">Sneha</p>
+                        <p class="cust-city">Mumbai</p>
+                    </div>
+                </div>
+
+                <div class="portrait-video-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1566753323558-f4e0952af115?auto=format&fit=crop&w=400');">
+                    <div class="video-center-play">
+                        <div class="play-arrow-white"></div>
+                    </div>
+                    <div class="video-card-footer">
+                        <p class="cust-name">Mukesh</p>
+                        <p class="cust-city">Bhopal</p>
+                    </div>
+                </div>
+                <div class="portrait-video-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400');">
+                    <div class="video-center-play">
+                        <div class="play-arrow-white"></div>
+                    </div>
+                    <div class="video-card-footer">
+                        <p class="cust-name">Anna</p>
+                        <p class="cust-city">Bengaluru</p>
+                    </div>
+                </div>
+                <div class="portrait-video-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400');">
+                    <div class="video-center-play">
+                        <div class="play-arrow-white"></div>
+                    </div>
+                    <div class="video-card-footer">
+                        <p class="cust-name">Jason</p>
+                        <p class="cust-city">Bengaluru</p>
+                    </div>
+                </div>
+
+                <div class="portrait-video-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&w=400');">
+                    <div class="video-center-play">
+                        <div class="play-arrow-white"></div>
+                    </div>
+                    <div class="video-card-footer">
+                        <p class="cust-name">Rajesh</p>
+                        <p class="cust-city">Delhi</p>
+                    </div>
+                </div>
+                <div class="portrait-video-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400');">
+                    <div class="video-center-play">
+                        <div class="play-arrow-white"></div>
+                    </div>
+                    <div class="video-card-footer">
+                        <p class="cust-name">Sneha</p>
+                        <p class="cust-city">Mumbai</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- HEALTH VIDEO REVIEWS SECTION END{aak}-->
+
+
+    <!-- CERTIFICATION SECTION START{aak}-->
+     <style>
+    .global-wrapper {
         font-family: 'Inter', sans-serif;
+        background-color: #fcfdfe;
+        padding: 60px 0;
     }
 
-    /* Half Width Container - Exactly like your reference */
-    .reviews-centered-container {
+    .centered-box {
         max-width: 1200px;
         margin: 0 auto;
-        overflow: hidden; /* Bahar ka content hide rahega */
-        position: relative;
-    }
-
-    .reviews-header-text { 
-        text-align: center; 
-        color: #008b94; 
-        font-size: 30px; 
-        font-weight: 700; 
-        margin-bottom: 40px; 
-    }
-
-    /* Infinite Track - Very Slow Slide */
-    .video-infinite-track {
-        display: flex;
-        /* Width = (Card Width + Margin) * Total Items (6 Unique + 6 Clones) */
-        width: calc(260px * 12); 
-        animation: slowScroll 40s linear infinite; /* Increased to 40s for slow feel */
-    }
-
-    @keyframes slowScroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(calc(-260px * 6)); }
-    }
-
-    /* Card Styling - Portrait Look */
-    .portrait-video-card {
-        width: 240px;
-        height: 350px;
-        margin-right: 20px; /* Space between cards */
-        position: relative;
-        border-radius: 24px;
         overflow: hidden;
-        background-size: cover;
-        background-position: center;
-        flex-shrink: 0;
-        cursor: pointer;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        padding: 0 20px;
+        position: relative;
     }
 
-    /* Play Button Overlay */
-    .video-center-play {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 50px;
-        height: 50px;
-        background: rgba(255,255,255,0.25);
-        backdrop-filter: blur(4px);
-        border: 2px solid #ffffff;
-        border-radius: 50%;
+    .section-head {
+        text-align: center;
+        color: #008b94;
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 40px;
+    }
+
+    /* Infinite Track Logic */
+    .infinite-flex {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 2;
-        transition: 0.3s ease;
+        width: max-content; /* Content ke hisaab se width lega */
+        animation: slowMove 40s linear infinite;
     }
 
-    .portrait-video-card:hover .video-center-play {
+    /* Blogs Moving in Reverse - Start from 0 to avoid empty space */
+    .reverse-track {
+        animation: slowMoveReverse 45s linear infinite;
+    }
+
+    @keyframes slowMove {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-320px * 6)); }
+    }
+
+    @keyframes slowMoveReverse {
+        0% { transform: translateX(calc(-320px * 6)); }
+        100% { transform: translateX(0); }
+    }
+
+    /* Pause on Hover */
+    .infinite-flex:hover {
+        animation-play-state: paused;
+    }
+
+    /* Card Styling */
+    .reward-card, .blog-card {
+        width: 300px;
+        background: #fff;
+        margin-right: 20px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+        border: 1px solid #f0f0f0;
+        flex-shrink: 0;
+    }
+
+    .reward-card { padding: 25px; display: flex; align-items: center; gap: 15px; }
+    .reward-img { width: 80px; height: auto; object-fit: contain; }
+    .reward-text { font-size: 13px; color: #444; font-weight: 600; }
+
+    .blog-card { overflow: hidden; transition: 0.3s; }
+    .blog-thumb { width: 100%; height: 180px; object-fit: cover; }
+    .blog-body { padding: 15px; }
+    .blog-title { font-size: 14px; font-weight: 700; color: #333; margin: 0; line-height: 1.4; }
+
+    /* Callback Strip */
+    .callback-strip {
         background: #008b94;
-        border-color: #008b94;
-        transform: translate(-50%, -50%) scale(1.1);
-    }
-
-    .play-arrow-white {
-        width: 0; height: 0; 
-        border-top: 8px solid transparent;
-        border-bottom: 8px solid transparent;
-        border-left: 12px solid white;
-        margin-left: 4px;
-    }
-
-    /* Bottom Info Overlay */
-    .video-card-footer {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: 20px;
-        background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        padding: 15px 30px;
+        border-radius: 12px 12px 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-top: 60px;
         color: white;
-        z-index: 3;
     }
 
-    .cust-name { font-size: 15px; font-weight: 700; margin: 0; }
-    .cust-city { font-size: 11px; opacity: 0.8; margin: 0; }
+    .call-input { padding: 12px 15px; border: none; border-radius: 8px; width: 280px; outline: none; }
+    .call-btn { background: #f3704b; color: white; padding: 12px 25px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; }
 
-    /* Mobile View - 2 cards visible */
     @media (max-width: 768px) {
-        .reviews-centered-container { max-width: 90%; }
-        .portrait-video-card { width: 170px; height: 250px; margin-right: 15px; }
-        .video-infinite-track { width: calc(185px * 12); }
-        @keyframes slowScroll {
+        .reward-card, .blog-card { width: 220px; }
+        @keyframes slowMove {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-185px * 6)); }
+            100% { transform: translateX(calc(-240px * 6)); }
         }
-        .video-center-play { width: 40px; height: 40px; }
+        @keyframes slowMoveReverse {
+            0% { transform: translateX(calc(-240px * 6)); }
+            100% { transform: translateX(0); }
+        }
     }
 </style>
 
-<div class="reviews-outer-wrapper">
-    <div class="reviews-centered-container">
-        <h2 class="reviews-header-text">Healthians Reviews</h2>
-        
-        <div class="video-infinite-track">
-            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1566753323558-f4e0952af115?auto=format&fit=crop&w=400');">
-                <div class="video-center-play"><div class="play-arrow-white"></div></div>
-                <div class="video-card-footer"><p class="cust-name">Mukesh</p><p class="cust-city">Bhopal</p></div>
-            </div>
+<div class="global-wrapper">
+    
+    <div class="centered-box">
+        <h2 class="section-head">Rewards & Recognition</h2>
+        <div class="infinite-flex">
+            <div class="reward-card"><img src="https://helma.healthians.com/stationery/mailer-assets/66c899fbb1e8f.webp" class="reward-img"><p class="reward-text">Economic Times Edge Awards 2019</p></div>
+            <div class="reward-card"><img src="https://helma.healthians.com/stationery/mailer-assets/66c89a2f4445a.webp" class="reward-img"><p class="reward-text">Healthcare Leadership Global 2022</p></div>
+            <div class="reward-card"><img src="https://helma.healthians.com/stationery/mailer-assets/66c899cec5cb2.webp" class="reward-img"><p class="reward-text">ET Inspiring Leaders North 2022</p></div>
+            <div class="reward-card"><img src="https://helma.healthians.com/stationery/mailer-assets/66c899fbb1e8f.webp" class="reward-img"><p class="reward-text">Economic Times Edge Awards 2019</p></div>
+            <div class="reward-card"><img src="https://helma.healthians.com/stationery/mailer-assets/66c89a2f4445a.webp" class="reward-img"><p class="reward-text">Healthcare Leadership Global 2022</p></div>
+            <div class="reward-card"><img src="https://helma.healthians.com/stationery/mailer-assets/66c899cec5cb2.webp" class="reward-img"><p class="reward-text">ET Inspiring Leaders North 2022</p></div>
+        </div>
+    </div>
 
-            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400');">
-                <div class="video-center-play"><div class="play-arrow-white"></div></div>
-                <div class="video-card-footer"><p class="cust-name">Anna</p><p class="cust-city">Bengaluru</p></div>
-            </div>
+    <div style="height: 60px;"></div>
 
-            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400');">
-                <div class="video-center-play"><div class="play-arrow-white"></div></div>
-                <div class="video-card-footer"><p class="cust-name">Jason</p><p class="cust-city">Bengaluru</p></div>
+    <div class="centered-box">
+        <h2 class="section-head">Health Blogs & Articles</h2>
+        <div class="infinite-flex reverse-track">
+            <div class="blog-card">
+                <img src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/Ghee-benefits.webp" class="blog-thumb">
+                <div class="blog-body"><p class="blog-title">Surprising Health Benefits of Betel Leaves</p></div>
             </div>
+            <div class="blog-card">
+                <img src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/betel-leaf-benefits.webp" class="blog-thumb">
+                <div class="blog-body"><p class="blog-title">Is Ghee Good for Your Heart?</p></div>
+            </div>
+            <div class="blog-card">
+                <img src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/10-ways-to-Quit-Sugar-from-Your-Diet.webp" class="blog-thumb">
+                <div class="blog-body"><p class="blog-title">10 Easy Ways to Quit Sugar from Your Diet</p></div>
+            </div>
+            <div class="blog-card"><img src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/Ghee-benefits.webp" class="blog-thumb"><div class="blog-body"><p class="blog-title">Benefits of Betel Leaves</p></div></div>
+            <div class="blog-card"><img src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/betel-leaf-benefits.webp" class="blog-thumb"><div class="blog-body"><p class="blog-title">Is Ghee Good for Your Heart?</p></div></div>
+            <div class="blog-card"><img src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/10-ways-to-Quit-Sugar-from-Your-Diet.webp" class="blog-thumb"><div class="blog-body"><p class="blog-title">10 Easy Ways to Quit Sugar</p></div></div>
+        </div>
+    </div>
 
-            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&w=400');">
-                <div class="video-center-play"><div class="play-arrow-white"></div></div>
-                <div class="video-card-footer"><p class="cust-name">Rajesh</p><p class="cust-city">Delhi</p></div>
-            </div>
-
-            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400');">
-                <div class="video-center-play"><div class="play-arrow-white"></div></div>
-                <div class="video-card-footer"><p class="cust-name">Sneha</p><p class="cust-city">Mumbai</p></div>
-            </div>
-
-            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1566753323558-f4e0952af115?auto=format&fit=crop&w=400');">
-                <div class="video-center-play"><div class="play-arrow-white"></div></div>
-                <div class="video-card-footer"><p class="cust-name">Mukesh</p><p class="cust-city">Bhopal</p></div>
-            </div>
-            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400');">
-                <div class="video-center-play"><div class="play-arrow-white"></div></div>
-                <div class="video-card-footer"><p class="cust-name">Anna</p><p class="cust-city">Bengaluru</p></div>
-            </div>
-            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400');">
-                <div class="video-center-play"><div class="play-arrow-white"></div></div>
-                <div class="video-card-footer"><p class="cust-name">Jason</p><p class="cust-city">Bengaluru</p></div>
-            </div>
-            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1598550874175-4d0fe4a2c943?auto=format&fit=crop&w=400');">
-                <div class="video-center-play"><div class="play-arrow-white"></div></div>
-                <div class="video-card-footer"><p class="cust-name">Pravita</p><p class="cust-city">Pune</p></div>
-            </div>
-            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&w=400');">
-                <div class="video-center-play"><div class="play-arrow-white"></div></div>
-                <div class="video-card-footer"><p class="cust-name">Rajesh</p><p class="cust-city">Delhi</p></div>
-            </div>
-            <div class="portrait-video-card" style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400');">
-                <div class="video-center-play"><div class="play-arrow-white"></div></div>
-                <div class="video-card-footer"><p class="cust-name">Sneha</p><p class="cust-city">Mumbai</p></div>
+    <div class="centered-box">
+        <div class="callback-strip">
+            <span style="font-weight: 600;">Get a Callback from our Health Advisor</span>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                <input type="text" placeholder="Enter your 10 digit mobile number" class="call-input">
+                <button class="call-btn">Get a Call Back</button>
             </div>
         </div>
     </div>
 </div>
-    <!-- HEALTH VIDEO REVIEWS SECTION END{aak}-->
-
-
+    <!-- CERTIFICATION SECTION END{aak}-->
 
 
 
