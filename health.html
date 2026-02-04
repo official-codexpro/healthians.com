@@ -1238,177 +1238,419 @@
     <!--HEALTH RISK START SECTION END-->
 
     <!-- DOWNLAOD MOBILE APPLICAITON SECTION START {aak}-->
-<style>
-    /* Desktop & General Styles */
-    .features-overflow { overflow: hidden; width: 100%; position: relative; }
+    <style>
+        /* Desktop & General Styles */
+        .features-overflow {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .features-container {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .feature-item {
+            flex: 1;
+            min-width: 160px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Indicators */
+        .carousel-dots {
+            display: none;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: #ddd;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .dot.active {
+            background: #008b94;
+            width: 20px;
+            border-radius: 10px;
+        }
+
+        /* Mobile Responsive Logic */
+        @media (max-width: 768px) {
+            .app-flex {
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+
+            .app-image-wrap {
+                margin-bottom: 30px !important;
+            }
+
+            .app-content {
+                padding: 0 !important;
+            }
+
+            .badge-wrap {
+                justify-content: center !important;
+            }
+
+            .carousel-dots {
+                display: flex;
+            }
+
+            .features-container {
+                gap: 0 !important;
+            }
+
+            .feature-item {
+                min-width: 50% !important;
+                /* Show 2 cards at a time */
+                box-sizing: border-box;
+            }
+
+            .feature-number {
+                font-size: 40px !important;
+                top: -12px !important;
+            }
+
+            .feature-text {
+                font-size: 11px !important;
+                margin-top: 5px !important;
+            }
+        }
+    </style>
+
+    <section style="background-color: #fcfdfe; padding: 60px 0; font-family: 'Inter', sans-serif; overflow: hidden;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+
+            <div class="app-flex"
+                style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 70px;">
+                <div class="app-image-wrap" style="flex: 1; min-width: 280px; text-align: center;">
+                    <img src="https://colourmoon.com/images/docto-top-img.png" alt="App"
+                        style="max-width: 480px; width: 100%; height: auto; transform: rotate(-2deg); filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));">
+                </div>
+
+                <div class="app-content" style="flex: 1.2; min-width: 300px; padding-left: 45px;">
+                    <h2 style="color: #008b94; font-size: 30px; font-weight: 700; margin-bottom: 15px;">Download Our App
+                        Now</h2>
+                    <p style="color: #666; line-height: 1.6; font-size: 15px; margin-bottom: 25px;">
+                        Tracking health status made easy. Book health tests and access your smart reports anytime
+                        anywhere. Get the app for a better experience.
+                    </p>
+                    <div class="badge-wrap" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <a href="#" style="transition: 0.3s;"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                                style="height: 42px;"></a>
+                        <a href="#" style="transition: 0.3s;"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+                                style="height: 42px;"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                style="width: 100%; height: 1px; background: linear-gradient(to right, transparent, #eee, transparent); margin-bottom: 60px;">
+            </div>
+
+            <h2 style="text-align: center; color: #008b94; font-size: 30px; font-weight: 700; margin-bottom: 50px;">Why
+                Choose Healthians</h2>
+
+            <div class="features-overflow">
+                <div id="chooseTrackFinal" class="features-container">
+
+                    <div class="feature-item">
+                        <div style="position: relative; margin-bottom: 15px;">
+                            <span class="feature-number"
+                                style="color: #f0f7f8; font-size: 55px; font-weight: 900; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 1;">01</span>
+                            <img src="https://cdn-icons-png.flaticon.com/512/3062/3062276.png"
+                                style="width: 45px; position: relative; z-index: 2; filter: hue-rotate(140deg);">
+                        </div>
+                        <p class="feature-text"
+                            style="font-size: 13px; color: #444; font-weight: 700; line-height: 1.4;">Free &
+                            On-time<br>Collection</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div style="position: relative; margin-bottom: 15px;">
+                            <span class="feature-number"
+                                style="color: #f0f7f8; font-size: 55px; font-weight: 900; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 1;">02</span>
+                            <img src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png"
+                                style="width: 45px; position: relative; z-index: 2; filter: hue-rotate(140deg);">
+                        </div>
+                        <p class="feature-text"
+                            style="font-size: 13px; color: #444; font-weight: 700; line-height: 1.4;">Free
+                            Report<br>Counselling</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div style="position: relative; margin-bottom: 15px;">
+                            <span class="feature-number"
+                                style="color: #f0f7f8; font-size: 55px; font-weight: 900; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 1;">03</span>
+                            <img src="https://cdn-icons-png.flaticon.com/512/2618/2618576.png"
+                                style="width: 45px; position: relative; z-index: 2; filter: hue-rotate(140deg);">
+                        </div>
+                        <p class="feature-text"
+                            style="font-size: 13px; color: #444; font-weight: 700; line-height: 1.4;">Fast &
+                            Accurate<br>Reports</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div style="position: relative; margin-bottom: 15px;">
+                            <span class="feature-number"
+                                style="color: #f0f7f8; font-size: 55px; font-weight: 900; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 1;">04</span>
+                            <img src="https://cdn-icons-png.flaticon.com/512/8244/8244464.png"
+                                style="width: 45px; position: relative; z-index: 2; filter: hue-rotate(140deg);">
+                        </div>
+                        <p class="feature-text"
+                            style="font-size: 13px; color: #444; font-weight: 700; line-height: 1.4;">250+ Cities<br>In
+                            India</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div style="position: relative; margin-bottom: 15px;">
+                            <span class="feature-number"
+                                style="color: #f0f7f8; font-size: 55px; font-weight: 900; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 1;">05</span>
+                            <img src="https://cdn-icons-png.flaticon.com/512/2785/2785641.png"
+                                style="width: 45px; position: relative; z-index: 2; filter: hue-rotate(140deg);">
+                        </div>
+                        <p class="feature-text"
+                            style="font-size: 13px; color: #444; font-weight: 700; line-height: 1.4;">Largest
+                            Fleet<br>Phlebotomists</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div style="position: relative; margin-bottom: 15px;">
+                            <span class="feature-number"
+                                style="color: #f0f7f8; font-size: 55px; font-weight: 900; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 1;">06</span>
+                            <img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png"
+                                style="width: 45px; position: relative; z-index: 2; filter: hue-rotate(140deg);">
+                        </div>
+                        <p class="feature-text"
+                            style="font-size: 13px; color: #444; font-weight: 700; line-height: 1.4;">85
+                            Lakh+<br>Customers</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="carousel-dots" id="dotsContainer">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            const track = document.getElementById('chooseTrackFinal');
+            const dots = document.querySelectorAll('.dot');
+            let index = 0;
+            const slides = 3; // Since we show 2 cards at a time (6/2 = 3 slides)
+
+            function updateCarousel() {
+                if (window.innerWidth <= 768) {
+                    index++;
+                    if (index >= slides) index = 0;
+
+                    track.style.transform = `translateX(-${index * 100}%)`;
+
+                    // Update dots
+                    dots.forEach(d => d.classList.remove('active'));
+                    dots[index].classList.add('active');
+                } else {
+                    track.style.transform = `translateX(0)`;
+                }
+            }
+
+            let slideInterval = setInterval(updateCarousel, 3000);
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    track.style.transform = `translateX(0)`;
+                    index = 0;
+                }
+            });
+        })();
+    </script>
+    <!-- DOWNLAOD MOBILE APPLICAITON SECTION END{aak}-->
+
+    <!-- Health Checkup Journey Section Start{aak}-->
+     <style>
+    /* Desktop Styles */
+    .journey-overflow { overflow: hidden; width: 100%; position: relative; }
     
-    .features-container {
+    .journey-track {
         display: flex;
-        gap: 20px;
+        justify-content: space-between;
+        align-items: flex-start;
         transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .feature-item {
-        flex: 1;
-        min-width: 160px;
-        text-align: center;
-        padding: 10px;
+        position: relative;
     }
 
-    /* Indicators */
-    .carousel-dots {
+    .journey-step {
+        flex: 1;
+        min-width: 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0 10px;
+        z-index: 2;
+    }
+
+    /* Curved Line for Desktop only */
+    .journey-line-svg {
+        position: absolute;
+        top: 45px;
+        left: 5%;
+        width: 90%;
+        height: 60px;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    /* Indicators for Mobile */
+    .journey-dots {
         display: none;
         justify-content: center;
         gap: 8px;
-        margin-top: 20px;
+        margin-top: 30px;
     }
-    .dot {
-        width: 8px;
-        height: 8px;
-        background: #ddd;
-        border-radius: 50%;
-        transition: 0.3s;
-    }
-    .dot.active { background: #008b94; width: 20px; border-radius: 10px; }
+    .j-dot { width: 8px; height: 8px; background: #ddd; border-radius: 50%; transition: 0.3s; }
+    .j-dot.active { background: #008b94; width: 22px; border-radius: 10px; }
 
-    /* Mobile Responsive Logic */
+    /* Mobile Responsive Adjustments */
     @media (max-width: 768px) {
-        .app-flex { flex-direction: column !important; text-align: center !important; }
-        .app-image-wrap { margin-bottom: 30px !important; }
-        .app-content { padding: 0 !important; }
-        .badge-wrap { justify-content: center !important; }
-        .carousel-dots { display: flex; }
-
-        .features-container { gap: 0 !important; }
-        .feature-item {
-            min-width: 50% !important; /* Show 2 cards at a time */
-            box-sizing: border-box;
+        .journey-line-svg { display: none; }
+        .journey-dots { display: flex; }
+        
+        .journey-track { gap: 0 !important; justify-content: flex-start !important; }
+        .journey-step {
+            min-width: 100% !important; /* One card at a time for focus */
+            padding: 0;
         }
 
-        .feature-number { font-size: 40px !important; top: -12px !important; }
-        .feature-text { font-size: 11px !important; margin-top: 5px !important; }
+        .icon-circle-j {
+            width: 80px !important;
+            height: 80px !important;
+        }
+        .journey-step-title { font-size: 18px !important; }
+        .journey-step-desc { font-size: 14px !important; max-width: 80% !important; }
     }
 </style>
 
-<section style="background-color: #fcfdfe; padding: 60px 0; font-family: 'Inter', sans-serif; overflow: hidden;">
+<section style="padding: 60px 0; background-color: #ffffff; font-family: 'Inter', sans-serif;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
         
-        <div class="app-flex" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 70px;">
-            <div class="app-image-wrap" style="flex: 1; min-width: 280px; text-align: center;">
-                <img src="https://colourmoon.com/images/docto-top-img.png" alt="App" style="max-width: 480px; width: 100%; height: auto; transform: rotate(-2deg); filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));">
-            </div>
-            
-            <div class="app-content" style="flex: 1.2; min-width: 300px; padding-left: 45px;">
-                <h2 style="color: #008b94; font-size: 30px; font-weight: 700; margin-bottom: 15px;">Download Our App Now</h2>
-                <p style="color: #666; line-height: 1.6; font-size: 15px; margin-bottom: 25px;">
-                    Tracking health status made easy. Book health tests and access your smart reports anytime anywhere. Get the app for a better experience.
-                </p>
-                <div class="badge-wrap" style="display: flex; gap: 15px; flex-wrap: wrap;">
-                    <a href="#" style="transition: 0.3s;"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" style="height: 42px;"></a>
-                    <a href="#" style="transition: 0.3s;"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" style="height: 42px;"></a>
-                </div>
-            </div>
+        <div style="text-align: center; margin-bottom: 50px;">
+            <p style="color: #666; font-size: 16px; margin: 0; letter-spacing: 1px;">Your Healthians</p>
+            <h2 style="color: #008b94; font-size: 28px; font-weight: 700; margin: 5px 0;">Health Checkup Journey</h2>
+            <div style="width: 100px; height: 3px; background: #f39c12; margin: 10px auto; border-radius: 2px;"></div>
         </div>
 
-        <div style="width: 100%; height: 1px; background: linear-gradient(to right, transparent, #eee, transparent); margin-bottom: 60px;"></div>
+        <div class="journey-overflow">
+            <svg class="journey-line-svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                <path d="M0,50 Q125,0 250,50 T500,50 T750,50 T1000,50" fill="none" stroke="#008b94" stroke-width="2" stroke-dasharray="8,8" opacity="0.3"/>
+            </svg>
 
-        <h2 style="text-align: center; color: #008b94; font-size: 30px; font-weight: 700; margin-bottom: 50px;">Why Choose Healthians</h2>
-        
-        <div class="features-overflow">
-            <div id="chooseTrackFinal" class="features-container">
+            <div id="journeyTrack" class="journey-track">
                 
-                <div class="feature-item">
-                    <div style="position: relative; margin-bottom: 15px;">
-                        <span class="feature-number" style="color: #f0f7f8; font-size: 55px; font-weight: 900; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 1;">01</span>
-                        <img src="https://cdn-icons-png.flaticon.com/512/3062/3062276.png" style="width: 45px; position: relative; z-index: 2; filter: hue-rotate(140deg);">
+                <div class="journey-step">
+                    <div class="icon-circle-j" style="width: 90px; height: 90px; background: #fdfaf2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2693/2693507.png" style="width: 45px;">
                     </div>
-                    <p class="feature-text" style="font-size: 13px; color: #444; font-weight: 700; line-height: 1.4;">Free & On-time<br>Collection</p>
+                    <h4 class="journey-step-title" style="font-size: 16px; font-weight: 700; color: #333; margin-bottom: 10px;">Book with Ease</h4>
+                    <p class="journey-step-desc" style="font-size: 13px; color: #777; line-height: 1.5;">Choose your test, time slot and book instantly.</p>
                 </div>
 
-                <div class="feature-item">
-                    <div style="position: relative; margin-bottom: 15px;">
-                        <span class="feature-number" style="color: #f0f7f8; font-size: 55px; font-weight: 900; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 1;">02</span>
-                        <img src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png" style="width: 45px; position: relative; z-index: 2; filter: hue-rotate(140deg);">
+                <div class="journey-step">
+                    <div class="icon-circle-j" style="width: 90px; height: 90px; background: #fdfaf2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
+                        <img src="https://cdn-icons-png.flaticon.com/512/609/609803.png" style="width: 45px;">
                     </div>
-                    <p class="feature-text" style="font-size: 13px; color: #444; font-weight: 700; line-height: 1.4;">Free Report<br>Counselling</p>
+                    <h4 class="journey-step-title" style="font-size: 16px; font-weight: 700; color: #333; margin-bottom: 10px;">Hassle-Free Collection</h4>
+                    <p class="journey-step-desc" style="font-size: 13px; color: #777; line-height: 1.5;">Safe & timely sample collection by trained phlebotomist.</p>
                 </div>
 
-                <div class="feature-item">
-                    <div style="position: relative; margin-bottom: 15px;">
-                        <span class="feature-number" style="color: #f0f7f8; font-size: 55px; font-weight: 900; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 1;">03</span>
-                        <img src="https://cdn-icons-png.flaticon.com/512/2618/2618576.png" style="width: 45px; position: relative; z-index: 2; filter: hue-rotate(140deg);">
+                <div class="journey-step">
+                    <div class="icon-circle-j" style="width: 90px; height: 90px; background: #fdfaf2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2830/2830305.png" style="width: 45px;">
                     </div>
-                    <p class="feature-text" style="font-size: 13px; color: #444; font-weight: 700; line-height: 1.4;">Fast & Accurate<br>Reports</p>
+                    <h4 class="journey-step-title" style="font-size: 16px; font-weight: 700; color: #333; margin-bottom: 10px;">Secure Transfer</h4>
+                    <p class="journey-step-desc" style="font-size: 13px; color: #777; line-height: 1.5;">Temperature-controlled transportation to lab.</p>
                 </div>
 
-                <div class="feature-item">
-                    <div style="position: relative; margin-bottom: 15px;">
-                        <span class="feature-number" style="color: #f0f7f8; font-size: 55px; font-weight: 900; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 1;">04</span>
-                        <img src="https://cdn-icons-png.flaticon.com/512/8244/8244464.png" style="width: 45px; position: relative; z-index: 2; filter: hue-rotate(140deg);">
+                <div class="journey-step">
+                    <div class="icon-circle-j" style="width: 90px; height: 90px; background: #fdfaf2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2907/2907971.png" style="width: 45px;">
                     </div>
-                    <p class="feature-text" style="font-size: 13px; color: #444; font-weight: 700; line-height: 1.4;">250+ Cities<br>In India</p>
-                </div>
-
-                <div class="feature-item">
-                    <div style="position: relative; margin-bottom: 15px;">
-                        <span class="feature-number" style="color: #f0f7f8; font-size: 55px; font-weight: 900; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 1;">05</span>
-                        <img src="https://cdn-icons-png.flaticon.com/512/2785/2785641.png" style="width: 45px; position: relative; z-index: 2; filter: hue-rotate(140deg);">
-                    </div>
-                    <p class="feature-text" style="font-size: 13px; color: #444; font-weight: 700; line-height: 1.4;">Largest Fleet<br>Phlebotomists</p>
-                </div>
-
-                <div class="feature-item">
-                    <div style="position: relative; margin-bottom: 15px;">
-                        <span class="feature-number" style="color: #f0f7f8; font-size: 55px; font-weight: 900; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); z-index: 1;">06</span>
-                        <img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png" style="width: 45px; position: relative; z-index: 2; filter: hue-rotate(140deg);">
-                    </div>
-                    <p class="feature-text" style="font-size: 13px; color: #444; font-weight: 700; line-height: 1.4;">85 Lakh+<br>Customers</p>
+                    <h4 class="journey-step-title" style="font-size: 16px; font-weight: 700; color: #333; margin-bottom: 10px;">Quick Report Access</h4>
+                    <p class="journey-step-desc" style="font-size: 13px; color: #777; line-height: 1.5;">Get reports within 6 hours via WhatsApp & Email.</p>
                 </div>
 
             </div>
         </div>
 
-        <div class="carousel-dots" id="dotsContainer">
-            <div class="dot active"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
+        <div class="journey-dots" id="jDots">
+            <div class="j-dot active"></div>
+            <div class="j-dot"></div>
+            <div class="j-dot"></div>
+            <div class="j-dot"></div>
         </div>
     </div>
 </section>
 
 <script>
     (function() {
-        const track = document.getElementById('chooseTrackFinal');
-        const dots = document.querySelectorAll('.dot');
-        let index = 0;
-        const slides = 3; // Since we show 2 cards at a time (6/2 = 3 slides)
+        const jTrack = document.getElementById('journeyTrack');
+        const jDots = document.querySelectorAll('.j-dot');
+        let jIndex = 0;
+        const jTotal = 4;
 
-        function updateCarousel() {
+        function slideJourney() {
             if (window.innerWidth <= 768) {
-                index++;
-                if (index >= slides) index = 0;
+                jIndex++;
+                if (jIndex >= jTotal) jIndex = 0;
                 
-                track.style.transform = `translateX(-${index * 100}%)`;
+                jTrack.style.transform = `translateX(-${jIndex * 100}%)`;
                 
-                // Update dots
-                dots.forEach(d => d.classList.remove('active'));
-                dots[index].classList.add('active');
+                jDots.forEach(d => d.classList.remove('active'));
+                jDots[jIndex].classList.add('active');
             } else {
-                track.style.transform = `translateX(0)`;
+                jTrack.style.transform = `translateX(0)`;
             }
         }
 
-        let slideInterval = setInterval(updateCarousel, 3000);
+        setInterval(slideJourney, 3500); // Slide every 3.5s
 
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768) {
-                track.style.transform = `translateX(0)`;
-                index = 0;
+                jTrack.style.transform = `translateX(0)`;
+                jIndex = 0;
             }
         });
     })();
 </script>
-    <!-- DOWNLAOD MOBILE APPLICAITON SECTION END{aak}-->
+    <!-- Health Checkup Journey Section End{aak}-->
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
 </html>
