@@ -2193,146 +2193,679 @@
 
 
     <!-- CERTIFICATION SECTION START{aak}-->
+    <style>
+        .global-wrapper {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfdfe;
+            padding: 60px 0;
+        }
+
+        .centered-box {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .section-head {
+            text-align: center;
+            color: #008b94;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        /* Infinite Track Logic */
+        .infinite-flex {
+            display: flex;
+            width: max-content;
+            /* Content ke hisaab se width lega */
+            animation: slowMove 40s linear infinite;
+        }
+
+        /* Blogs Moving in Reverse - Start from 0 to avoid empty space */
+        .reverse-track {
+            animation: slowMoveReverse 45s linear infinite;
+        }
+
+        @keyframes slowMove {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-320px * 6));
+            }
+        }
+
+        @keyframes slowMoveReverse {
+            0% {
+                transform: translateX(calc(-320px * 6));
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Pause on Hover */
+        .infinite-flex:hover {
+            animation-play-state: paused;
+        }
+
+        /* Card Styling */
+        .reward-card,
+        .blog-card {
+            width: 300px;
+            background: #fff;
+            margin-right: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid #f0f0f0;
+            flex-shrink: 0;
+        }
+
+        .reward-card {
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .reward-img {
+            width: 80px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .reward-text {
+            font-size: 13px;
+            color: #444;
+            font-weight: 600;
+        }
+
+        .blog-card {
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .blog-thumb {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .blog-body {
+            padding: 15px;
+        }
+
+        .blog-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #333;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* Callback Strip */
+        .callback-strip {
+            background: #008b94;
+            padding: 15px 30px;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 60px;
+            color: white;
+        }
+
+        .call-input {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px;
+            width: 280px;
+            outline: none;
+        }
+
+        .call-btn {
+            background: #f3704b;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+
+            .reward-card,
+            .blog-card {
+                width: 220px;
+            }
+
+            @keyframes slowMove {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(calc(-240px * 6));
+                }
+            }
+
+            @keyframes slowMoveReverse {
+                0% {
+                    transform: translateX(calc(-240px * 6));
+                }
+
+                100% {
+                    transform: translateX(0);
+                }
+            }
+        }
+    </style>
+
+    <div class="global-wrapper">
+
+        <div class="centered-box">
+            <h2 class="section-head">Rewards & Recognition</h2>
+            <div class="infinite-flex">
+                <div class="reward-card"><img
+                        src="https://helma.healthians.com/stationery/mailer-assets/66c899fbb1e8f.webp"
+                        class="reward-img">
+                    <p class="reward-text">Economic Times Edge Awards 2019</p>
+                </div>
+                <div class="reward-card"><img
+                        src="https://helma.healthians.com/stationery/mailer-assets/66c89a2f4445a.webp"
+                        class="reward-img">
+                    <p class="reward-text">Healthcare Leadership Global 2022</p>
+                </div>
+                <div class="reward-card"><img
+                        src="https://helma.healthians.com/stationery/mailer-assets/66c899cec5cb2.webp"
+                        class="reward-img">
+                    <p class="reward-text">ET Inspiring Leaders North 2022</p>
+                </div>
+                <div class="reward-card"><img
+                        src="https://helma.healthians.com/stationery/mailer-assets/66c899fbb1e8f.webp"
+                        class="reward-img">
+                    <p class="reward-text">Economic Times Edge Awards 2019</p>
+                </div>
+                <div class="reward-card"><img
+                        src="https://helma.healthians.com/stationery/mailer-assets/66c89a2f4445a.webp"
+                        class="reward-img">
+                    <p class="reward-text">Healthcare Leadership Global 2022</p>
+                </div>
+                <div class="reward-card"><img
+                        src="https://helma.healthians.com/stationery/mailer-assets/66c899cec5cb2.webp"
+                        class="reward-img">
+                    <p class="reward-text">ET Inspiring Leaders North 2022</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="height: 60px;"></div>
+
+        <div class="centered-box">
+            <h2 class="section-head">Health Blogs & Articles</h2>
+            <div class="infinite-flex reverse-track">
+                <div class="blog-card">
+                    <img src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/Ghee-benefits.webp"
+                        class="blog-thumb">
+                    <div class="blog-body">
+                        <p class="blog-title">Surprising Health Benefits of Betel Leaves</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/betel-leaf-benefits.webp"
+                        class="blog-thumb">
+                    <div class="blog-body">
+                        <p class="blog-title">Is Ghee Good for Your Heart?</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/10-ways-to-Quit-Sugar-from-Your-Diet.webp"
+                        class="blog-thumb">
+                    <div class="blog-body">
+                        <p class="blog-title">10 Easy Ways to Quit Sugar from Your Diet</p>
+                    </div>
+                </div>
+                <div class="blog-card"><img
+                        src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/Ghee-benefits.webp"
+                        class="blog-thumb">
+                    <div class="blog-body">
+                        <p class="blog-title">Benefits of Betel Leaves</p>
+                    </div>
+                </div>
+                <div class="blog-card"><img
+                        src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/betel-leaf-benefits.webp"
+                        class="blog-thumb">
+                    <div class="blog-body">
+                        <p class="blog-title">Is Ghee Good for Your Heart?</p>
+                    </div>
+                </div>
+                <div class="blog-card"><img
+                        src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/10-ways-to-Quit-Sugar-from-Your-Diet.webp"
+                        class="blog-thumb">
+                    <div class="blog-body">
+                        <p class="blog-title">10 Easy Ways to Quit Sugar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CERTIFICATION SECTION END{aak}-->
+
+    <!-- SUBSCRIBE NOW BAR SECITON START{aak}-->
+    <style>
+        .subscribe-outer {
+            background-color: #00a4ad;
+            /* Exact Healthians Teal */
+            padding: 50px 20px;
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+        }
+
+        .subscribe-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .subscribe-title {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Underline styling */
+        .title-line {
+            width: 120px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.3);
+            margin: 0 auto 35px;
+            position: relative;
+        }
+
+        .title-line::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 100%;
+            background: #f3704b;
+            /* Orange highlight */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Search/Input Bar Styling */
+        .subscribe-form {
+            display: flex;
+            background: #ffffff;
+            border-radius: 50px;
+            overflow: hidden;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 5px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .sub-input {
+            flex: 1;
+            border: none;
+            padding: 15px 25px;
+            font-size: 15px;
+            outline: none;
+            color: #666;
+        }
+
+        .sub-btn {
+            background-color: #f3704b;
+            /* Exact Orange */
+            color: #ffffff;
+            border: none;
+            padding: 0 45px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .sub-btn:hover {
+            background-color: #e65a32;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .subscribe-title {
+                font-size: 22px;
+            }
+
+            .subscribe-form {
+                border-radius: 15px;
+                flex-direction: column;
+                background: transparent;
+                box-shadow: none;
+                gap: 10px;
+            }
+
+            .sub-input {
+                border-radius: 50px;
+                text-align: center;
+            }
+
+            .sub-btn {
+                padding: 15px 0;
+                border-radius: 50px;
+            }
+        }
+    </style>
+
+    <section class="subscribe-outer">
+        <div class="subscribe-container">
+            <h2 class="subscribe-title">Subscribe For Healthy Updates</h2>
+            <div class="title-line"></div>
+
+            <form class="subscribe-form" onsubmit="event.preventDefault();">
+                <input type="email" class="sub-input" placeholder="Enter your email ID" required>
+                <button type="submit" class="sub-btn">Submit</button>
+            </form>
+        </div>
+    </section>
+    <!-- SUBSCRIBE NOW BAR SECITON START END{aak}-->
+
+    <!-- DETAILED DESCRIPTION ABOUT OUR SERVICE SECTION START {aak}-->
      <style>
-    .global-wrapper {
-        font-family: 'Inter', sans-serif;
-        background-color: #fcfdfe;
-        padding: 60px 0;
+    .dense-footer-section {
+        background-color: #ffffff;
+        padding: 40px 0;
+        font-family: Arial, sans-serif; /* Standard clean font */
+        border-top: 1px solid #eee;
     }
 
-    .centered-box {
-        max-width: 1200px;
+    .dense-container {
+        max-width: 1300px;
         margin: 0 auto;
-        overflow: hidden;
-        padding: 0 20px;
-        position: relative;
-    }
-
-    .section-head {
+        padding: 0 15px;
         text-align: center;
+    }
+
+    .dense-group {
+        margin-bottom: 25px; /* Kam gap section ke beech mein */
+    }
+
+    .dense-title {
+        color: #333;
+        font-size: 14px;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .dense-links {
+        color: #888;
+        font-size: 11.5px; /* Chota font bhara dikhane ke liye */
+        line-height: 1.8;
+        letter-spacing: 0.2px;
+    }
+
+    .dense-links a {
+        color: #888;
+        text-decoration: none;
+        transition: 0.2s;
+        display: inline;
+    }
+
+    .dense-links a:hover {
         color: #008b94;
-        font-size: 28px;
-        font-weight: 700;
-        margin-bottom: 40px;
     }
 
-    /* Infinite Track Logic */
-    .infinite-flex {
-        display: flex;
-        width: max-content; /* Content ke hisaab se width lega */
-        animation: slowMove 40s linear infinite;
+    /* Separators exactly like reference */
+    .s-pipe::after { content: " | "; color: #ccc; margin: 0 4px; }
+    .s-slash::after { content: " / "; color: #ddd; margin: 0 4px; }
+    .s-comma::after { content: ", "; color: #ccc; }
+    .s-space::after { content: "  "; margin: 0 6px; }
+
+    .dense-hr {
+        border: 0;
+        border-top: 1px solid #f2f2f2;
+        margin: 20px 0;
     }
-
-    /* Blogs Moving in Reverse - Start from 0 to avoid empty space */
-    .reverse-track {
-        animation: slowMoveReverse 45s linear infinite;
-    }
-
-    @keyframes slowMove {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(calc(-320px * 6)); }
-    }
-
-    @keyframes slowMoveReverse {
-        0% { transform: translateX(calc(-320px * 6)); }
-        100% { transform: translateX(0); }
-    }
-
-    /* Pause on Hover */
-    .infinite-flex:hover {
-        animation-play-state: paused;
-    }
-
-    /* Card Styling */
-    .reward-card, .blog-card {
-        width: 300px;
-        background: #fff;
-        margin-right: 20px;
-        border-radius: 15px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-        border: 1px solid #f0f0f0;
-        flex-shrink: 0;
-    }
-
-    .reward-card { padding: 25px; display: flex; align-items: center; gap: 15px; }
-    .reward-img { width: 80px; height: auto; object-fit: contain; }
-    .reward-text { font-size: 13px; color: #444; font-weight: 600; }
-
-    .blog-card { overflow: hidden; transition: 0.3s; }
-    .blog-thumb { width: 100%; height: 180px; object-fit: cover; }
-    .blog-body { padding: 15px; }
-    .blog-title { font-size: 14px; font-weight: 700; color: #333; margin: 0; line-height: 1.4; }
-
-    /* Callback Strip */
-    .callback-strip {
-        background: #008b94;
-        padding: 15px 30px;
-        border-radius: 12px 12px 0 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        margin-top: 60px;
-        color: white;
-    }
-
-    .call-input { padding: 12px 15px; border: none; border-radius: 8px; width: 280px; outline: none; }
-    .call-btn { background: #f3704b; color: white; padding: 12px 25px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; }
 
     @media (max-width: 768px) {
-        .reward-card, .blog-card { width: 220px; }
-        @keyframes slowMove {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-240px * 6)); }
-        }
-        @keyframes slowMoveReverse {
-            0% { transform: translateX(calc(-240px * 6)); }
-            100% { transform: translateX(0); }
-        }
+        .dense-links { font-size: 10px; line-height: 2; text-align: justify; }
     }
 </style>
 
-<div class="global-wrapper">
+<section class="dense-footer-section">
+    <div class="dense-container">
+
+        <div class="dense-group">
+            <span class="dense-title">Full Body Health Checkup</span>
+            <div class="dense-links">
+                <a href="#" class="s-pipe">Full Body Checkup In Agra</a><a href="#" class="s-pipe">Full Body Checkup In Ahmadnagar</a><a href="#" class="s-pipe">Full Body Checkup In Ahmedabad</a><a href="#" class="s-pipe">Full Body Checkup In Aligarh</a><a href="#" class="s-pipe">Full Body Checkup In Allahabad</a><a href="#" class="s-pipe">Full Body Checkup In Almora</a><a href="#" class="s-pipe">Full Body Checkup In Alwar</a><a href="#" class="s-pipe">Full Body Checkup In Ambala</a><a href="#" class="s-pipe">Full Body Checkup In Amravati</a><a href="#" class="s-pipe">Full Body Checkup In Amritsar</a><a href="#" class="s-pipe">Full Body Checkup In Aurangabad</a><a href="#" class="s-pipe">Full Body Checkup In Ayodhya</a><a href="#" class="s-pipe">Full Body Checkup In Azamgarh</a><a href="#" class="s-pipe">Full Body Checkup In Bahadurgarh</a><a href="#" class="s-pipe">Full Body Checkup In Bareilly</a><a href="#" class="s-pipe">Full Body Checkup In Belgaum</a><a href="#" class="s-pipe">Full Body Checkup In Bengaluru</a><a href="#" class="s-pipe">Full Body Checkup In Bharatpur</a><a href="#" class="s-pipe">Full Body Checkup In Bhatinda</a><a href="#" class="s-pipe">Full Body Checkup In Bhilai</a><a href="#" class="s-pipe">Full Body Checkup In Bhilwara</a><a href="#" class="s-pipe">Full Body Checkup In Bhiwani</a><a href="#" class="s-pipe">Full Body Checkup In Bhopal</a><a href="#" class="s-pipe">Full Body Checkup In Bhubaneswar</a><a href="#" class="s-pipe">Full Body Checkup In Bijnor</a><a href="#" class="s-pipe">Full Body Checkup In Bikaner</a><a href="#" class="s-pipe">Full Body Checkup In Bilaspur</a><a href="#" class="s-pipe">Full Body Checkup In Bokaro</a><a href="#" class="s-pipe">Full Body Checkup In Bulandshahar</a><a href="#" class="s-pipe">Full Body Checkup In Chandigarh</a><a href="#" class="s-pipe">Full Body Checkup In Chennai</a><a href="#" class="s-pipe">Full Body Checkup In Darbhanga</a><a href="#" class="s-pipe">Full Body Checkup In Dehradun</a><a href="#" class="s-pipe">Full Body Checkup In Delhi</a><a href="#" class="s-pipe">Full Body Checkup In Dhanbad</a><a href="#" class="s-pipe">Full Body Checkup In Faridabad</a><a href="#" class="s-pipe">Full Body Checkup In Firozabad</a><a href="#" class="s-pipe">Full Body Checkup In Gandhinagar</a><a href="#" class="s-pipe">Full Body Checkup In Ganganagar</a><a href="#" class="s-pipe">Full Body Checkup In Ghaziabad</a><a href="#" class="s-pipe">Full Body Checkup In Gonda</a><a href="#" class="s-pipe">Full Body Checkup In Gorakhpur</a><a href="#" class="s-pipe">Full Body Checkup In Greater Noida</a><a href="#" class="s-pipe">Full Body Checkup In Gurgaon</a><a href="#" class="s-pipe">Full Body Checkup In Guwahati</a><a href="#" class="s-pipe">Full Body Checkup In Gwalior</a><a href="#" class="s-pipe">Full Body Checkup In Hardoi</a><a href="#" class="s-pipe">Full Body Checkup In Haridwar</a><a href="#" class="s-pipe">Full Body Checkup In Hathras</a><a href="#" class="s-pipe">Full Body Checkup In Hazaribagh</a><a href="#" class="s-pipe">Full Body Checkup In Hisar</a><a href="#" class="s-pipe">Full Body Checkup In Hoshiarpur</a><a href="#" class="s-pipe">Full Body Checkup In Hyderabad</a><a href="#" class="s-pipe">Full Body Checkup In Indore</a><a href="#" class="s-pipe">Full Body Checkup In Jabalpur</a><a href="#" class="s-pipe">Full Body Checkup In Jaipur</a><a href="#" class="s-pipe">Full Body Checkup In Jalandhar</a><a href="#" class="s-pipe">Full Body Checkup In Jamnagar</a><a href="#" class="s-pipe">Full Body Checkup In Jamshedpur</a><a href="#" class="s-pipe">Full Body Checkup In Jhansi</a><a href="#" class="s-pipe">Full Body Checkup In Jodhpur</a><a href="#" class="s-pipe">Full Body Checkup In Kanpur</a><a href="#" class="s-pipe">Full Body Checkup In Karimnagar</a><a href="#" class="s-pipe">Full Body Checkup In Karnal</a><a href="#" class="s-pipe">Full Body Checkup In Kolkata</a><a href="#" class="s-pipe">Full Body Checkup In Kota</a><a href="#" class="s-pipe">Full Body Checkup In Latur</a><a href="#" class="s-pipe">Full Body Checkup In Lucknow</a><a href="#" class="s-pipe">Full Body Checkup In Ludhiana</a><a href="#" class="s-pipe">Full Body Checkup In Mathura</a><a href="#" class="s-pipe">Full Body Checkup In Meerut</a><a href="#" class="s-pipe">Full Body Checkup In Mehsana</a><a href="#" class="s-pipe">Full Body Checkup In Modinagar</a><a href="#" class="s-pipe">Full Body Checkup In Moga</a><a href="#" class="s-pipe">Full Body Checkup In Mohali</a><a href="#" class="s-pipe">Full Body Checkup In Moradabad</a><a href="#" class="s-pipe">Full Body Checkup In Mumbai</a><a href="#" class="s-pipe">Full Body Checkup In Muzaffarnagar</a><a href="#" class="s-pipe">Full Body Checkup In Mysuru</a><a href="#" class="s-pipe">Full Body Checkup In Nagpur</a><a href="#" class="s-pipe">Full Body Checkup In Nashik</a><a href="#" class="s-pipe">Full Body Checkup In Noida</a><a href="#" class="s-pipe">Full Body Checkup In Panchkula</a><a href="#" class="s-pipe">Full Body Checkup In Panipat</a><a href="#" class="s-pipe">Full Body Checkup In Patiala</a><a href="#" class="s-pipe">Full Body Checkup In Patna</a><a href="#" class="s-pipe">Full Body Checkup In Pune</a><a href="#" class="s-pipe">Full Body Checkup In Raebareli</a><a href="#" class="s-pipe">Full Body Checkup In Raipur</a><a href="#" class="s-pipe">Full Body Checkup In Rajkot</a><a href="#" class="s-pipe">Full Body Checkup In Ranchi</a><a href="#" class="s-pipe">Full Body Checkup In Rohtak</a><a href="#" class="s-pipe">Full Body Checkup In Roorkee</a><a href="#" class="s-pipe">Full Body Checkup In Saharanpur</a><a href="#" class="s-pipe">Full Body Checkup In Samastipur</a><a href="#" class="s-pipe">Full Body Checkup In Sohna</a><a href="#" class="s-pipe">Full Body Checkup In Sonipat</a><a href="#" class="s-pipe">Full Body Checkup In Surat</a><a href="#" class="s-pipe">Full Body Checkup In Tarn Taran</a><a href="#" class="s-pipe">Full Body Checkup In Udaipur</a><a href="#" class="s-pipe">Full Body Checkup In Ujjain</a><a href="#" class="s-pipe">Full Body Checkup In Vadodara</a><a href="#" class="s-pipe">Full Body Checkup In Varanasi</a><a href="#" class="s-pipe">Full Body Checkup In Vijaywada</a><a href="#" class="s-pipe">Full Body Checkup In Visakhapatnam</a><a href="#" class="s-pipe">Full Body Checkup In Warangal</a><a href="#">Full Body Checkup In Yamuna Nagar</a>
+            </div>
+        </div>
+
+        <hr class="dense-hr">
+
+        <div class="dense-group">
+            <span class="dense-title">Most Popular Health Tests</span>
+            <div class="dense-links">
+                <a href="#" class="s-space">Allergy Testing</a><a href="#" class="s-space">Amylase Test</a><a href="#" class="s-space">Anemia Test</a><a href="#" class="s-space">Anti Hcv Test</a><a href="#" class="s-space">Arthritis Test</a><a href="#" class="s-space">Ca125 Test</a><a href="#" class="s-space">CBC Test</a><a href="#" class="s-space">Chikungunya Test</a><a href="#" class="s-space">Cholesterol Test</a><a href="#" class="s-space">Dengue Test</a><a href="#" class="s-space">Diabetes Test</a><a href="#" class="s-space">Fever Test</a><a href="#" class="s-space">HbA1c Test</a><a href="#" class="s-space">HbsAg Test</a><a href="#" class="s-space">Hepatitis B Test</a><a href="#" class="s-space">HIV Test</a><a href="#" class="s-space">Hormone Test</a><a href="#" class="s-space">Immunity Test</a><a href="#" class="s-space">Iron Studies Test</a><a href="#" class="s-space">Kidney Function Test</a><a href="#" class="s-space">Lipid Profile Test</a><a href="#" class="s-space">Liver Function Test</a><a href="#" class="s-space">Malaria Test</a><a href="#" class="s-space">Pancreatitis Test</a><a href="#" class="s-space">PCOS Test</a><a href="#" class="s-space">Early Pregnancy Checkup</a><a href="#" class="s-space">PSA Test</a><a href="#" class="s-space">STD Test</a><a href="#" class="s-space">Stool Test</a><a href="#" class="s-space">Sugar Test</a><a href="#" class="s-space">Thyroid Test</a><a href="#" class="s-space">Typhoid Test</a><a href="#" class="s-space">Uric Acid Test</a><a href="#" class="s-space">Urine Test</a><a href="#" class="s-space">Viral Marker Test</a><a href="#" class="s-space">Vitamin B12 Test</a><a href="#" class="s-space">Vitamin D Test</a><a href="#">Vitamin Test</a>
+            </div>
+        </div>
+
+        <hr class="dense-hr">
+
+        <div class="dense-group">
+            <span class="dense-title">Browse Test By Risks</span>
+            <div class="dense-links">
+                <a href="#" class="s-slash">Fever Test</a><a href="#" class="s-slash">STD Test</a><a href="#" class="s-slash">Vitamins Test</a><a href="#" class="s-slash">Diabetes Test</a><a href="#" class="s-slash">Heart Test</a><a href="#" class="s-slash">Thyroid Test</a><a href="#" class="s-slash">Kidney Test</a><a href="#" class="s-slash">Allergy Test</a><a href="#" class="s-slash">Liver Test</a><a href="#" class="s-slash">Joints Test</a><a href="#" class="s-slash">Bone Test</a><a href="#" class="s-slash">Fatigue Test</a><a href="#" class="s-slash">Acidity Test</a><a href="#" class="s-slash">Cancer Test</a><a href="#" class="s-slash">Anaemia Test</a><a href="#" class="s-slash">Hypertension Test</a><a href="#" class="s-slash">Obesity Test</a><a href="#" class="s-slash">Hormones Test</a><a href="#" class="s-slash">Arthritis Test</a><a href="#" class="s-slash">Hepatitis Test</a><a href="#" class="s-slash">Immunity Test</a><a href="#" class="s-slash">Jaundice Test</a><a href="#" class="s-slash">Digestion Test</a><a href="#" class="s-slash">Infections Test</a><a href="#" class="s-slash">Pregnancy Test</a><a href="#">Infertility Test</a>
+            </div>
+        </div>
+
+        <hr class="dense-hr">
+
+        <div class="dense-group">
+            <span class="dense-title">Browse Test By Habits</span>
+            <div class="dense-links">
+                <a href="#" class="s-slash">Alcoholism</a><a href="#" class="s-slash">Anger</a><a href="#" class="s-slash">Eating Poorly</a><a href="#" class="s-slash">Heartburn</a><a href="#" class="s-slash">Junk Food</a><a href="#" class="s-slash">Low Iron Diet</a><a href="#" class="s-slash">Medicine Overuse</a><a href="#" class="s-slash">Poor Nutrition</a><a href="#" class="s-slash">Sleeplessness</a><a href="#" class="s-slash">Smoking</a><a href="#" class="s-slash">Stress</a><a href="#">Zero Exercise</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+    <!-- DETAILED DESCRIPTION ABOUT OUR SERVICE SECTION END {aak}-->
+
+    <!-- FOOTER SECTION START{aak}-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+    .main-footer {
+        background-color: #ffffff;
+        padding: 60px 0 0;
+        font-family: 'Inter', sans-serif;
+        border-top: 1px solid #eee;
+        color: #666;
+    }
+
+    .footer-container {
+        max-width: 1250px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1.8fr 1fr;
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    /* LEFT: BRANDING & BADGE */
+    .footer-brand {
+        text-align: center;
+        border-right: 1px dashed #ddd;
+        padding-right: 30px;
+    }
+    .footer-logo { width: 170px; margin-bottom: 20px; }
+    .award-badge { width: 200px; display: block; margin: 0 auto; }
+    .award-text { font-size: 11px; color: #008b94; font-weight: 700; margin-top: 8px; text-transform: uppercase; }
+
+    /* MIDDLE: IMPORTANT LINKS */
+    .footer-links-wrapper { padding: 0 20px; }
+    .footer-column-title {
+        color: #333;
+        font-size: 16px;
+        font-weight: 800;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+    }
+    .links-grid-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    .footer-link {
+        font-size: 13px;
+        color: #777;
+        text-decoration: none;
+        margin-bottom: 12px;
+        display: block;
+        transition: 0.2s;
+    }
+    .footer-link:hover { color: #008b94; transform: translateX(5px); }
+
+    /* RIGHT: SOCIAL & APPS */
+    .footer-right { padding-left: 20px; }
     
-    <div class="centered-box">
-        <h2 class="section-head">Rewards & Recognition</h2>
-        <div class="infinite-flex">
-            <div class="reward-card"><img src="https://helma.healthians.com/stationery/mailer-assets/66c899fbb1e8f.webp" class="reward-img"><p class="reward-text">Economic Times Edge Awards 2019</p></div>
-            <div class="reward-card"><img src="https://helma.healthians.com/stationery/mailer-assets/66c89a2f4445a.webp" class="reward-img"><p class="reward-text">Healthcare Leadership Global 2022</p></div>
-            <div class="reward-card"><img src="https://helma.healthians.com/stationery/mailer-assets/66c899cec5cb2.webp" class="reward-img"><p class="reward-text">ET Inspiring Leaders North 2022</p></div>
-            <div class="reward-card"><img src="https://helma.healthians.com/stationery/mailer-assets/66c899fbb1e8f.webp" class="reward-img"><p class="reward-text">Economic Times Edge Awards 2019</p></div>
-            <div class="reward-card"><img src="https://helma.healthians.com/stationery/mailer-assets/66c89a2f4445a.webp" class="reward-img"><p class="reward-text">Healthcare Leadership Global 2022</p></div>
-            <div class="reward-card"><img src="https://helma.healthians.com/stationery/mailer-assets/66c899cec5cb2.webp" class="reward-img"><p class="reward-text">ET Inspiring Leaders North 2022</p></div>
+    /* Font Awesome Icons Styling */
+    .social-row { display: flex; gap: 15px; margin-bottom: 35px; }
+    .social-btn {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background: #f4f4f4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #555;
+        font-size: 18px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    /* Official Brand Colors on Hover */
+    .social-btn.fb:hover { background: #3b5998; color: white; }
+    .social-btn.tw:hover { background: #000000; color: white; }
+    .social-btn.ln:hover { background: #0077b5; color: white; }
+    .social-btn.yt:hover { background: #ff0000; color: white; }
+    .social-btn.ig:hover { background: #e4405f; color: white; }
+
+    .app-title { font-size: 15px; font-weight: 800; color: #333; margin-bottom: 15px; text-transform: uppercase; }
+    .app-flex { display: flex; gap: 10px; }
+    .app-img { height: 38px; cursor: pointer; transition: 0.2s; }
+    .app-img:hover { opacity: 0.8; }
+
+    /* BOTTOM BAR */
+    .copyright-strip {
+        border-top: 1px solid #f0f0f0;
+        margin-top: 50px;
+        padding: 20px 0;
+        background: #fafafa;
+    }
+    .copy-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        font-size: 12px;
+        color: #999;
+        flex-wrap: wrap;
+    }
+    .copy-content a { color: #999; text-decoration: none; }
+    .copy-content a:hover { color: #666; }
+
+    @media (max-width: 992px) {
+        .footer-container { grid-template-columns: 1fr; text-align: center; }
+        .footer-brand { border-right: none; padding-right: 0; margin-bottom: 30px; }
+        .links-grid-inner { text-align: left; }
+        .social-row, .app-flex { justify-content: center; }
+        .footer-right { padding-left: 0; margin-top: 30px; }
+    }
+</style>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        
+        <div class="footer-brand">
+            <img src="https://cdn3.healthians.com/img/Healthians-Group.svg" alt="Healthians" class="footer-logo">
+            <img src="https://cdn3.healthians.com/img/unit-no1.svg" class="award-badge">
+            <p class="award-text">in Delhi NCR</p>
+        </div>
+
+        <div class="footer-links-wrapper">
+            <h3 class="footer-column-title">Important Links</h3>
+            <div class="links-grid-inner">
+                <div class="col-left">
+                    <a href="#" class="footer-link">About Us</a>
+                    <a href="#" class="footer-link">Media</a>
+                    <a href="#" class="footer-link">Career</a>
+                    <a href="#" class="footer-link">Editorial Policy</a>
+                    <a href="#" class="footer-link">Money Back Policy</a>
+                    <a href="#" class="footer-link">Query/Complaints</a>
+                    <a href="#" class="footer-link">Our Corporate Clients</a>
+                    <a href="#" class="footer-link">Rating & Reviews</a>
+                </div>
+                <div class="col-right">
+                    <a href="#" class="footer-link">Our Labs</a>
+                    <a href="#" class="footer-link">Contact Us</a>
+                    <a href="#" class="footer-link">Blog</a>
+                    <a href="#" class="footer-link">Health Q&A</a>
+                    <a href="#" class="footer-link">Investors</a>
+                    <a href="#" class="footer-link">Scan Lab</a>
+                    <a href="#" class="footer-link">FAQ</a>
+                    <a href="#" class="footer-link">Become Business Partner</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-right">
+            <h3 class="footer-column-title">Follow Us</h3>
+            <div class="social-row">
+                <a href="#" class="social-btn fb"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="social-btn tw"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="social-btn ln"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="social-btn yt"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="social-btn ig"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+
+            <h3 class="app-title">Get the Healthians App</h3>
+            <div class="app-flex">
+                <img src="https://cdn2.healthians.com/img/google_play.png" class="app-img" alt="Play Store">
+                <img src="https://cdn2.healthians.com/img/appstore.png" class="app-img" alt="App Store">
+            </div>
         </div>
     </div>
 
-    <div style="height: 60px;"></div>
-
-    <div class="centered-box">
-        <h2 class="section-head">Health Blogs & Articles</h2>
-        <div class="infinite-flex reverse-track">
-            <div class="blog-card">
-                <img src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/Ghee-benefits.webp" class="blog-thumb">
-                <div class="blog-body"><p class="blog-title">Surprising Health Benefits of Betel Leaves</p></div>
-            </div>
-            <div class="blog-card">
-                <img src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/betel-leaf-benefits.webp" class="blog-thumb">
-                <div class="blog-body"><p class="blog-title">Is Ghee Good for Your Heart?</p></div>
-            </div>
-            <div class="blog-card">
-                <img src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/10-ways-to-Quit-Sugar-from-Your-Diet.webp" class="blog-thumb">
-                <div class="blog-body"><p class="blog-title">10 Easy Ways to Quit Sugar from Your Diet</p></div>
-            </div>
-            <div class="blog-card"><img src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/Ghee-benefits.webp" class="blog-thumb"><div class="blog-body"><p class="blog-title">Benefits of Betel Leaves</p></div></div>
-            <div class="blog-card"><img src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/betel-leaf-benefits.webp" class="blog-thumb"><div class="blog-body"><p class="blog-title">Is Ghee Good for Your Heart?</p></div></div>
-            <div class="blog-card"><img src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/10-ways-to-Quit-Sugar-from-Your-Diet.webp" class="blog-thumb"><div class="blog-body"><p class="blog-title">10 Easy Ways to Quit Sugar</p></div></div>
+    <div class="copyright-strip">
+        <div class="copy-content">
+            <span>2026 © Healthians.com</span>
+            <span>|</span>
+            <a href="#">Terms & Conditions</a>
+            <span>|</span>
+            <a href="#">Privacy Policy</a>
+            <span>|</span>
+            <a href="#">Statutory Compliance</a>
+            <span>|</span>
+            <a href="#">Programs & Policies</a>
         </div>
     </div>
-</div>
-    <!-- CERTIFICATION SECTION END{aak}-->
-
-
-
+</footer>
+    <!-- FOOTER SECTION END {aak}-->
 
 
 
