@@ -159,6 +159,76 @@
         }
 /* HEALTH SCAN STYLEING : START */
 
+/* WHY CHOOSE US STYLEING START */
+      /* Desktop & General Styles */
+        .features-overflow {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .features-container {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .feature-item {
+            flex: 1;
+            min-width: 160px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Indicators */
+        .carousel-dots {
+            display: none;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: #ddd;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .dot.active {
+            background: #008b94;
+            width: 20px;
+            border-radius: 10px;
+        }
+
+        /* Mobile Responsive Logic */
+        @media (max-width: 768px) {
+            .carousel-dots {
+                display: flex;
+            }
+
+            .features-container {
+                gap: 0 !important;
+            }
+
+            .feature-item {
+                min-width: 50% !important;
+                box-sizing: border-box;
+            }
+
+            .feature-number {
+                font-size: 40px !important;
+                top: -12px !important;
+            }
+
+            .feature-text {
+                font-size: 11px !important;
+                margin-top: 5px !important;
+            }
+        }
+/* WHY CHOOSE US STYLEING START */
+
 /* HEALTH CHECKUP STYLEING : START */
  
         .journey-overflow {
