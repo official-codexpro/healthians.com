@@ -197,6 +197,12 @@
         }
 
         .dot.active {
+                            <div
+                                style="width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 16px solid white; margin-left: 4px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             background: #008b94;
             width: 20px;
             border-radius: 10px;
@@ -389,7 +395,7 @@
 
         /* Part 2: Lab Excellence (Bottom Teal) */
         .lab-teal-section {
-            background-color: #00a4ad;
+            background: radial-gradient(circle at 0% 0%, #2a9d8f 0%, #163835 100%);
             padding: 60px 0;
             color: #ffffff;
         }
@@ -838,8 +844,7 @@
 
 /* SUBSCRIBE NOW BAR SECTION : START */
   .subscribe-outer {
-            background-color: #00a4ad;
-            /* Exact Healthians Teal */
+             background: radial-gradient(circle at 0% 0%, #2a9d8f 0%, #163835 100%);           
             padding: 50px 20px;
             font-family: 'Inter', sans-serif;
             text-align: center;
