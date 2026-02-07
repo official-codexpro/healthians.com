@@ -1,0 +1,1169 @@
+/* NEVBAR SECTION STYLEING : START {AAK} */
+.nav-underline {
+                position: absolute;
+                left: 0;
+                bottom: -6px;
+                height: 2px;
+                width: 0%;
+                background: white;
+                transition: width .35s ease;
+            }
+
+            .group:hover .nav-underline {
+                width: 100%;
+            }
+
+            .group:hover .arrow {
+                transform: rotate(180deg);
+            }
+
+            .no-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+/* NEVBAR SECTION STYLEING : END {AAK} */
+
+/* IMG INFO SLIDER SECITON STYLEING : START  */
+        .premium-stack-section {
+            background-color: #ffffff;
+            padding: 5px 0;
+            /* Bohat kam padding margins ke liye */
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            margin-top: -15px;
+        }
+
+        .premium-stack-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            position: relative;
+            height: 320px;
+            /* PC height restored */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1500px;
+        }
+
+        /* Card Styling */
+        .p-stack-card {
+            position: absolute;
+            width: 750px;
+            /* PC View: Pehle jaisi width */
+            height: 250px;
+            /* PC View: Pehle jaisi height */
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Mobile Responsive Logic - Fixed & Premium */
+        @media (max-width: 768px) {
+            .premium-stack-section {
+                margin-top: 0;
+                padding: 10px 0;
+            }
+
+            .premium-stack-container {
+                height: 180px;
+                /* Mobile par chota section */
+            }
+
+            .p-stack-card {
+                width: 85% !important;
+                /* Screen ke andar rahega */
+                height: 140px !important;
+            }
+
+            .nav-btn-p {
+                width: 32px !important;
+                height: 32px !important;
+                font-size: 16px !important;
+            }
+
+            .btn-p-left {
+                left: 2% !important;
+            }
+
+            .btn-p-right {
+                right: 2% !important;
+            }
+        }
+/* IMG INFO SLIDER SECITON STYLEING : END */
+
+
+/* PLANS SECTION STYLEING : START */
+   .card-unit {
+            min-width: calc(33.33% - 14px);
+            transition: 0.3s;
+        }
+
+        @media (max-width: 992px) {
+            .card-unit {
+                min-width: calc(50% - 10px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .card-unit {
+                min-width: 100%;
+            }
+
+            #infiniteTrack {
+                gap: 10px !important;
+            }
+
+            .nav-btn {
+                width: 35px !important;
+                height: 35px !important;
+            }
+        }
+/* PLANS SECTION STYLEING : END */
+
+/* HEALTH SCAN STYLEING : START */
+ .risk-card {
+            min-width: calc(33.33% - 14px);
+            background: white;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .risk-card:hover {
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 992px) {
+            .risk-card {
+                min-width: calc(50% - 10px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .risk-card {
+                min-width: 100%;
+            }
+
+            .nav-btn-risk {
+                width: 35px !important;
+                height: 35px !important;
+            }
+        }
+/* HEALTH SCAN STYLEING : START */
+
+/* HEALTH CHECKUP STYLEING : START */
+ 
+        .journey-overflow {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .journey-track {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .journey-step {
+            flex: 1;
+            min-width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 10px;
+            z-index: 2;
+        }
+
+        /* Curved Line for Desktop only */
+        .journey-line-svg {
+            position: absolute;
+            top: 45px;
+            left: 5%;
+            width: 90%;
+            height: 60px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Indicators for Mobile */
+        .journey-dots {
+            display: none;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 30px;
+        }
+
+        .j-dot {
+            width: 8px;
+            height: 8px;
+            background: #ddd;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .j-dot.active {
+            background: #008b94;
+            width: 22px;
+            border-radius: 10px;
+        }
+
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 768px) {
+            .journey-line-svg {
+                display: none;
+            }
+
+            .journey-dots {
+                display: flex;
+            }
+
+            .journey-track {
+                gap: 0 !important;
+                justify-content: flex-start !important;
+            }
+
+            .journey-step {
+                min-width: 100% !important;
+                /* One card at a time for focus */
+                padding: 0;
+            }
+
+            .icon-circle-j {
+                width: 80px !important;
+                height: 80px !important;
+            }
+
+            .journey-step-title {
+                font-size: 18px !important;
+            }
+
+            .journey-step-desc {
+                font-size: 14px !important;
+                max-width: 80% !important;
+            }
+        }
+/* HEALTH CHECKUP STYLEING : END */
+
+/* THE EXCELLENCE OF SNH-LABS  SECTION : START */
+        .combined-wrapper {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            overflow: hidden;
+        }
+
+        /* Part 1: Smart Report (Top) */
+        .sr-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-end;
+            /* Image ko bottom se touch karne ke liye */
+            padding: 60px 20px 0 20px;
+            /* Bottom padding 0 ki taki gap na rahe */
+        }
+
+        .sr-text-box {
+            flex: 1;
+            padding-bottom: 60px;
+            /* Text ko center mein rakhne ke liye padding */
+        }
+
+        .sr-main-title {
+            color: #008b94;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .sr-desc-text {
+            color: #666;
+            font-size: 22px;
+            line-height: 1.2;
+            margin-bottom: 40px;
+        }
+
+        .sr-history {
+            color: #008b94;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .sr-image-box {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+
+        .sr-mockup {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            display: block;
+            /* Gap remove karne ke liye */
+            margin-bottom: -1px;
+            /* Precision touch for the section below */
+        }
+
+        /* Part 2: Lab Excellence (Bottom Teal) */
+        .lab-teal-section {
+            background-color: #00a4ad;
+            padding: 60px 0;
+            color: #ffffff;
+        }
+
+        .lab-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .lab-header-title {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 45px;
+        }
+
+        .lab-header-title span {
+            color: #ffb400;
+        }
+
+        .lab-flex-row {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .lab-text-content {
+            flex: 1.2;
+        }
+
+        .lab-video-container {
+            flex: 1;
+            position: relative;
+        }
+
+        .lab-paragraph {
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .btn-know-more {
+            display: inline-block;
+            padding: 12px 35px;
+            background: #ffffff;
+            color: #00a4ad;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-thumb-img {
+            width: 100%;
+            border-radius: 12px;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .play-icon-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 55px;
+            height: 55px;
+            background: #ff0000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        /* Mobile Responsive Logic */
+        @media (max-width: 768px) {
+            .sr-section {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 40px;
+                align-items: center;
+            }
+
+            .sr-text-box {
+                padding-bottom: 30px;
+            }
+
+            .sr-image-box {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .sr-mockup {
+                max-width: 350px;
+            }
+
+            .lab-flex-row {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .lab-video-container {
+                order: 2;
+                width: 100%;
+            }
+
+            .lab-text-content {
+                order: 1;
+            }
+
+            .lab-header-title {
+                font-size: 24px;
+            }
+        }
+/* THE EXCELLENCE OF SNH-LABS  SECTION : END*/
+
+
+/* HEALTH VIDEO REVIEWS SECTION SECTION : START */
+        .reviews-outer-wrapper {
+            padding: 80px 0;
+            background-color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Half Width Container - Exactly like your reference */
+        .reviews-centered-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            /* Bahar ka content hide rahega */
+            position: relative;
+        }
+
+        .reviews-header-text {
+            text-align: center;
+            color: #008b94;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        /* Infinite Track - Very Slow Slide */
+        .video-infinite-track {
+            display: flex;
+            /* Width = (Card Width + Margin) * Total Items (6 Unique + 6 Clones) */
+            width: calc(260px * 12);
+            animation: slowScroll 40s linear infinite;
+            /* Increased to 40s for slow feel */
+        }
+
+        @keyframes slowScroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-260px * 6));
+            }
+        }
+
+        /* Card Styling - Portrait Look */
+        .portrait-video-card {
+            width: 240px;
+            height: 350px;
+            margin-right: 20px;
+            /* Space between cards */
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            flex-shrink: 0;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Play Button Overlay */
+        .video-center-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(4px);HEALTH VIDEO REVIEWS SECTION SECTION : START
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            transition: 0.3s ease;
+        }
+
+        .portrait-video-card:hover .video-center-play {
+            background: #008b94;
+            border-color: #008b94;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .play-arrow-white {
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 12px solid white;
+            margin-left: 4px;
+        }
+
+        /* Bottom Info Overlay */
+        .video-card-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            color: white;
+            z-index: 3;
+        }
+
+        .cust-name {
+            font-size: 15px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .cust-city {
+            font-size: 11px;
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        /* Mobile View - 2 cards visible */
+        @media (max-width: 768px) {
+            .reviews-centered-container {
+                max-width: 90%;
+            }
+
+            .portrait-video-card {
+                width: 170px;
+                height: 250px;
+                margin-right: 15px;
+            }
+
+            .video-infinite-track {
+                width: calc(185px * 12);
+            }
+
+            @keyframes slowScroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(calc(-185px * 6));
+                }
+            }
+
+            .video-center-play {
+                width: 40px;
+                height: 40px;
+            }
+        }
+/* HEALTH VIDEO REVIEWS SECTION SECTION : END */
+
+
+ /* CERTIFICATION SECTION START */
+  .global-wrapper {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfdfe;
+            padding: 60px 0;
+        }
+
+        .centered-box {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .section-head {
+            text-align: center;
+            color: #008b94;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        /* Infinite Track Logic */
+        .infinite-flex {
+            display: flex;
+            width: max-content;
+            /* Content ke hisaab se width lega */
+            animation: slowMove 40s linear infinite;
+        }
+
+        /* Blogs Moving in Reverse - Start from 0 to avoid empty space */
+        .reverse-track {
+            animation: slowMoveReverse 45s linear infinite;
+        }
+
+        @keyframes slowMove {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-320px * 6));
+            }
+        }
+
+        @keyframes slowMoveReverse {
+            0% {
+                transform: translateX(calc(-320px * 6));
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Pause on Hover */
+        .infinite-flex:hover {
+            animation-play-state: paused;
+        }
+
+        /* Card Styling */
+        .reward-card,
+        .blog-card {
+            width: 300px;
+            background: #fff;
+            margin-right: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid #f0f0f0;
+            flex-shrink: 0;
+        }
+
+        .reward-card {
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .reward-img {
+            width: 80px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .reward-text {
+            font-size: 13px;
+            color: #444;
+            font-weight: 600;
+        }
+
+        .blog-card {
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .blog-thumb {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .blog-body {
+            padding: 15px;
+        }
+
+        .blog-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #333;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* Callback Strip */
+        .callback-strip {
+            background: #008b94;
+            padding: 15px 30px;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 60px;
+            color: white;
+        }
+
+        .call-input {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px;
+            width: 280px;
+            outline: none;
+        }
+
+        .call-btn {
+            background: #f3704b;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+
+            .reward-card,
+            .blog-card {
+                width: 220px;
+            }
+
+            @keyframes slowMove {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(calc(-240px * 6));
+                }
+            }
+
+            @keyframes slowMoveReverse {
+                0% {
+                    transform: translateX(calc(-240px * 6));
+                }
+
+                100% {
+                    transform: translateX(0);
+                }
+            }
+        }
+  /* CERTIFICATION SECTION END */
+
+/* SUBSCRIBE NOW BAR SECTION : START */
+  .subscribe-outer {
+            background-color: #00a4ad;
+            /* Exact Healthians Teal */
+            padding: 50px 20px;
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+        }
+
+        .subscribe-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .subscribe-title {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Underline styling */
+        .title-line {
+            width: 120px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.3);
+            margin: 0 auto 35px;
+            position: relative;
+        }
+
+        .title-line::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 100%;
+            background: #f3704b;
+            /* Orange highlight */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Search/Input Bar Styling */
+        .subscribe-form {
+            display: flex;
+            background: #ffffff;
+            border-radius: 50px;
+            overflow: hidden;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 5px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .sub-input {
+            flex: 1;
+            border: none;
+            padding: 15px 25px;
+            font-size: 15px;
+            outline: none;
+            color: #666;
+        }
+
+        .sub-btn {
+            background-color: #f3704b;
+            /* Exact Orange */
+            color: #ffffff;
+            border: none;
+            padding: 0 45px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .sub-btn:hover {
+            background-color: #e65a32;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .subscribe-title {
+                font-size: 22px;
+            }
+
+            .subscribe-form {
+                border-radius: 15px;
+                flex-direction: column;
+                background: transparent;
+                box-shadow: none;
+                gap: 10px;
+            }
+
+            .sub-input {
+                border-radius: 50px;
+                text-align: center;
+            }
+
+            .sub-btn {
+                padding: 15px 0;
+                border-radius: 50px;
+            }
+        }
+/* SUBSCRIBE NOW BAR SECTION : END*/
+
+/* DETAILED DESCRIPTION ABOUT OUR SERVICE SECTION : START */
+    .dense-footer-section {
+            background-color: #ffffff;
+            padding: 40px 0;
+            font-family: Arial, sans-serif;
+            /* Standard clean font */
+            border-top: 1px solid #eee;
+        }
+
+        .dense-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 15px;
+            text-align: center;
+        }
+
+        .dense-group {
+            margin-bottom: 25px;
+            /* Kam gap section ke beech mein */
+        }
+
+        .dense-title {
+            color: #333;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .dense-links {
+            color: #888;
+            font-size: 11.5px;
+            /* Chota font bhara dikhane ke liye */
+            line-height: 1.8;
+            letter-spacing: 0.2px;
+        }
+
+        .dense-links a {
+            color: #888;
+            text-decoration: none;
+            transition: 0.2s;
+            display: inline;
+        }
+
+        .dense-links a:hover {
+            color: #008b94;
+        }
+
+        /* Separators exactly like reference */
+        .s-pipe::after {
+            content: " | ";
+            color: #ccc;
+            margin: 0 4px;
+        }
+
+        .s-slash::after {
+            content: " / ";
+            color: #ddd;
+            margin: 0 4px;
+        }
+
+        .s-comma::after {
+            content: ", ";
+            color: #ccc;
+        }
+
+        .s-space::after {
+            content: "  ";
+            margin: 0 6px;
+        }
+
+        .dense-hr {
+            border: 0;
+            border-top: 1px solid #f2f2f2;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .dense-links {
+                font-size: 10px;
+                line-height: 2;
+                text-align: justify;
+            }
+        }
+/* DETAILED DESCRIPTION ABOUT OUR SERVICE SECTION : END */
+
+/* FOOTER SECTION : START */
+.main-footer {
+            background-color: #ffffff;
+            padding: 60px 0 0;
+            font-family: 'Inter', sans-serif;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+
+        .footer-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.8fr 1fr;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        /* LEFT: BRANDING & BADGE */
+        .footer-brand {
+            text-align: center;
+            border-right: 1px dashed #ddd;
+            padding-right: 30px;
+        }
+
+        .footer-logo {
+            width: 170px;
+            margin-bottom: 20px;
+        }
+
+        .award-badge {
+            width: 200px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .award-text {
+            font-size: 11px;
+            color: #008b94;
+            font-weight: 700;
+            margin-top: 8px;
+            text-transform: uppercase;
+        }
+
+        /* MIDDLE: IMPORTANT LINKS */
+        .footer-links-wrapper {
+            padding: 0 20px;
+        }
+
+        .footer-column-title {
+            color: #333;
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .links-grid-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .footer-link {
+            font-size: 13px;
+            color: #777;
+            text-decoration: none;
+            margin-bottom: 12px;
+            display: block;
+            transition: 0.2s;
+        }
+
+        .footer-link:hover {
+            color: #008b94;
+            transform: translateX(5px);
+        }
+
+        /* RIGHT: SOCIAL & APPS */
+        .footer-right {
+            padding-left: 20px;
+        }
+
+        /* Font Awesome Icons Styling */
+        .social-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .social-btn {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 18px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        /* Official Brand Colors on Hover */
+        .social-btn.fb:hover {
+            background: #3b5998;
+            color: white;
+        }
+
+        .social-btn.tw:hover {
+            background: #000000;
+            color: white;
+        }
+
+        .social-btn.ln:hover {
+            background: #0077b5;
+            color: white;
+        }
+
+        .social-btn.yt:hover {
+            background: #ff0000;
+            color: white;
+        }
+
+        .social-btn.ig:hover {
+            background: #e4405f;
+            color: white;
+        }
+
+        .app-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .app-flex {
+            display: flex;
+            gap: 10px;
+        }
+
+        .app-img {
+            height: 38px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .app-img:hover {
+            opacity: 0.8;
+        }
+
+        /* BOTTOM BAR */
+        .copyright-strip {
+            border-top: 1px solid #f0f0f0;
+            margin-top: 50px;
+            padding: 20px 0;
+            background: #fafafa;
+        }
+
+        .copy-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 12px;
+            color: #999;
+            flex-wrap: wrap;
+        }
+
+        .copy-content a {
+            color: #999;
+            text-decoration: none;
+        }
+
+        .copy-content a:hover {
+            color: #666;
+        }
+
+        @media (max-width: 992px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-brand {
+                border-right: none;
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+
+            .links-grid-inner {
+                text-align: left;
+            }
+
+            .social-row,
+            .app-flex {
+                justify-content: center;
+            }
+
+            .footer-right {
+                padding-left: 0;
+                margin-top: 30px;
+            }
+        }
+/* FOOTER SECTION END */

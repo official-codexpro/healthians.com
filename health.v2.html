@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Layout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+
+<body class="bg-gray-50 font-sans">
+
+    <!-- ================= PREMIUM HEADER : START ================= -->
+    <header class="sticky top-0 z-50">
+
+        <!-- ===== TOPBAR ===== -->
+        <div class="w-full bg-white border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+
+                <!-- Logo -->
+                    <img src="https://cdn1.healthians.com/img/healthians-logo.svg" class="h-9">
+
+                <!-- Right Info -->
+                    <div class="hidden lg:flex items-center gap-10 text-[13px] text-gray-600">
+
+                        <div class="flex items-center gap-2 cursor-pointer hover:text-teal-700">
+                            <svg class="w-5 h-5 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <path d="M12 21s7-5.2 7-11a7 7 0 10-14 0c0 5.8 7 11 7 11z" />
+                                <circle cx="12" cy="10" r="2.5" />
+                            </svg>
+                            Your Location <b class="text-gray-800">Gurgaon</b>
+                        </div>
+
+                        <div class="h-5 w-px bg-gray-300"></div>
+                        <div>Login / Signup</div>
+                        <div class="h-5 w-px bg-gray-300"></div>
+
+                        <div>
+                            <div class="text-[11px] text-gray-500">Customer Support</div>
+                            <div class="font-semibold text-gray-800">1800-572-0005</div>
+                        </div>
+
+                        <div class="h-5 w-px bg-gray-300"></div>
+
+                        <div>
+                            <div class="text-[11px] text-gray-500">Corporate Enquiry</div>
+                            <div class="font-semibold text-gray-800">93-125-3875</div>
+                        </div>
+
+                    </div>
+
+                    <!-- Mobile Hamburger -->
+                    <button onclick="openMenu()" class="lg:hidden">
+                        <svg class="w-7 h-7 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+
+                </div>
+            </div>
+        <!-- ===== NAVBAR ===== -->
+        <nav class="w-full bg-teal-600 shadow-md">
+            <div class="max-w-7xl mx-auto px-6 h-12 flex items-center justify-between text-white">
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-10 text-[14.5px] font-medium">
+
+                    <!-- Menu Item -->
+                    <div class="group relative cursor-pointer">
+                        <div class="flex items-center gap-1">
+                            Full Body Checkup
+                            <svg class="arrow w-3.5 h-3.5 transition-transform duration-300" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path d="M5.5 7l4.5 5 4.5-5" />
+                            </svg>
+                        </div>
+                        <span class="nav-underline"></span>
+                    </div>
+
+                    <div class="group relative cursor-pointer">
+                        <div class="flex items-center gap-1">
+                            Heart
+                            <svg class="arrow w-3.5 h-3.5 transition-transform duration-300" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path d="M5.5 7l4.5 5 4.5-5" />
+                            </svg>
+                        </div>
+                        <span class="nav-underline"></span>
+                    </div>
+
+                    <div class="group relative cursor-pointer">
+                        <div class="flex items-center gap-1">
+                            Cancer
+                            <svg class="arrow w-3.5 h-3.5 transition-transform duration-300" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path d="M5.5 7l4.5 5 4.5-5" />
+                            </svg>
+                        </div>
+                        <span class="nav-underline"></span>
+                    </div>
+
+                    <div class="group relative cursor-pointer">
+                        <div class="flex items-center gap-1">
+                            Thyroid
+                            <svg class="arrow w-3.5 h-3.5 transition-transform duration-300" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path d="M5.5 7l4.5 5 4.5-5" />
+                            </svg>
+                        </div>
+                        <span class="nav-underline"></span>
+                    </div>
+
+                    <div class="group relative cursor-pointer">
+                        <div class="flex items-center gap-1">
+                            Diabetes
+                            <svg class="arrow w-3.5 h-3.5 transition-transform duration-300" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path d="M5.5 7l4.5 5 4.5-5" />
+                            </svg>
+                        </div>
+                        <span class="nav-underline"></span>
+                    </div>
+
+                </div>
+
+                <!-- Mobile Scroll Menu -->
+                <div class="lg:hidden flex gap-6 overflow-x-auto no-scrollbar text-[14px] font-medium">
+                    <span class="whitespace-nowrap">Full Body</span>
+                    <span class="whitespace-nowrap">Heart</span>
+                    <span class="whitespace-nowrap">Cancer</span>
+                    <span class="whitespace-nowrap">Thyroid</span>
+                    <span class="whitespace-nowrap">Diabetes</span>
+                </div>
+
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- ===== SIDEBAR : MOBILE ===== -->
+    <div id="sidebar" class="fixed inset-0 bg-black/40 z-50 hidden">
+        <div class="w-72 bg-white h-full p-6 shadow-2xl">
+
+            <div class="flex justify-between items-center mb-6">
+                <img src="https://cdn1.healthians.com/img/healthians-logo.svg" class="h-8" alt="Sidebar Logo">
+                <button onclick="closeMenu()">✕</button>
+            </div>
+
+            <div class="space-y-5 text-gray-700 font-medium">
+                <div>Full Body Checkup</div>
+                <div>Heart</div>
+                <div>Cancer</div>
+                <div>Thyroid</div>
+                <div>Diabetes</div>
+            </div>
+
+        </div>
+    </div>
+    <!-- ================= PREMIUM HEADER : END ================= -->
+
+
+    <!-- ===============HERO SECTION START AAK==================== -->
+    <section class="relative overflow-hidden text-white">
+
+        <!-- Background Image -->
+        <img src="https://images.unsplash.com/photo-1631248055158-edec7a3c072b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xpbmljfGVufDB8fDB8fHww"
+            class="absolute inset-0 w-full h-full object-cover">
+
+        <!-- Gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-[#3b3127]/95 via-[#3b3127]/85 to-transparent"></div>
+
+        <!-- Content -->
+        <div class="relative max-w-7xl mx-auto px-5 lg:px-6 py-20 lg:py-28">
+
+            <div class="max-w-2xl">
+
+                <h2 class="text-3xl sm:text-4xl lg:text-6xl font-extrabold leading-tight mb-4">
+                    WHEN GOOD FOOD <br> MAKES YOU FEEL BAD,
+                </h2>
+
+                <p class="text-lg text-blue-300 font-semibold mb-8">
+                    It’s time to find out why.
+                </p>
+
+                <!-- Offer Row -->
+                <div class="flex flex-wrap items-center gap-4 mb-8">
+                    <div class="bg-[#5b4a3a] px-5 py-4 rounded-xl">
+                        <div class="text-sm">FOOD</div>
+                        <div class="font-bold text-xl">INTOLERANCE TEST</div>
+                    </div>
+
+                    <div class="bg-[#5b4a3a] px-6 py-4 rounded-xl text-3xl font-bold">
+                        ₹5499
+                    </div>
+
+                    <button class="bg-white text-gray-900 font-semibold px-6 py-3 rounded-lg shadow-lg">
+                        BOOK NOW →
+                    </button>
+                </div>
+
+                <!-- Search -->
+                <div class="flex w-full max-w-xl overflow-hidden rounded-xl shadow-lg mb-8">
+                    <input class="flex-1 px-4 py-3 text-gray-800 outline-none"
+                        placeholder="Find your Package/Test/Scans" />
+                    <button class="bg-orange-500 text-white px-6 font-semibold">
+                        Search
+                    </button>
+                </div>
+
+                <!-- Features -->
+                <div class="flex flex-wrap gap-6 text-sm text-gray-200">
+                    <div class="flex items-center gap-2">🚚 Free Sample Collection</div>
+                    <div class="flex items-center gap-2">📊 Smart Reports</div>
+                    <div class="flex items-center gap-2">👨‍⚕️ Free Report Counseling</div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- ==============================HERO SECITON END AAK========================================-->
+
+
+    <!--================================ CARD SECITON START AAK=====================================-->
+    <section class="bg-white py-10 lg:py-14">
+        <div class="max-w-7xl mx-auto px-4 lg:px-6">
+
+            <!-- ===== DESKTOP GRID ===== -->
+            <div class="hidden lg:grid grid-cols-6 gap-5">
+
+                <!-- CARD -->
+                <div onclick="openModal('Blood Tests')"
+                    class="cursor-pointer rounded-2xl bg-[#e8fbff] p-5 text-center shadow-sm hover:shadow-xl transition">
+                    <div class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">
+                        Up to 79% off</div>
+                    <img src="https://cdn-icons-png.flaticon.com/512/2966/2966483.png" class="w-16 h-16 mx-auto mb-4">
+                    <div class="font-semibold text-gray-700">Blood Tests</div>
+                </div>
+
+                <div onclick="openModal('X-Rays, Scans & MRI')"
+                    class="cursor-pointer rounded-2xl bg-[#eaf1ff] p-5 text-center shadow-sm hover:shadow-xl transition">
+                    <div class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">
+                        Up to 70% off</div>
+                    <img src="https://cdn-icons-png.flaticon.com/512/2920/2920329.png" class="w-16 h-16 mx-auto mb-4">
+                    <div class="font-semibold text-gray-700">X-Rays, Scans & MRI</div>
+                </div>
+
+                <div onclick="openModal('Doctor & Diet Consultations')"
+                    class="cursor-pointer rounded-2xl bg-[#fff1ec] p-5 text-center shadow-sm hover:shadow-xl transition">
+                    <div class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">
+                        Up to 75% off</div>
+                    <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png" class="w-16 h-16 mx-auto mb-4">
+                    <div class="font-semibold text-gray-700">Doctor & Diet Consultations</div>
+                </div>
+
+                <div onclick="openModal('Herbved+ Supplements')"
+                    class="cursor-pointer rounded-2xl bg-[#f2f9ff] p-5 text-center shadow-sm hover:shadow-xl transition">
+                    <div class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">
+                        Flat 55% off</div>
+                    <img src="https://cdn-icons-png.flaticon.com/512/3039/3039432.png" class="w-16 h-16 mx-auto mb-4">
+                    <div class="font-semibold text-gray-700">Herbved+ Supplements</div>
+                </div>
+
+                <div onclick="openModal('Genetic Testing')"
+                    class="cursor-pointer rounded-2xl bg-[#ffeef6] p-5 text-center shadow-sm hover:shadow-xl transition">
+                    <div class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">
+                        Up to 70% off</div>
+                    <img src="https://cdn-icons-png.flaticon.com/512/2941/2941776.png" class="w-16 h-16 mx-auto mb-4">
+                    <div class="font-semibold text-gray-700">Genetic Testing</div>
+                </div>
+
+                <div onclick="openModal('Upload Prescription')"
+                    class="cursor-pointer rounded-2xl bg-[#eaf7ff] p-5 text-center shadow-sm hover:shadow-xl transition">
+                    <div class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">
+                        Easy</div>
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="w-16 h-16 mx-auto mb-4">
+                    <div class="font-semibold text-gray-700">Upload Prescription</div>
+                </div>
+
+            </div>
+
+            <!-- ===== MOBILE SLIDER ===== -->
+            <div class="lg:hidden overflow-hidden">
+                <div id="catSlider" class="flex gap-5">
+
+                    <!-- Repeat same cards -->
+                    <div onclick="openModal('Blood Tests')"
+                        class="cursor-pointer min-w-[85%] bg-[#e8fbff] p-5 rounded-2xl text-center shadow">
+                        <div
+                            class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">
+                            Up to 79% off</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/2966/2966483.png"
+                            class="w-16 h-16 mx-auto mb-4">
+                        <div class="font-semibold text-gray-700">Blood Tests</div>
+                    </div>
+
+                    <div onclick="openModal('X-Rays, Scans & MRI')"
+                        class="cursor-pointer min-w-[85%] bg-[#eaf1ff] p-5 rounded-2xl text-center shadow">
+                        <div
+                            class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">
+                            Up to 70% off</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920329.png"
+                            class="w-16 h-16 mx-auto mb-4">
+                        <div class="font-semibold text-gray-700">X-Rays, Scans & MRI</div>
+                    </div>
+
+                    <div onclick="openModal('Doctor & Diet Consultations')"
+                        class="cursor-pointer min-w-[85%] bg-[#fff1ec] p-5 rounded-2xl text-center shadow">
+                        <div
+                            class="bg-white text-teal-600 text-xs font-semibold inline-block px-3 py-1 rounded-full mb-4">
+                            Up to 75% off</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png"
+                            class="w-16 h-16 mx-auto mb-4">
+                        <div class="font-semibold text-gray-700">Doctor & Diet Consultations</div>
+                    </div>
+
+                    <!-- add remaining 3 same -->
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- ========================================CARD SECITON END AAK===========================================-->
+
+
+    <!-- =========================================== 3 INFO  SECTION START======================================================= -->
+
+    <section class="relative">
+
+        <!-- ================= CALLBACK MODAL ================= -->
+        <div id="callbackModal"
+            class="fixed inset-0 hidden items-center justify-center bg-black/50 backdrop-blur-sm z-50">
+            <div class="bg-white w-[92%] max-w-md rounded-3xl p-7 relative shadow-2xl">
+                <button onclick="closeModal()" health class="absolute top-3 right-4 text-2xl text-gray-400">
+                    &times;
+                </button>
+
+                <h3 class="text-2xl font-semibold text-gray-800 mb-1">
+                    Book <span id="testName" class="text-teal-600"></span>
+                </h3>
+
+                <p class="text-sm text-gray-500 mb-6">
+                    Our health advisor will call you shortly
+                </p>
+
+                <div class="space-y-4">
+                    <input class="w-full border rounded-xl px-4 py-3" placeholder="Full Name">
+                    <input class="w-full border rounded-xl px-4 py-3" placeholder="Mobile Number">
+                    <input class="w-full border rounded-xl px-4 py-3" placeholder="City">
+                    <button class="w-full bg-teal-600 text-white py-3 rounded-xl font-semibold">
+                        Request Callback
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= INFO STRIP SECTION ================= -->
+        <div class="bg-white py-10 lg:py-14 mt-[-3%]">
+            <div class="max-w-7xl mx-auto px-4 lg:px-6 space-y-8">
+
+                <!-- Top 2 Cards -->
+                <div class="grid lg:grid-cols-2 gap-6">
+
+                    <!-- Card 1 -->
+                    <div
+                        class="bg-[#e9fbff] border border-[#c8eef5] rounded-2xl p-6 flex flex-col lg:flex-row items-start gap-4 shadow-sm">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="w-12 h-12">
+
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-gray-800 text-lg mb-1">
+                                We are now empanelled on Government Panels for Health Tests
+                            </h3>
+
+                            <p class="text-sm text-gray-600 mb-4">
+                                For in-service or retired govt. employees across CGHS, DGHS, ESIC &
+                                relevant Dept.
+                            </p>
+
+                            <button class="bg-[#f6b042] text-black font-semibold px-5 py-2 rounded-lg shadow">
+                                📞 Call us: +91-9289902266
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="bg-[#e9fbff] border border-[#c8eef5] rounded-2xl p-6 flex flex-col lg:flex-row items-start gap-4 shadow-sm">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2331/2331966.png" class="w-12 h-12">
+
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-gray-800 text-lg mb-1">
+                                Unlock Your Health Score with HealthKarma!
+                            </h3>
+
+                            <p class="text-sm text-gray-600 mb-4">
+                                Uncover potential health risks and get custom test recommendations.
+                            </p>
+
+                            <button class="bg-orange-500 text-white font-semibold px-5 py-2 rounded-lg shadow">
+                                Check your health score →
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ================= PREMIUM TRUST STRIP ================= -->
+                <div class="bg-gradient-to-r from-[#f5fdff] to-[#e9f9fc] rounded-3xl px-6 py-8">
+                    <div class="grid lg:grid-cols-5 gap-8 items-center">
+
+                        <!-- Left Heading -->
+                        <div class="text-center lg:text-left">
+                            <h3 class="text-lg lg:text-xl font-semibold text-gray-800 leading-snug">
+                                Why <span class="text-teal-600 font-bold">8.5 Million</span><br class="hidden lg:block">
+                                Indians Trust Health Labs
+                            </h3>
+                        </div>
+
+                        <!-- Badges -->
+                        <div class="lg:col-span-4 grid grid-cols-2 sm:grid-cols-4 gap-6 text-sm text-gray-700">
+
+                            <div class="flex flex-col items-center text-center gap-3">
+                                <div
+                                    class="w-12 h-12 bg-white rounded-xl shadow flex items-center justify-center text-xl">
+                                    🏅
+                                </div>
+                                <span>CAP & NABL<br>Accredited Labs</span>
+                            </div>
+
+                            <div class="flex flex-col items-center text-center gap-3">
+                                <div
+                                    class="w-12 h-12 bg-white rounded-xl shadow flex items-center justify-center text-xl">
+                                    ⏱️
+                                </div>
+                                <span>On Time Sample<br>Collection</span>
+                            </div>
+
+                            <div class="flex flex-col items-center text-center gap-3">
+                                <div
+                                    class="w-12 h-12 bg-white rounded-xl shadow flex items-center justify-center text-xl">
+                                    📄
+                                </div>
+                                <span>Smart Reports<br>in 6 Hours</span>
+                            </div>
+
+                            <div class="flex flex-col items-center text-center gap-3">
+                                <div
+                                    class="w-12 h-12 bg-white rounded-xl shadow flex items-center justify-center text-xl">
+                                    📞
+                                </div>
+                                <span>Free Report<br>Consultation</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- =========================================== 3 INFO  SECTION END======================================================= -->
+
+
+    <!-- =========================================== IMAGE INFO SLIDER SECTION START======================================================= -->
+    <div class="premium-stack-section">
+        <div class="premium-stack-container">
+
+            <button class="nav-btn-p btn-p-left" onclick="pMoveStack(-1)"
+                style="position: absolute; left: 8%; z-index: 100; width: 42px; height: 42px; border-radius: 50%; border: 1px solid #eee; background: white; cursor: pointer; color: #008b94; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">‹</button>
+
+            <button class="nav-btn-p btn-p-right" onclick="pMoveStack(1)"
+                style="position: absolute; right: 8%; z-index: 100; width: 42px; height: 42px; border-radius: 50%; border: 1px solid #eee; background: white; cursor: pointer; color: #008b94; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">›</button>
+
+            <div id="pStackTrack"
+                style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; transform-style: preserve-3d;">
+
+                <div class="p-stack-card">
+                    <img src="/IMG/1.png" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+
+                <div class="p-stack-card">
+                    <img src="/IMG/4.png" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+
+                <div class="p-stack-card">
+                    <img src="/IMG/2.png" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+
+                <div class="p-stack-card">
+                    <img src="/IMG/3.png" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- =========================================== IMAGE INFO SLIDER SECTION END======================================================= -->
+
+
+    <!-- =========================================== PLANS SECTION START============================================================ -->
+    <section style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+        <h2 style="text-align: center; color: #008b94; font-size: 28px; font-weight: 700; margin-bottom: 30px;">Full
+            Body Checkup packages in Gurgaon</h2>
+
+        <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 40px;">
+            <button onclick="filterPkg('all', this)"
+                style="padding: 10px 22px; border-radius: 25px; border: 1px solid #008b94; background: #008b94; color: white; cursor: pointer; font-weight: 600;">Full
+                Body Checkup</button>
+            <button onclick="filterPkg('fever', this)"
+                style="padding: 10px 22px; border-radius: 25px; border: 1px solid #ddd; background: white; color: #666; cursor: pointer;">Fever</button>
+            <button onclick="filterPkg('diabetes', this)"
+                style="padding: 10px 22px; border-radius: 25px; border: 1px solid #ddd; background: white; color: #666; cursor: pointer;">Diabetes</button>
+            <button onclick="filterPkg('heart', this)"
+                style="padding: 10px 22px; border-radius: 25px; border: 1px solid #ddd; background: white; color: #666; cursor: pointer;">Heart</button>
+        </div>
+
+        <div id="pkgGrid"
+            style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 25px;">
+
+            <div class="pkg-card" data-cat="all"
+                style="background: white; border-radius: 16px; border: 1px solid #e0e6e6; overflow: hidden; transition: 0.3s; position: relative;">
+                <div style="padding: 24px;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #333; margin: 0; line-height: 1.3;">Healthy
+                            India 2026 Full Body Checkup Lite</h3>
+                        <div
+                            style="background: #e6f7f8; color: #008b94; padding: 6px 12px; border-radius: 10px; text-align: center; border: 1px solid #b2e2e5;">
+                            <b style="font-size: 20px; display: block;">80</b> <small
+                                style="font-size: 10px;">Tests</small>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 20px; font-size: 13px; color: #666; line-height: 1.6; min-height: 50px;">
+                        <b>Tests Included:</b> Blood Glucose Fasting, TSH Ultra-Sensitive, Vitamin D Total-25 Hydroxy,
+                        Liver Function Test...
+                        <span style="color: #008b94; cursor: pointer; font-weight: 700;">+ Know More</span>
+                    </div>
+
+                    <div
+                        style="background: #f8fcfc; border-radius: 8px; padding: 12px; margin-top: 20px; display: flex; justify-content: space-between; font-size: 12px; color: #777; border: 1px solid #edf2f2;">
+                        <span>🕒 12 hrs Fasting</span>
+                        <span>👥 For Everyone</span>
+                    </div>
+
+                    <div
+                        style="margin-top: 24px; padding-top: 20px; border-top: 1px dashed #e0e6e6; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <span style="font-size: 22px; font-weight: 800; color: #333;">₹910</span>
+                            <span
+                                style="font-size: 13px; color: #999; text-decoration: line-through; margin-left: 6px;">₹1819</span>
+                        </div>
+                        <button
+                            style="background: #008b94; color: white; border: none; padding: 12px 28px; border-radius: 10px; font-weight: 700; cursor: pointer;">Book
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="pkg-card" data-cat="all"
+                style="background: white; border-radius: 16px; border: 1px solid #e0e6e6; overflow: hidden; transition: 0.3s; position: relative;">
+                <div style="padding: 24px;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #333; margin: 0; line-height: 1.3;">Healthy
+                            India 2026 Full Body Checkup Lite</h3>
+                        <div
+                            style="background: #e6f7f8; color: #008b94; padding: 6px 12px; border-radius: 10px; text-align: center; border: 1px solid #b2e2e5;">
+                            <b style="font-size: 20px; display: block;">80</b> <small
+                                style="font-size: 10px;">Tests</small>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 20px; font-size: 13px; color: #666; line-height: 1.6; min-height: 50px;">
+                        <b>Tests Included:</b> Blood Glucose Fasting, TSH Ultra-Sensitive, Vitamin D Total-25 Hydroxy,
+                        Liver Function Test...
+                        <span style="color: #008b94; cursor: pointer; font-weight: 700;">+ Know More</span>
+                    </div>
+
+                    <div
+                        style="background: #f8fcfc; border-radius: 8px; padding: 12px; margin-top: 20px; display: flex; justify-content: space-between; font-size: 12px; color: #777; border: 1px solid #edf2f2;">
+                        <span>🕒 12 hrs Fasting</span>
+                        <span>👥 For Everyone</span>
+                    </div>
+
+                    <div
+                        style="margin-top: 24px; padding-top: 20px; border-top: 1px dashed #e0e6e6; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <span style="font-size: 22px; font-weight: 800; color: #333;">₹910</span>
+                            <span
+                                style="font-size: 13px; color: #999; text-decoration: line-through; margin-left: 6px;">₹1819</span>
+                        </div>
+                        <button
+                            style="background: #008b94; color: white; border: none; padding: 12px 28px; border-radius: 10px; font-weight: 700; cursor: pointer;">Book
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="pkg-card" data-cat="all"
+                style="background: white; border-radius: 16px; border: 1px solid #e0e6e6; overflow: hidden; transition: 0.3s; position: relative;">
+                <div style="padding: 24px;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #333; margin: 0; line-height: 1.3;">Healthy
+                            India 2026 Full Body Checkup Lite</h3>
+                        <div
+                            style="background: #e6f7f8; color: #008b94; padding: 6px 12px; border-radius: 10px; text-align: center; border: 1px solid #b2e2e5;">
+                            <b style="font-size: 20px; display: block;">80</b> <small
+                                style="font-size: 10px;">Tests</small>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 20px; font-size: 13px; color: #666; line-height: 1.6; min-height: 50px;">
+                        <b>Tests Included:</b> Blood Glucose Fasting, TSH Ultra-Sensitive, Vitamin D Total-25 Hydroxy,
+                        Liver Function Test...
+                        <span style="color: #008b94; cursor: pointer; font-weight: 700;">+ Know More</span>
+                    </div>
+
+                    <div
+                        style="background: #f8fcfc; border-radius: 8px; padding: 12px; margin-top: 20px; display: flex; justify-content: space-between; font-size: 12px; color: #777; border: 1px solid #edf2f2;">
+                        <span>🕒 12 hrs Fasting</span>
+                        <span>👥 For Everyone</span>
+                    </div>
+
+                    <div
+                        style="margin-top: 24px; padding-top: 20px; border-top: 1px dashed #e0e6e6; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <span style="font-size: 22px; font-weight: 800; color: #333;">₹910</span>
+                            <span
+                                style="font-size: 13px; color: #999; text-decoration: line-through; margin-left: 6px;">₹1819</span>
+                        </div>
+                        <button
+                            style="background: #008b94; color: white; border: none; padding: 12px 28px; border-radius: 10px; font-weight: 700; cursor: pointer;">Book
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div style="text-align: center; margin-top: 50px;">
+            <button
+                style="background: #e6f7f8; color: #008b94; border: 1px solid #b2e2e5; padding: 14px 40px; border-radius: 12px; font-weight: 700; cursor: pointer; font-size: 16px;">View
+                All Full Body Checkup packages</button>
+        </div>
+    </section>
+    <!-- =========================================== PLANS SECTION END======================================================= -->
+
+    <!-- =========================================== HEALTH SCAN SECTION : START======================================================= -->
+    <section style="background-color: #ffffff; padding: 60px 0; font-family: 'Inter', sans-serif; overflow: hidden;">
+        <div style="max-width: 1240px; margin: 0 auto; position: relative; padding: 0 20px;">
+
+            <h2 style="text-align: center; color: #008b94; font-size: 28px; font-weight: 700; margin-bottom: 40px;">
+                Health Scans & Imaging Tests
+            </h2>
+
+            <div style="overflow: hidden; width: 100%;">
+                <div id="infiniteTrack"
+                    style="display: flex; gap: 20px; transition: transform 0.5s cubic-bezier(0.45, 0.05, 0.55, 0.95); will-change: transform;">
+
+                    <div class="card-unit"
+                        style="background: white; border-radius: 15px; border: 1px solid #e0e6e6; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <img src="https://helma.healthians.com/stationery/mailer-assets/61bc43a2774ff.png"
+                            style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 24px; text-align: center;">
+                            <h3 style="font-size: 20px; margin: 0; color: #333; font-weight: 700;">DEXA Scan</h3>
+                            <p style="color: #008b94; font-weight: 700; font-size: 19px; margin: 12px 0;">Starting @
+                                <span
+                                    style="text-decoration: line-through; color: #999; font-weight: 400; font-size: 14px;">₹1500</span>
+                                ₹789
+                            </p>
+                            <p
+                                style="font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 20px; height: 85px; overflow: hidden;">
+                                A DEXA bone density scan is a non-invasive, painless, and cutting-edge diagnostic test
+                                conducted to determine bone mineral density. It helps in the early detection of
+                                osteoporosis and assesses your risk for bone fractures by measuring calcium levels
+                                accurately.
+                            </p>
+                            <div
+                                style="background: #f37048; color: white; display: inline-block; padding: 6px 18px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 15px;">
+                                Salient Features</div>
+                        </div>
+                        <div
+                            style="background: #f0f7f8; padding: 18px; font-size: 12px; color: #444; border-top: 1px solid #e0e6e6; flex-grow: 1;">
+                            <div style="margin-bottom: 6px;">• High-resolution image quality for diagnosis</div>
+                            <div>• 100% Non-invasive and safe procedure</div>
+                        </div>
+                    </div>
+
+                    <div class="card-unit"
+                        style="background: white; border-radius: 15px; border: 1px solid #e0e6e6; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <img src="https://helma.healthians.com/stationery/mailer-assets/61bc534c83559.jpg"
+                            style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 24px; text-align: center;">
+                            <h3 style="font-size: 20px; margin: 0; color: #333; font-weight: 700;">Mammography</h3>
+                            <p style="color: #008b94; font-weight: 700; font-size: 19px; margin: 12px 0;">Starting @
+                                <span
+                                    style="text-decoration: line-through; color: #999; font-weight: 400; font-size: 14px;">₹3000</span>
+                                ₹1500
+                            </p>
+                            <p
+                                style="font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 20px; height: 85px; overflow: hidden;">
+                                A mammogram is a specialized X-ray of the breasts used to screen for early signs of
+                                breast cancer. It can detect tumors that cannot be felt during physical exams, making it
+                                a vital preventive tool for women's health and early medical intervention.
+                            </p>
+                            <div
+                                style="background: #f37048; color: white; display: inline-block; padding: 6px 18px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 15px;">
+                                Salient Features</div>
+                        </div> <!--PLANS SECTION END-->
+
+                        <div
+                            style="background: #f0f7f8; padding: 18px; font-size: 12px; color: #444; border-top: 1px solid #e0e6e6; flex-grow: 1;">
+                            <div style="margin-bottom: 6px;">• Advanced screening for early detection</div>
+                            <div>• Conducted by certified female specialists</div>
+                        </div>
+                    </div>
+
+                    <div class="card-unit"
+                        style="background: white; border-radius: 15px; border: 1px solid #e0e6e6; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=400"
+                            style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 24px; text-align: center;">
+                            <h3 style="font-size: 20px; margin: 0; color: #333; font-weight: 700;">EMG NCV Test</h3>
+                            <p style="color: #008b94; font-weight: 700; font-size: 19px; margin: 12px 0;">Starting @
+                                <span
+                                    style="text-decoration: line-through; color: #999; font-weight: 400; font-size: 14px;">₹7125</span>
+                                ₹2118
+                            </p> <!--PLANS SECTION END-->
+
+                            <p
+                                style="font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 20px; height: 85px; overflow: hidden;">
+                                Electromyography (EMG) and nerve conduction studies (NCV) evaluate the electrical
+                                activity of nerves and muscles. These tests help diagnose neuromuscular diseases, nerve
+                                injuries, and carpal tunnel syndrome with high clinical precision.
+                            </p>
+                            <div
+                                style="background: #f37048; color: white; display: inline-block; padding: 6px 18px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 15px;">
+                                Salient Features</div>
+                        </div>
+                        <div
+                            style="background: #f0f7f8; padding: 18px; font-size: 12px; color: #444; border-top: 1px solid #e0e6e6; flex-grow: 1;">
+                            <div style="margin-bottom: 6px;">• Comprehensive nerve health assessment</div>
+                            <div>• 100% Painless and accurate results</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <button class="nav-btn" onclick="moveBy(-1)"
+                style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 10; background: #f37048; border: none; width: 44px; height: 44px; border-radius: 50%; color: white; cursor: pointer; font-size: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">‹</button>
+            <button class="nav-btn" onclick="moveBy(1)"
+                style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 10; background: #f37048; border: none; width: 44px; height: 44px; border-radius: 50%; color: white; cursor: pointer; font-size: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">›</button>
+        </div>
+    </section>
+
+    <!-- =========================================== HEALTH SCAN SECTION : END======================================================= -->
+
+    <!-- =========================================== HEALTH RISK SECTION : START======================================================= -->
+
+    <section style="background-color: #ffffff; padding: 60px 0; font-family: 'Inter', sans-serif; overflow: hidden;">
+        <div style="max-width: 1200px; margin: 0 auto; position: relative; padding: 0 20px;">
+
+            <h2 style="text-align: center; color: #008b94; font-size: 32px; font-weight: 700; margin-bottom: 45px;">
+                Health Risk
+            </h2>
+
+            <div style="overflow: hidden; width: 100%;">
+                <div id="riskTrack"
+                    style="display: flex; gap: 20px; transition: transform 0.5s cubic-bezier(0.45, 0.05, 0.55, 0.95); will-change: transform;">
+
+                    <div class="risk-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3010/3010164.png" alt="Joints"
+                            style="width: 80px; height: 80px; margin-bottom: 20px; object-fit: contain;">
+                        <h3 style="color: #008b94; font-size: 22px; font-weight: 700; margin-bottom: 15px;">Joints</h3>
+                        <p
+                            style="color: #555; font-size: 14px; line-height: 1.6; margin-bottom: 20px; height: 70px; overflow: hidden;">
+                            Most of us relate joint pain with age, but that is not true. It does not just affect elderly
+                            people but can occur at any stage of life...
+                        </p>
+                        <a href="#"
+                            style="color: #008b94; text-decoration: none; font-weight: 700; font-size: 15px;">View
+                            More</a>
+                    </div>
+
+                    <div class="risk-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2865/2865801.png" alt="Bone"
+                            style="width: 80px; height: 80px; margin-bottom: 20px; object-fit: contain;">
+                        <h3 style="color: #008b94; font-size: 22px; font-weight: 700; margin-bottom: 15px;">Bone</h3>
+                        <p
+                            style="color: #555; font-size: 14px; line-height: 1.6; margin-bottom: 20px; height: 70px; overflow: hidden;">
+                            Strong bones are key to staying active, mobile, and independent as we age. However, bone
+                            health often starts declining quietly...
+                        </p>
+                        <a href="#"
+                            style="color: #008b94; text-decoration: none; font-weight: 700; font-size: 15px;">View
+                            More</a>
+                    </div>
+
+                    <div class="risk-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3233/3233858.png" alt="Fatigue"
+                            style="width: 80px; height: 80px; margin-bottom: 20px; object-fit: contain;">
+                        <h3 style="color: #008b94; font-size: 22px; font-weight: 700; margin-bottom: 15px;">Fatigue</h3>
+                        <p
+                            style="color: #555; font-size: 14px; line-height: 1.6; margin-bottom: 20px; height: 70px; overflow: hidden;">
+                            Fatigue can be defined as a feeling of overall tiredness or a lack of energy, wherein the
+                            individual feels drained and exhausted...
+                        </p>
+                        <a href="#"
+                            style="color: #008b94; text-decoration: none; font-weight: 700; font-size: 15px;">View
+                            More</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <button class="nav-btn-risk" onclick="moveRisk(-1)"
+                style="position: absolute; left: 0; top: 55%; transform: translateY(-50%); z-index: 10; background: #f37048; border: none; width: 40px; height: 40px; border-radius: 50%; color: white; cursor: pointer; font-size: 22px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">‹</button>
+            <button class="nav-btn-risk" onclick="moveRisk(1)"
+                style="position: absolute; right: 0; top: 55%; transform: translateY(-50%); z-index: 10; background: #f37048; border: none; width: 40px; height: 40px; border-radius: 50%; color: white; cursor: pointer; font-size: 22px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">›</button>
+        </div>
+    </section>
+    <!-- =========================================== HEALTH RISK SECTION : END======================================================= -->
+
+
+    <!-- =========================================== HEALTH CHECKUP  SECTION : START======================================================= -->
+    <section style="padding: 60px 0; background-color: #ffffff; font-family: 'Inter', sans-serif;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+
+            <div style="text-align: center; margin-bottom: 50px;">
+                <p style="color: #666; font-size: 16px; margin: 0; letter-spacing: 1px;">Your Healthians</p>
+                <h2 style="color: #008b94; font-size: 28px; font-weight: 700; margin: 5px 0;">Health Checkup Journey
+                </h2>
+                <div style="width: 100px; height: 3px; background: #f39c12; margin: 10px auto; border-radius: 2px;">
+                </div>
+            </div>
+
+            <div class="journey-overflow">
+                <svg class="journey-line-svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                    <path d="M0,50 Q125,0 250,50 T500,50 T750,50 T1000,50" fill="none" stroke="#008b94" stroke-width="2"
+                        stroke-dasharray="8,8" opacity="0.3" />
+                </svg>
+
+                <div id="journeyTrack" class="journey-track">
+
+                    <div class="journey-step">
+                        <div class="icon-circle-j"
+                            style="width: 90px; height: 90px; background: #fdfaf2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2693/2693507.png" style="width: 45px;">
+                        </div>
+                        <h4 class="journey-step-title"
+                            style="font-size: 16px; font-weight: 700; color: #333; margin-bottom: 10px;">Book with Ease
+                        </h4>
+                        <p class="journey-step-desc" style="font-size: 13px; color: #777; line-height: 1.5;">Choose your
+                            test, time slot and book instantly.</p>
+                    </div>
+
+                    <div class="journey-step">
+                        <div class="icon-circle-j"
+                            style="width: 90px; height: 90px; background: #fdfaf2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
+                            <img src="https://cdn-icons-png.flaticon.com/512/609/609803.png" style="width: 45px;">
+                        </div>
+                        <h4 class="journey-step-title"
+                            style="font-size: 16px; font-weight: 700; color: #333; margin-bottom: 10px;">Hassle-Free
+                            Collection</h4>
+                        <p class="journey-step-desc" style="font-size: 13px; color: #777; line-height: 1.5;">Safe &
+                            timely sample collection by trained phlebotomist.</p>
+                    </div>
+
+                    <div class="journey-step">
+                        <div class="icon-circle-j"
+                            style="width: 90px; height: 90px; background: #fdfaf2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2830/2830305.png" style="width: 45px;">
+                        </div>
+                        <h4 class="journey-step-title"
+                            style="font-size: 16px; font-weight: 700; color: #333; margin-bottom: 10px;">Secure Transfer
+                        </h4>
+                        <p class="journey-step-desc" style="font-size: 13px; color: #777; line-height: 1.5;">
+                            Temperature-controlled transportation to lab.</p>
+                    </div>
+
+                    <div class="journey-step">
+                        <div class="icon-circle-j"
+                            style="width: 90px; height: 90px; background: #fdfaf2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2907/2907971.png" style="width: 45px;">
+                        </div>
+                        <h4 class="journey-step-title"
+                            style="font-size: 16px; font-weight: 700; color: #333; margin-bottom: 10px;">Quick Report
+                            Access</h4>
+                        <p class="journey-step-desc" style="font-size: 13px; color: #777; line-height: 1.5;">Get reports
+                            within 6 hours via WhatsApp & Email.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="journey-dots" id="jDots">
+                <div class="j-dot active"></div>
+                <div class="j-dot"></div>
+                <div class="j-dot"></div>
+                <div class="j-dot"></div>
+            </div>
+        </div>
+    </section>
+    <!-- =========================================== HEALTH CHECKUP  SECTION : END======================================================= -->
+
+    <!-- =========================================== THE EXCELLENCE OF SNH-LABS  SECTION : START======================================================= -->
+    <div class="combined-wrapper">
+        <div class="sr-section">
+            <div class="sr-text-box">
+                <h2 class="sr-main-title">Healthians Smart Report</h2>
+                <p class="sr-desc-text">Now understanding lab<br>reports got easier</p>
+                <p class="sr-history">Consolidated Health<br>History Report</p>
+            </div>
+            <div class="sr-image-box">
+                <img src="https://helma-mumbai.healthians.com/stationery/mailer-assets/68663d546352c.webp"
+                    class="sr-mockup" alt="Smart Report Mockup">
+            </div>
+        </div>
+
+        <div class="lab-teal-section">
+            <div class="lab-inner">
+                <h2 class="lab-header-title">The Excellence of <span>SNH Labs</span></h2>
+
+                <div class="lab-flex-row">
+                    <div class="lab-text-content">
+                        <p class="lab-paragraph">
+                            Healthians is one of the most trusted players in diagnostics today, with a network of fully
+                            automated labs across major cities in India, that are hardcoded with innovative technology,
+                            advanced robotics and intelligent digital solutions.
+                        </p>
+                        <p class="lab-paragraph">
+                            With an extensive team of highly qualified lab technicians and pathologists, our
+                            single-minded purpose is to follow the strictest of quality measures to maintain accuracy
+                            for each test we perform.
+                        </p>
+                        <a href="#" class="btn-know-more">Know more</a>
+                    </div>
+
+                    <div class="lab-video-container">
+                        <img src="https://img.freepik.com/free-photo/scientist-working-lab_23-2148851065.jpg"
+                            class="video-thumb-img" alt="Lab Excellence Video">
+                        <div class="play-icon-overlay">
+                            <div
+                                style="width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 16px solid white; margin-left: 4px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =========================================== THE EXCELLENCE OF SNH-LABS  SECTION : END======================================================= -->
+
+    <!-- =========================================== HEALTH VIDEO REVIEWS SECTION SECTION : START======================================================= -->
+
+    <div class="reviews-outer-wrapper">
+        <div class="reviews-centered-container">
+            <h2 class="reviews-header-text">Healthians Reviews</h2>
+
+            <div class="video-infinite-track">
+                <div class="portrait-video-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1566753323558-f4e0952af115?auto=format&fit=crop&w=400');">
+                    <div class="video-center-play">
+                        <div class="play-arrow-white"></div>
+                    </div>
+                    <div class="video-card-footer">
+                        <p class="cust-name">Mukesh</p>
+                        <p class="cust-city">Bhopal</p>
+                    </div>
+                </div>
+
+                <div class="portrait-video-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400');">
+                    <div class="video-center-play">
+                        <div class="play-arrow-white"></div>
+                    </div>
+                    <div class="video-card-footer">
+                        <p class="cust-name">Anna</p>
+                        <p class="cust-city">Bengaluru</p>
+                    </div>
+                </div>
+
+                <div class="portrait-video-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400');">
+                    <div class="video-center-play">
+                        <div class="play-arrow-white"></div>
+                    </div>
+                    <div class="video-card-footer">
+                        <p class="cust-name">Jason</p>
+                        <p class="cust-city">Bengaluru</p>
+                    </div>
+                </div>
+
+                <div class="portrait-video-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&w=400');">
+                    <div class="video-center-play">
+                        <div class="play-arrow-white"></div>
+                    </div>
+                    <div class="video-card-footer">
+                        <p class="cust-name">Rajesh</p>
+                        <p class="cust-city">Delhi</p>
+                    </div>
+                </div>
+
+                <div class="portrait-video-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400');">
+                    <div class="video-center-play">
+                        <div class="play-arrow-white"></div>
+                    </div>
+                    <div class="video-card-footer">
+                        <p class="cust-name">Sneha</p>
+                        <p class="cust-city">Mumbai</p>
+                    </div>
+                </div>
+
+                <div class="portrait-video-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1566753323558-f4e0952af115?auto=format&fit=crop&w=400');">
+                    <div class="video-center-play">
+                        <div class="play-arrow-white"></div>
+                    </div>
+                    <div class="video-card-footer">
+                        <p class="cust-name">Mukesh</p>
+                        <p class="cust-city">Bhopal</p>
+                    </div>
+                </div>
+                <div class="portrait-video-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400');">
+                    <div class="video-center-play">
+                        <div class="play-arrow-white"></div>
+                    </div>
+                    <div class="video-card-footer">
+                        <p class="cust-name">Anna</p>
+                        <p class="cust-city">Bengaluru</p>
+                    </div>
+                </div>
+                <div class="portrait-video-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400');">
+                    <div class="video-center-play">
+                        <div class="play-arrow-white"></div>
+                    </div>
+                    <div class="video-card-footer">
+                        <p class="cust-name">Jason</p>
+                        <p class="cust-city">Bengaluru</p>
+                    </div>
+                </div>
+
+                <div class="portrait-video-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&w=400');">
+                    <div class="video-center-play">
+                        <div class="play-arrow-white"></div>
+                    </div>
+                    <div class="video-card-footer">
+                        <p class="cust-name">Rajesh</p>
+                        <p class="cust-city">Delhi</p>
+                    </div>
+                </div>
+                <div class="portrait-video-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400');">
+                    <div class="video-center-play">
+                        <div class="play-arrow-white"></div>
+                    </div>
+                    <div class="video-card-footer">
+                        <p class="cust-name">Sneha</p>
+                        <p class="cust-city">Mumbai</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =========================================== HEALTH VIDEO REVIEWS SECTION SECTION : END====================================================== -->
+
+    <!-- ===========================================  CERTIFICATION SECTION START SECTION : START====================================================== -->
+    <div class="global-wrapper">
+
+        <div class="centered-box">
+            <h2 class="section-head">Rewards & Recognition</h2>
+            <div class="infinite-flex">
+                <div class="reward-card"><img
+                        src="https://helma.healthians.com/stationery/mailer-assets/66c899fbb1e8f.webp"
+                        class="reward-img">
+                    <p class="reward-text">Economic Times Edge Awards 2019</p>
+                </div>
+                <div class="reward-card"><img
+                        src="https://helma.healthians.com/stationery/mailer-assets/66c89a2f4445a.webp"
+                        class="reward-img">
+                    <p class="reward-text">Healthcare Leadership Global 2022</p>
+                </div>
+                <div class="reward-card"><img
+                        src="https://helma.healthians.com/stationery/mailer-assets/66c899cec5cb2.webp"
+                        class="reward-img">
+                    <p class="reward-text">ET Inspiring Leaders North 2022</p>
+                </div>
+                <div class="reward-card"><img
+                        src="https://helma.healthians.com/stationery/mailer-assets/66c899fbb1e8f.webp"
+                        class="reward-img">
+                    <p class="reward-text">Economic Times Edge Awards 2019</p>
+                </div>
+                <div class="reward-card"><img
+                        src="https://helma.healthians.com/stationery/mailer-assets/66c89a2f4445a.webp"
+                        class="reward-img">
+                    <p class="reward-text">Healthcare Leadership Global 2022</p>
+                </div>
+                <div class="reward-card"><img
+                        src="https://helma.healthians.com/stationery/mailer-assets/66c899cec5cb2.webp"
+                        class="reward-img">
+                    <p class="reward-text">ET Inspiring Leaders North 2022</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="height: 60px;"></div>
+
+        <div class="centered-box">
+            <h2 class="section-head">Health Blogs & Articles</h2>
+            <div class="infinite-flex reverse-track">
+                <div class="blog-card">
+                    <img src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/Ghee-benefits.webp"
+                        class="blog-thumb">
+                    <div class="blog-body">
+                        <p class="blog-title">Surprising Health Benefits of Betel Leaves</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/betel-leaf-benefits.webp"
+                        class="blog-thumb">
+                    <div class="blog-body">
+                        <p class="blog-title">Is Ghee Good for Your Heart?</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/10-ways-to-Quit-Sugar-from-Your-Diet.webp"
+                        class="blog-thumb">
+                    <div class="blog-body">
+                        <p class="blog-title">10 Easy Ways to Quit Sugar from Your Diet</p>
+                    </div>
+                </div>
+                <div class="blog-card"><img
+                        src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/Ghee-benefits.webp"
+                        class="blog-thumb">
+                    <div class="blog-body">
+                        <p class="blog-title">Benefits of Betel Leaves</p>
+                    </div>
+                </div>
+                <div class="blog-card"><img
+                        src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/betel-leaf-benefits.webp"
+                        class="blog-thumb">
+                    <div class="blog-body">
+                        <p class="blog-title">Is Ghee Good for Your Heart?</p>
+                    </div>
+                </div>
+                <div class="blog-card"><img
+                        src="https://cdn1.healthians.com/blog/wp-content/uploads/2026/01/10-ways-to-Quit-Sugar-from-Your-Diet.webp"
+                        class="blog-thumb">
+                    <div class="blog-body">
+                        <p class="blog-title">10 Easy Ways to Quit Sugar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===========================================  CERTIFICATION SECTION START SECTION : END====================================================== -->
+
+    <!-- ===========================================  SUBSCRIBE NOW BAR SECTION : START====================================================== -->
+    <section class="subscribe-outer">
+        <div class="subscribe-container">
+            <h2 class="subscribe-title">Subscribe For Healthy Updates</h2>
+            <div class="title-line"></div>
+
+            <form class="subscribe-form" onsubmit="event.preventDefault();">
+                <input type="email" class="sub-input" placeholder="Enter your email ID" required>
+                <button type="submit" class="sub-btn">Submit</button>
+            </form>
+        </div>
+    </section>
+    <!-- ===========================================  SUBSCRIBE NOW BAR SECTION : START====================================================== -->
+
+    <!-- =================================== DETAILED DESCRIPTION ABOUT OUR SERVICE SECTION : START====================================================== -->
+    <section class="dense-footer-section">
+        <div class="dense-container">
+            <hr class="dense-hr">
+
+            <div class="dense-group">
+                <span class="dense-title">Most Popular Health Tests</span>
+                <div class="dense-links">
+                    <a href="#" class="s-space">Allergy Testing</a><a href="#" class="s-space">Amylase Test</a><a
+                        href="#" class="s-space">Anemia Test</a><a href="#" class="s-space">Anti Hcv Test</a><a href="#"
+                        class="s-space">Arthritis Test</a><a href="#" class="s-space">Ca125 Test</a><a href="#"
+                        class="s-space">CBC Test</a><a href="#" class="s-space">Chikungunya Test</a><a href="#"
+                        class="s-space">Cholesterol Test</a><a href="#" class="s-space">Dengue Test</a><a href="#"
+                        class="s-space">Diabetes Test</a><a href="#" class="s-space">Fever Test</a><a href="#"
+                        class="s-space">HbA1c Test</a><a href="#" class="s-space">HbsAg Test</a><a href="#"
+                        class="s-space">Hepatitis B Test</a><a href="#" class="s-space">HIV Test</a><a href="#"
+                        class="s-space">Hormone Test</a><a href="#" class="s-space">Immunity Test</a><a href="#"
+                        class="s-space">Iron Studies Test</a><a href="#" class="s-space">Kidney Function Test</a><a
+                        href="#" class="s-space">Lipid Profile Test</a><a href="#" class="s-space">Liver Function
+                        Test</a><a href="#" class="s-space">Malaria Test</a><a href="#" class="s-space">Pancreatitis
+                        Test</a><a href="#" class="s-space">PCOS Test</a><a href="#" class="s-space">Early Pregnancy
+                        Checkup</a><a href="#" class="s-space">PSA Test</a><a href="#" class="s-space">STD Test</a><a
+                        href="#" class="s-space">Stool Test</a><a href="#" class="s-space">Sugar Test</a><a href="#"
+                        class="s-space">Thyroid Test</a><a href="#" class="s-space">Typhoid Test</a><a href="#"
+                        class="s-space">Uric Acid Test</a><a href="#" class="s-space">Urine Test</a><a href="#"
+                        class="s-space">Viral Marker Test</a><a href="#" class="s-space">Vitamin B12 Test</a><a href="#"
+                        class="s-space">Vitamin D Test</a><a href="#">Vitamin Test</a>
+                </div>
+            </div>
+
+            <hr class="dense-hr">
+
+            <div class="dense-group">
+                <span class="dense-title">Browse Test By Risks</span>
+                <div class="dense-links">
+                    <a href="#" class="s-slash">Fever Test</a><a href="#" class="s-slash">STD Test</a><a href="#"
+                        class="s-slash">Vitamins Test</a><a href="#" class="s-slash">Diabetes Test</a><a href="#"
+                        class="s-slash">Heart Test</a><a href="#" class="s-slash">Thyroid Test</a><a href="#"
+                        class="s-slash">Kidney Test</a><a href="#" class="s-slash">Allergy Test</a><a href="#"
+                        class="s-slash">Liver Test</a><a href="#" class="s-slash">Joints Test</a><a href="#"
+                        class="s-slash">Bone Test</a><a href="#" class="s-slash">Fatigue Test</a><a href="#"
+                        class="s-slash">Acidity Test</a><a href="#" class="s-slash">Cancer Test</a><a href="#"
+                        class="s-slash">Anaemia Test</a><a href="#" class="s-slash">Hypertension Test</a><a href="#"
+                        class="s-slash">Obesity Test</a><a href="#" class="s-slash">Hormones Test</a><a href="#"
+                        class="s-slash">Arthritis Test</a><a href="#" class="s-slash">Hepatitis Test</a><a href="#"
+                        class="s-slash">Immunity Test</a><a href="#" class="s-slash">Jaundice Test</a><a href="#"
+                        class="s-slash">Digestion Test</a><a href="#" class="s-slash">Infections Test</a><a href="#"
+                        class="s-slash">Pregnancy Test</a><a href="#">Infertility Test</a>
+                </div>
+            </div>
+
+            <hr class="dense-hr">
+
+            <div class="dense-group">
+                <span class="dense-title">Browse Test By Habits</span>
+                <div class="dense-links">
+                    <a href="#" class="s-slash">Alcoholism</a><a href="#" class="s-slash">Anger</a><a href="#"
+                        class="s-slash">Eating Poorly</a><a href="#" class="s-slash">Heartburn</a><a href="#"
+                        class="s-slash">Junk Food</a><a href="#" class="s-slash">Low Iron Diet</a><a href="#"
+                        class="s-slash">Medicine Overuse</a><a href="#" class="s-slash">Poor Nutrition</a><a href="#"
+                        class="s-slash">Sleeplessness</a><a href="#" class="s-slash">Smoking</a><a href="#"
+                        class="s-slash">Stress</a><a href="#">Zero Exercise</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- =================================== DETAILED DESCRIPTION ABOUT OUR SERVICE SECTION : END====================================================== -->
+
+    <!-- =================================== FOOTER SECTION STARTV SECTION : START=================================================================== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <footer class="main-footer">
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <img src="https://cdn3.healthians.com/img/Healthians-Group.svg" alt="Healthians" class="footer-logo">
+                <img src="https://cdn3.healthians.com/img/unit-no1.svg" class="award-badge">
+                <p class="award-text">in Delhi NCR</p>
+            </div>
+
+            <div class="footer-links-wrapper">
+                <h3 class="footer-column-title">Important Links</h3>
+                <div class="links-grid-inner">
+                    <div class="col-left">
+                        <a href="#" class="footer-link">About Us</a>
+                        <a href="#" class="footer-link">Media</a>
+                        <a href="#" class="footer-link">Career</a>
+                        <a href="#" class="footer-link">Editorial Policy</a>
+                        <a href="#" class="footer-link">Money Back Policy</a>
+                        <a href="#" class="footer-link">Query/Complaints</a>
+                        <a href="#" class="footer-link">Our Corporate Clients</a>
+                        <a href="#" class="footer-link">Rating & Reviews</a>
+                    </div>
+                    <div class="col-right">
+                        <a href="#" class="footer-link">Our Labs</a>
+                        <a href="#" class="footer-link">Contact Us</a>
+                        <a href="#" class="footer-link">Blog</a>
+                        <a href="#" class="footer-link">Health Q&A</a>
+                        <a href="#" class="footer-link">Investors</a>
+                        <a href="#" class="footer-link">Scan Lab</a>
+                        <a href="#" class="footer-link">FAQ</a>
+                        <a href="#" class="footer-link">Become Business Partner</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <h3 class="footer-column-title">Follow Us</h3>
+                <div class="social-row">
+                    <a href="#" class="social-btn fb"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn tw"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-btn ln"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn yt"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="social-btn ig"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+
+                <h3 class="app-title">Get the Healthians App</h3>
+                <div class="app-flex">
+                    <img src="https://cdn2.healthians.com/img/google_play.png" class="app-img" alt="Play Store">
+                    <img src="https://cdn2.healthians.com/img/appstore.png" class="app-img" alt="App Store">
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright-strip">
+            <div class="copy-content">
+                <span>2026 © Healthians.com</span>
+                <span>|</span>
+                <a href="#">Terms & Conditions</a>
+                <span>|</span>
+                <a href="#">Privacy Policy</a>
+                <span>|</span>
+                <a href="#">Statutory Compliance</a>
+                <span>|</span>
+                <a href="#">Programs & Policies</a>
+            </div>
+        </div>
+    </footer>
+    <!-- =================================== FOOTER SECTION STARTV SECTION : END=================================================================== -->
+
+</body>
+<!-- =========================================================NAVBAR SCRIPT : START========================================================= -->
+<script>
+    function openMenu() {
+        document.getElementById("sidebar").classList.remove("hidden");
+    }
+    function closeMenu() {
+        document.getElementById("sidebar").classList.add("hidden");
+    }
+</script>
+<!-- =========================================================NAVBAR SCRIPT : END========================================================= -->
+
+<!-- ====================================================IMG SLIDER SECTION SCRIPT : START ====================================================-->
+<script>
+    (function () {
+        const pItems = document.querySelectorAll('.p-stack-card');
+        let pActiveIdx = 0;
+
+        function pRender() {
+            const isMob = window.innerWidth <= 768;
+
+            pItems.forEach((item, i) => {
+                item.style.opacity = "0";
+                item.style.transform = "translateX(0) scale(0.6) translateZ(-500px)";
+                item.style.zIndex = "0";
+                item.style.filter = "blur(10px) brightness(0.7)";
+                item.style.pointerEvents = "none";
+
+                const pPrev = (pActiveIdx - 1 + pItems.length) % pItems.length;
+                const pNext = (pActiveIdx + 1) % pItems.length;
+
+                if (i === pActiveIdx) {
+                    item.style.opacity = "1";
+                    item.style.transform = "translateX(0) scale(1) translateZ(0)";
+                    item.style.zIndex = "30";
+                    item.style.filter = "blur(0px) brightness(1)";
+                    item.style.pointerEvents = "auto";
+                }
+                else if (i === pPrev) {
+                    const xOff = isMob ? "-15%" : "-45%";
+                    item.style.opacity = isMob ? "0.3" : "0.5";
+                    item.style.transform = `translateX(${xOff}) scale(0.85) translateZ(-150px)`;
+                    item.style.zIndex = "20";
+                    item.style.filter = "blur(3px) brightness(0.8)";
+                }
+                else if (i === pNext) {
+                    const xOff = isMob ? "15%" : "45%";
+                    item.style.opacity = isMob ? "0.3" : "0.5";
+                    item.style.transform = `translateX(${xOff}) scale(0.85) translateZ(-150px)`;
+                    item.style.zIndex = "20";
+                    item.style.filter = "blur(3px) brightness(0.8)";
+                }
+            });
+        }
+
+        window.pMoveStack = function (dir) {
+            pActiveIdx = (pActiveIdx + dir + pItems.length) % pItems.length;
+            pRender();
+        };
+
+        setInterval(() => pMoveStack(1), 5000);
+
+        pRender();
+        window.addEventListener('resize', pRender);
+    })();
+</script>
+<!-- ==========================================================IMG SLIDER SECTION SCRIPT : END========================================================== -->
+
+<!-- ============================================================PLAN SECTION SCRIPT : START ============================================================-->
+<script>
+    // 1. Banner Logic (3D Stack)
+    const banners = document.querySelectorAll('.stack-card');
+    let bannerIdx = 0;
+
+    function renderBanners() {
+        banners.forEach((card, i) => {
+            const prev = (bannerIdx - 1 + banners.length) % banners.length;
+            const next = (bannerIdx + 1) % banners.length;
+
+            if (i === bannerIdx) {
+                card.style.transform = "translateX(0) scale(1) translateZ(0)";
+                card.style.zIndex = "30";
+                card.style.opacity = "1";
+                card.style.filter = "none";
+            } else if (i === prev) {
+                card.style.transform = "translateX(-45%) scale(0.85) translateZ(-150px)";
+                card.style.zIndex = "20";
+                card.style.opacity = "0.4";
+                card.style.filter = "blur(2px)";
+            } else if (i === next) {
+                card.style.transform = "translateX(45%) scale(0.85) translateZ(-150px)";
+                card.style.zIndex = "20";
+                card.style.opacity = "0.4";
+                card.style.filter = "blur(2px)";<!-- =========================================== PLANS SECTION END======================================================= -->
+
+            } else {
+                card.style.opacity = "0";
+            }
+        });
+    }
+
+    function moveBanner(dir) {
+        bannerIdx = (bannerIdx + dir + banners.length) % banners.length;
+        renderBanners();
+    }
+
+    // 2. Filter Logic
+    function filterPkg(cat, btn) {
+        const btns = btn.parentElement.querySelectorAll('button');
+        btns.forEach(b => {
+            b.style.background = "white";
+            b.style.color = "#666";
+            b.style.borderColor = "#ddd";
+        });
+        btn.style.background = "#008b94";
+        btn.style.color = "white";
+        btn.style.borderColor = "#008b94";
+
+        const cards = document.querySelectorAll('.pkg-card');
+        cards.forEach(card => {
+            card.style.display = (cat === 'all' || card.dataset.cat === cat) ? "block" : "none";
+        });
+    }
+
+    renderBanners();
+    setInterval(() => moveBanner(1), 5000);
+</script>
+<!-- =============================================================PLAN SECTION SCRIPT : END =============================================================-->
+
+<!-- HEALTH SCAN SCRIPT : START -->
+<script>
+    const track = document.getElementById('infiniteTrack');
+    const originalCardsCount = track.children.length;
+
+    // Duplicate cards for seamless infinite effect
+    const cardsToClone = Array.from(track.children);
+    cardsToClone.forEach(card => track.appendChild(card.cloneNode(true)));
+    cardsToClone.forEach(card => track.appendChild(card.cloneNode(true)));
+
+    let currentIndex = 0;
+
+    function getStepWidth() {
+        const firstCard = track.children[0];
+        const gap = 20;
+        return firstCard.offsetWidth + gap;
+    }
+
+    function updateSlider(animate = true) {
+        const step = getStepWidth();
+        track.style.transition = animate ? "transform 0.5s cubic-bezier(0.45, 0.05, 0.55, 0.95)" : "none";
+        track.style.transform = `translateX(-${currentIndex * step}px)`;
+    }
+
+    function moveBy(direction) {
+        currentIndex += direction;
+        updateSlider();
+
+        if (currentIndex >= originalCardsCount) {
+            setTimeout(() => {
+                currentIndex = 0;
+                updateSlider(false);
+            }, 500);
+        } else if (currentIndex < 0) {
+            setTimeout(() => {
+                currentIndex = originalCardsCount - 1;
+                updateSlider(false);
+            }, 500);
+        }
+    }
+
+    let autoPlay = setInterval(() => moveBy(1), 5000);
+    track.parentElement.addEventListener('mouseenter', () => clearInterval(autoPlay));
+    track.parentElement.addEventListener('mouseleave', () => autoPlay = setInterval(() => moveBy(1), 5000));
+    window.addEventListener('resize', () => updateSlider(false));
+</script>
+<!-- ========================================================HEALTH SCAN SCRIPT : START======================================================== -->
+
+<!-- ========================================================HEALTH RISK SCRIPT : START======================================================== -->
+<script>
+    const riskTrack = document.getElementById('riskTrack');
+    const riskCards = Array.from(riskTrack.children);
+    const riskCount = riskCards.length;
+
+    // Triple cloning for seamless loop
+    riskCards.forEach(c => riskTrack.appendChild(c.cloneNode(true)));
+    riskCards.forEach(c => riskTrack.appendChild(c.cloneNode(true)));
+
+    let riskIndex = 0;
+
+    function moveRisk(dir) {
+        riskIndex += dir;
+        const step = riskTrack.children[0].offsetWidth + 20;
+        riskTrack.style.transition = "transform 0.5s cubic-bezier(0.45, 0.05, 0.55, 0.95)";
+        riskTrack.style.transform = `translateX(-${riskIndex * step}px)`;
+
+        if (riskIndex >= riskCount) {
+            setTimeout(() => {
+                riskTrack.style.transition = "none";
+                riskIndex = 0;
+                riskTrack.style.transform = `translateX(0)`;
+            }, 500);
+        } else if (riskIndex < 0) {
+            setTimeout(() => {
+                riskTrack.style.transition = "none";
+                riskIndex = riskCount - 1;
+                riskTrack.style.transform = `translateX(-${riskIndex * step}px)`;
+            }, 500);
+        }
+    }
+
+    // Auto-play
+    let riskTimer = setInterval(() => moveRisk(1), 4500);
+    riskTrack.parentElement.addEventListener('mouseenter', () => clearInterval(riskTimer));
+    riskTrack.parentElement.addEventListener('mouseleave', () => riskTimer = setInterval(() => moveRisk(1), 4500));
+    window.addEventListener('resize', () => {
+        riskTrack.style.transition = "none";
+        riskTrack.style.transform = `translateX(0)`;
+        riskIndex = 0;
+    });
+</script>
+<!-- ========================================================HEALTH RISK SECITON END======================================================== -->
+
+<!-- ========================================================HEALTH CHECKUP SECTION SCRIPT : START======================================================== -->
+<script>
+    (function () {
+        const jTrack = document.getElementById('journeyTrack');
+        const jDots = document.querySelectorAll('.j-dot');
+        let jIndex = 0;
+        const jTotal = 4;
+
+        function slideJourney() {
+            if (window.innerWidth <= 768) {
+                jIndex++;
+                if (jIndex >= jTotal) jIndex = 0;
+
+                jTrack.style.transform = `translateX(-${jIndex * 100}%)`;
+
+                jDots.forEach(d => d.classList.remove('active'));
+                jDots[jIndex].classList.add('active');
+            } else {
+                jTrack.style.transform = `translateX(0)`;
+            }
+        }
+
+        setInterval(slideJourney, 3500); // Slide every 3.5s
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                jTrack.style.transform = `translateX(0)`;
+                jIndex = 0;
+            }
+        });
+    })();
+</script>
+<!-- ========================================================HEALTH CHECKUP SECTION SCRIPT : END======================================================== -->
+
+</html>
